@@ -26,4 +26,4 @@ URL REPO: https://github.com/hernanfda/grupo_2_GamingStore
 * [Bautista Boudou](https://github.com/BautistaBoudou)
 * [Hernan De Andres](https://github.com/hernanfda)
 * [Francisco Cesare](https://github.com/franciscocesare)
-* [Diego Navarro]()
+* [Diego Navarro](https://github.com/diegonavarr)
