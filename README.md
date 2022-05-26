@@ -19,7 +19,7 @@ URL REPO: https://github.com/hernanfda/grupo_2_GamingStore
 * [LogitechG](https://www.logitechg.com/) 
 * [RedDragon](https://redragon.es/)
 * [HyperX](https://www.hyperxgaming.com/es) 
-* [Razer](https://www.hyperxgaming.com/es)
+* [Razer](https://www.razer.com/latam-es)
 
 ## Listado de grupo y referencia
 * [Alex Arango](https://github.com/alex-arango47)
