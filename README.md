@@ -7,12 +7,13 @@ URL REPO: https://github.com/hernanfda/grupo_2_GamingStore
 
 ## Publico objetivo
 
-* Sitio web para comprar equipamiento gamer, de perifericos a sillas, todo lo que precisa un Gamer Pro que se jacte de serlo. 
-* El sitio es para usuarios de amplia franja etaria, ya que la pasión por los juegos no discrimina de genero ni edades!
+* Sitio web para comprar equipamiento gamer. Desde perifericos hasta sillas, todo lo que precisa un Gamer para preparar su setup. 
+* El sitio está orientado al público en general. El mundo del gaming es una actividad que atrapa niños desde temprana edad hasta adultos mayores.
 
 ## Productos ofrecidos
 
-* En GamingStore vas a encontrar desde teclado y mouse, monitores, sillas gamer, todo TODO lo que precisas para poder viciar comodo, y que el estar jugando por horas no sea un dolor de cabeza!
+* En GamingStore vas a encontrar desde un mousePad hasta monitores y sillas gamer. TODO lo que precisas para poder viciar comodo y que el estar jugando por horas no sea un dolor de cabeza.
+
 
 ## Sitios de referencia
 * [ArmyTech](https://www.armytech.com.ar/) 
