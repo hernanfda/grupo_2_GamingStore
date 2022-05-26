@@ -5,7 +5,7 @@ URL REPO: https://github.com/hernanfda/grupo_2_GamingStore
 ## Tematica del sitio 
 * Ecommerce, tienda virtual de equipamiento gamer
 
-## Publico objetico
+## Publico objetivo
 
 * Sitio web para comprar equipamiento gamer, de perifericos a sillas, todo lo que precisa un Gamer Pro que se jacte de serlo. 
 * El sitio es para usuarios de amplia franja etaria, ya que la pasión por los juegos no discrimina de genero ni edades!
