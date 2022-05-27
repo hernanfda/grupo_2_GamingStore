@@ -1,0 +1,23 @@
+{
+  "name": "gamingstore",
+  "version": "1.0.0",
+  "description": "URL REPO: https://github.com/hernanfda/grupo_2_GamingStore",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hernanfda/grupo_2_GamingStore.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hernanfda/grupo_2_GamingStore/issues"
+  },
+  "homepage": "https://github.com/hernanfda/grupo_2_GamingStore#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
