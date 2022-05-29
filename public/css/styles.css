@@ -1,0 +1,44 @@
+body {
+    font-size: 1rem;
+    line-height: 2;
+    font-family: 'Varela Round', sans-serif;
+    margin: 0 auto;
+}
+
+img {
+    max-width: 50%;
+}
+nav {
+    font-size: 1.5rem;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+nav a {
+    color: whitesmoke;
+    text-decoration: none;
+    display: inline;
+     
+}
+nav a:hover{
+    text-decoration: underline;
+}
+footer {
+   background: rgb(187, 187, 190);
+    margin-top: 2px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+.site-header {
+    background-image: url(/img/img-placeHolder.jpg);
+    background-position: center center;
+    background-size: cover;
+    height: 100vh;
+    min-height: 60rem;
+}
+.logo {
+    max-width: 100%;
+}
+
