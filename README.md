@@ -28,3 +28,6 @@ URL REPO: https://github.com/hernanfda/grupo_2_GamingStore
 * [Hernan De Andres](https://github.com/hernanfda)
 * [Francisco Cesare](https://github.com/franciscocesare)
 * [Diego Navarro](https://github.com/diegonavarr)
+
+## Plataforma de organización del proyecto
+* [Trello GamerX](https://trello.com/b/xmiK1FAr/gamerx)
