@@ -1,0 +1,54 @@
+*
+{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: grey;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 64px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+    align-items: center;
+    background-color: transparent;
+    z-index: 1;
+}
+#logo{
+    height: 60px;
+    width: 60px;
+}
+.fa-bars,.fa-magnifying-glass{
+    height: 18px;
+    width: 18px;
+    color: white;
+    font-size: 30px
+}
+.carrousel{
+    width: 100%;
+    height: 100vh;
+    text-align:center;
+    background-color: rgb(44, 2, 73);
+    position: absolute;
+    top: 0px;
+    z-index: 0;
+    color: white;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    }
+section
+{
+    color: white;
+    width: 100%;
+    height: 200px;
+    z-index: 0;
+}
+
