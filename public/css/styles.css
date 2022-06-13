@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: black;
+  background-color: rgb(26, 26, 26);
 }
 
 header {
@@ -66,12 +66,15 @@ section {
 .articulo {
   width: 30%;
   margin: 10px 0 10px 0;
-  background-color: black;
+  background-color: rgb(26, 26, 26);
 }
 
 #producto {
   width: 100%;
   height: auto;
+}
+.descuento {
+  color: rgb(111, 0, 209);
 }
 
 .navbar {
@@ -81,18 +84,22 @@ section {
 h2 {
   width: 100%;
   text-align: center;
+  margin: 20px;
+  color: rgb(111, 0, 209);
 }
 
 footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  border-top: solid 1px grey;
 }
 
 .copy {
   width: 100%;
   color: white;
-  font-size: 10px;
+  font-size: 1em;
+  padding: 16px;
 }
 
 .fa-brands {
@@ -112,17 +119,23 @@ footer {
   width: 80%;
   justify-content: space-around;
 }
-.review p{
+.review p,h5 {
   display: flex;
-  width: 50%;
-  text-align: justify;
+  text-align: left;
   align-items: center;
-
+  justify-content: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 0.9em;
+  color: black;
 }
-.review img{
+.review img {
   width: 50%;
 }
-.general
-{
+.reviewer {
+  width: 50%;
+  background-color: grey;
+}
+.general {
   text-align: center;
 }
