@@ -8,11 +8,12 @@
 
 body {
   background-color: rgb(26, 26, 26);
-  position: relative;
+  /* position: relative; */
 }
 
 header {
   display: flex;
+  position: fixed;
   justify-content: space-between;
   width: 100%;
   height: 64px;
@@ -22,7 +23,7 @@ header {
   padding-right: 30px;
   align-items: center;
   position: absolute;
-  z-index: 0;
+  z-index: 1;
 }
 
 #logo {
@@ -47,7 +48,7 @@ header {
   background-color: rgb(44, 2, 73);
   top: 0px;
   color: white;
-  background-image: URL(https://thegadgetflow.com/wp-content/uploads/2018/01/Razer-Cynosa-Chroma-RGB-Gaming-Keyboard-02.jpg);
+  background-image: url(https://thegadgetflow.com/wp-content/uploads/2018/01/Razer-Cynosa-Chroma-RGB-Gaming-Keyboard-02.jpg);
   background-size: cover;
   /* background-position: center */
   background-repeat: no-repeat;
@@ -155,22 +156,36 @@ h5 {
 .slideshow-container {
   display: flex;
   align-items: center;
-  top: 0;
-  width: 100%;
+  /* top: 0; */
+  width: 100vw;
   height: 100vh;
+  min-width: 350px;
+  min-height: 765px;
   max-width: 1000px;
   position: relative;
   margin: auto;
   background-size: cover;
   background-repeat: no-repeat;
 }
+.dot-style {
+  text-align: center;
+  position: relative;
+  bottom: 90px;
+}
 
 /* Hide the images by default */
 .mySlides {
   display: none;
+  width: 100%;
+  height: 100%;
 }
-
-/* Next & previous buttons */
+.mySlides img {
+  width: 100%;
+  height: 100%;
+  max-width: 1000px;
+  max-height: 1000px;
+}
+  /* Next & previous buttons */
 .prev,
 .next {
   cursor: pointer;
