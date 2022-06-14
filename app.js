@@ -12,5 +12,5 @@ app.get('/', (req, res) => {
 //aca iran las rutas 
 
 app.listen(PORT, () => {
-  console.log(`App listening on port ${PORT}`)
+  console.log(`App listening and running in http://localhost:${PORT}`)
 })
