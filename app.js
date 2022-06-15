@@ -9,7 +9,18 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/views/index.html')
 })
 
-//aca iran las rutas 
+app.get('/login', (req, res) => {
+  res.sendFile(__dirname + '/views/login.html')
+})
+app.get('/register', (req, res) => {
+  res.sendFile(__dirname + '/views/register.html')
+})
+app.get('/product-detail', (req, res) => {
+  res.sendFile(__dirname + '/views/product-detail.html')
+})
+app.get('/product-cart', (req, res) => {
+  res.sendFile(__dirname + '/views/product-cart.html')
+})
 
 app.listen(PORT, () => {
   console.log(`App listening and running in http://localhost:${PORT}`)
