@@ -1,0 +1,114 @@
+/* color: rgb(111,0,209);
+  color: rgb(26,26,26);
+  color: rgb(179,179,179) */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Play", sans-serif;
+  color: rgb(179, 179, 179);
+}
+
+body {
+  background-color: rgb(26, 26, 26);
+}
+
+nav {
+  display: none;
+}
+
+header {
+  color: rgb(179, 179, 179);
+  display: flex;
+  flex-wrap: wrap;
+  height: 64px;
+  width: 100%;
+  position: relative;
+
+}
+#logo{
+  height: 60px;
+  width: 60px;
+}
+
+/*--------CENTRADO EL LOGO EN EL HEADER------*/
+header #logo {
+  position:absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:2px;  
+}
+
+/*--------TAMAÑO ICONOS/POSITION/FIJADO AL TOP------*/
+.fa-bars,
+.fa-magnifying-glass,.fa-cart-shopping {
+  height: 18px;
+  width: 18px;
+  color: white;
+  font-size: 30px;
+  position: absolute;
+  top:17px
+  
+}
+/*--------ALINEACIÓN MENU HAMBURGUESA------*/
+.fa-bars{
+  left:30px
+}
+/*--------ALINEACIÓN LUPA------*/
+.fa-magnifying-glass{
+  right:30px
+}
+
+/*--------ALINEACIÓN CARRITO------*/
+.fa-cart-shopping{
+  right:80px
+}
+
+/*--------ARTICULOS------*/
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.articulo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 30px 0 30px 0;
+}
+.articulo img {
+  width: 80%;
+}
+.articulo h3 {
+  color: rgb(111, 0, 209);
+}
+
+/*--------FOOTER------*/
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-top: solid 1px rgb(179, 179, 179);
+}
+
+.copy {
+  width: 100%;
+  color: white;
+  font-size: 1em;
+  padding: 16px;
+}
+
+.fa-brands {
+  padding: 10px;
+}
+
+.redes {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+}
