@@ -11,11 +11,12 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   background-color: rgb(26, 26, 26);
-}
-
-nav {
-  display: none;
+  min-width: 375px;
+  max-width: 767px;
+  position: relative;
 }
 
 header {
@@ -25,44 +26,61 @@ header {
   height: 64px;
   width: 100%;
   position: relative;
-
 }
-#logo{
+.logo {
   height: 60px;
   width: 60px;
+  background-image: URL(/img/iso-light.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+nav {
+  display: none;
 }
 
 /*--------CENTRADO EL LOGO EN EL HEADER------*/
-header #logo {
-  position:absolute;
+header .logo {
+  position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top:2px;  
+  top: 2px;
 }
 
 /*--------TAMAÑO ICONOS/POSITION/FIJADO AL TOP------*/
 .fa-bars,
-.fa-magnifying-glass,.fa-cart-shopping {
+.fa-magnifying-glass,
+.fa-cart-shopping,.fa-user {
   height: 18px;
   width: 18px;
   color: white;
   font-size: 30px;
   position: absolute;
-  top:17px
-  
+  top: 17px;
+}
+
+/*--------ICONO DE USER OCULTO------*/
+.fa-solid.fa-user
+{
+  display: none;
 }
 /*--------ALINEACIÓN MENU HAMBURGUESA------*/
-.fa-bars{
-  left:30px
+.fa-bars {
+  left: 30px;
 }
 /*--------ALINEACIÓN LUPA------*/
-.fa-magnifying-glass{
-  right:30px
+.fa-magnifying-glass {
+  right: 30px;
 }
 
 /*--------ALINEACIÓN CARRITO------*/
-.fa-cart-shopping{
-  right:80px
+.fa-cart-shopping {
+  right: 80px;
+}
+
+/*--------ESTILOS <a>------*/
+a {
+  text-decoration: none;
 }
 
 /*--------ARTICULOS------*/
@@ -71,12 +89,12 @@ section {
   flex-wrap: wrap;
   justify-content: center;
 }
-
 .articulo {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin: 30px 0 30px 0;
+  border-top: solid 1px rgb(179, 179, 179);
 }
 .articulo img {
   width: 80%;
@@ -84,6 +102,12 @@ section {
 .articulo h3 {
   color: rgb(111, 0, 209);
 }
+/*--------OCULTA ESPECIFICACIONES PARA VIEW DESKTOP------*/
+.especificaciones
+{
+display: block;
+}
+
 
 /*--------FOOTER------*/
 
@@ -92,6 +116,7 @@ footer {
   flex-wrap: wrap;
   justify-content: center;
   border-top: solid 1px rgb(179, 179, 179);
+  width: 100%;
 }
 
 .copy {
@@ -111,4 +136,36 @@ footer {
   justify-content: center;
   color: white;
   font-size: 20px;
+}
+
+/*--------BOTON CARRITO------*/
+#agregar{
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+  background-color: rgb(111, 0, 209);
+}
+
+/*--------DESCRIPCIONES DE PRODUCTO------*/
+.especificaciones
+{
+  display: block;
+  width: 320px;
+  height: 220px;
+  }
+/*--------DESACTIVA LINKS ARTICULO------*/
+section a{
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+  width: 100%;
+}
+.articulo .modelo {
+  color: rgb(111, 0, 209);
+  font-weight: 900;
+  font-size: 30px;
+  }
+.general
+{
+  display: none;
 }
