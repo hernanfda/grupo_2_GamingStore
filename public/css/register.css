@@ -6,7 +6,8 @@
 }
 
 body {
-  background-image: url(/img/register-background2\(mobile\).jpg);
+  /* background-image: url(/img/register-background2\(mobile\).jpg); */
+  background-color: rgba(26, 26, 26);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -48,7 +49,7 @@ header {
   justify-content: center;
   max-width: 300px;
   margin-top: 20px;
-  box-shadow: inset 0px 0px 5px rgba(185, 99, 235, 0.925);
+  box-shadow: inset 0px 0px 5px rgba(164, 89, 255, 0.925);
   border-radius: 30px;
   padding: 20px;
   max-width: 400px;
@@ -58,7 +59,7 @@ header {
 .register-title {
   width: 100%;
   text-align: center;
-  border-bottom: solid 1px rgba(185, 99, 235, 0.925);
+  border-bottom: solid 1px rgba(164, 89, 255, 0.925);
   margin-bottom: 10px;
 }
 
@@ -82,6 +83,7 @@ input[type="email"] {
   line-height: 1;
   padding: 5px;
   background: rgba(151, 149, 149, 0.2);
+  /* background-color: white; */
   /* Input 3D */
   box-shadow: inset 4px 6px 10px -4px rgba(0, 0, 0, 0.3),
     0 1px 1px -1px rgba(255, 255, 255, 0.3);
@@ -89,13 +91,38 @@ input[type="email"] {
 
 input[type="text"]:focus,
 input[type="password"]:focus,
-input[type="date"]:focus {
-  border-color: #b963ebec;
+input[type="date"]:focus,
+input[type="email"]:focus {
+  border-color: rgba(164, 89, 255, 0.925);
 }
 
 input[type="date"] {
   color: rgb(226, 222, 222);
   color-scheme: dark;
+}
+
+/* .form-icons {
+  color: rgb(226, 222, 222);
+  font-size: 14px;
+  margin: 7px 0 0 0;
+  margin-left: -20px;
+  float: left;
+  position: relative;
+  left: 8%;
+} */
+
+#eye {
+  color: rgb(226, 222, 222);
+
+  margin: 5.9px 0 0 0;
+  margin-left: -20px;
+
+  float: right;
+  position: relative;
+  right: 1.5%;
+  /* top: -50%; */
+
+  cursor: pointer;
 }
 
 .register-container p {
@@ -177,7 +204,8 @@ footer {
 
 @media (min-width:1024px) {
   body {
-    background-image: url("/img/register-background2.jpg");
+    /* background-image: url("/img/register-background2.jpg"); */
+    background-color: rgba(26, 26, 26);
     background-attachment: fixed;
   }
 
