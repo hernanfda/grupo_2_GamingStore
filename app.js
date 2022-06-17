@@ -15,8 +15,16 @@ app.get('/login', (req, res) => {
 app.get('/register', (req, res) => {
   res.sendFile(__dirname + '/views/register.html')
 })
-app.get('/product-detail', (req, res) => {
-  res.sendFile(__dirname + '/views/product-detail.html')
+app.get('/product_detail_keyboard', (req, res) => {
+  res.sendFile(__dirname + '/views/product_detail_keyboard.html')
+})
+
+app.get('/product_detail_keyboard_logitech', (req, res) => {
+  res.sendFile(__dirname + '/views/product_detail_keyboard_logitech.html')
+})
+
+app.get('/product_detail_keyboard_redragon', (req, res) => {
+  res.sendFile(__dirname + '/views/product_detail_keyboard_redragon.html')
 })
 app.get('/product-cart', (req, res) => {
   res.sendFile(__dirname + '/views/product-cart.html')
