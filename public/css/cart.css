@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Play", sans-serif;
+    font-size: 12px;
+    color: white;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .main-header {
+    background-color: black;
+    text-align: center;
+    padding: 5px;
+  }
+  
+  #logo {
+    height: 60px;
+    width: 60px;
+  }

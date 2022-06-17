@@ -21,6 +21,9 @@ app.get('/product-detail', (req, res) => {
 app.get('/product-cart', (req, res) => {
   res.sendFile(__dirname + '/views/product-cart.html')
 })
+app.get('/cart', (req, res) => {
+  res.sendFile(__dirname + '/views/cart.html')
+})
 
 app.listen(PORT, () => {
   console.log(`App listening and running in http://localhost:${PORT}`)
