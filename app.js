@@ -26,6 +26,12 @@ app.get('/product_detail_keyboard_logitech', (req, res) => {
 app.get('/product_detail_keyboard_redragon', (req, res) => {
   res.sendFile(__dirname + '/views/product_detail_keyboard_redragon.html')
 })
+
+app.get('/product_detail_mouse', (req, res) => {
+  res.sendFile(__dirname + '/views/product_detail_mouse.html')
+})
+
+
 app.get('/product-cart', (req, res) => {
   res.sendFile(__dirname + '/views/product-cart.html')
 })

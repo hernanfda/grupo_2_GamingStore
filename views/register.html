@@ -1,28 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>GamerXperience</title>
-        <link rel="shortcut icon" href="/brand/iso-bubble-negative.png" type="image/x-icon">
-        <link rel="stylesheet" href="/css/styles.css">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GamerXperience</title>
+    <link rel="shortcut icon" href="/brand/iso-bubble-negative.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/register.css">
+    <script src="https://kit.fontawesome.com/d5d519f54c.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet" />
 
-    </head>
+</head>
 
-    <body>
-        <header>
+<body>
+    <header>
+        <a href="/">
+            <img id="logo" src="\img\iso-light.svg" />
+        </a>
+    </header>
+    <main>
+        <div class="register">
+            <div class="register-title">
+                <h1>Crea tu cuenta</h1>
+            </div>
+            <form action="/" method="GET">
+                <div class="register-container">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre" class="text-input" required />
+                    <!-- <span>
+                        <i class="fa fa-user-circle form-icons"></i>
+                    </span> -->
+                </div>
 
-        </header>
+                <div class="register-container">
+                    <label for="nombre">Apellido</label>
+                    <input type="text" name="apellido" id="apellido" class="text-input" required />
+                </div>
 
-        <section>
+                <div class="register-container">
+                    <label for="usuario">Correo electronico</label>
+                    <input type="email" name="correo-electronico" id="correo-electronico" class="text-input" required />
+                </div>
 
-        </section>
-        <footer>
+                <div class="register-container">
+                    <label for="fecha-de-nacimiento">Fecha de nacimiento</label>
+                    <input type="date" name="fecha-de-nacimiento" id="fecha-de-nacimiento" required />
+                </div>
 
-        </footer>
+                <div class="register-container">
+                    <label for="clave">Contraseña</label>
+                    <input type="password" name="contraseña" id="contraseña" class="text-input" required />
+                    <span>
+                        <i class="fa fa-eye" aria-hidden="true" type="button" id="eye"></i>
+                    </span>
+                </div>
 
-    </body>
+                <div class="register-container">
+                    <label for="confirmar-clave">Confirmar contraseña</label>
+                    <input type="password" name="confirmar-contraseña" id="confirmar-contraseña" class="text-input"
+                        required />
+                </div>
+
+                <div class="register-container">
+                    <p>Revisa los terminos y condiciones de nuestros servicios</p>
+                    <input type="checkbox" name="tos" id="tos" class="text-input" required />
+                    <label for="tos">Acepto los terminos y condiciones</label>
+                </div>
+
+                <div class="btns-container">
+                    <button type="submit" name="enviar">
+                        CREAR
+                    </button>
+                </div>
+            </form>
+            <div class="already-signed">
+                <p>¿Ya tenes una cuenta?</p>
+                <a href="/login"> <button type="submit" name="ingresar">
+                        INGRESAR
+                    </button></a>
+
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p class="copy">Copyright © 2022 GamerXperience S.R.L.</p>
+        <div class="redes">
+            <a href="https://youtube.com"><i class="fa-brands fa-youtube"></i> </a>
+            <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://twitter.com"><i class="fa-brands fa-twitter"></i> </a>
+            <a href="https://facebook.com"><i class="fa-brands fa-facebook-f"></i>
+            </a>
+        </div>
+    </footer>
+</body>
 
 </html>

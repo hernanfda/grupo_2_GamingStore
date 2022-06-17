@@ -7,41 +7,52 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>GamerXperience</title>
         <link rel="shortcut icon" href="/img/bubble-light.svg" type="image/x-icon">
-        <link rel="stylesheet" href="/css/login.css">
+        <link rel="stylesheet" href="/css/register.css">
         <script src="https://kit.fontawesome.com/1366794178.js" crossorigin="anonymous"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet" />
     </head>
     <body>
-        <header class="main-header">
-            <a href="#">
+        <header>
+            <a href="/">
                 <img id="logo" src="\img\iso-light.svg" />
             </a>
         </header>
-        <main class="main-container">
-            <form action="/" method="get" class="create-form">
-                <div class="control-formulario">
-                    <input type="text" name="username" placeholder="Nombre de usuario" class="control" required>
+        <main class="register" >
+            <div class="register-title">
+                <h1>Ingresá</h1>
+            </div>
+            <form action="/" method="get" class="register-container">
+                <div class="control-formulario register-container">
+                    <input type="text" name="username" placeholder="Nombre de usuario" class="text-input" required>
                 </div>
-                <div class="control-formulario">
-                    <input type="password" name="password" placeholder="Contraseña" class="control" required>
+                <div class="register-container">
+                    <input type="password" name="password" placeholder="Contraseña" class="text-input" required>
                 </div>
-                <div class="control-formulario form-btn">
+                <div class="register-container btns-container">
                     <button type="submit" class="btn-login">Ingresar</button>
                 </div>
-                <div class="control-formulario">
-                    <a href="/" class="decline-password">
+                <div class="register-container">
+                    <a href="/" class="already-signed">
                         <p>¿Olvidaste tu contraseña?</p>
                     </a>
-                     <a href="/register" class="not-register">
+                     <a href="/register" class="already-signed">
                         <p>¿No tenés cuenta?</p>
                     </a>
                 </div>
             </form>
         </main>
-        <footer>
-            <p class="copy">Copyright © 2022 GamerXperience S.R.L.</p>
-        </footer>
+           <footer>
+        <p class="copy">Copyright © 2022 GamerXperience S.R.L.</p>
+        <div class="redes">
+            <a href="https://youtube.com"><i class="fa-brands fa-youtube"></i> </a>
+            <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://twitter.com"><i class="fa-brands fa-twitter"></i> </a>
+            <a href="https://facebook.com"><i class="fa-brands fa-facebook-f"></i>
+            </a>
+        </div>
+    </footer>
     </body>
 </html>
