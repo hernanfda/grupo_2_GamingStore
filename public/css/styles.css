@@ -184,6 +184,47 @@ video {
 /* Hide the images by default */
 .mySlides {
   display: none;
+  position: relative;
+}
+
+/* --------DEFAULT SLIDE INFORMATION CSS------ */
+.slide-info {
+  position: absolute;
+  top: 700px;
+  text-align: center;
+  z-index: 1;
+  margin: auto;
+  width: 100%;
+  max-width: 1023px;
+}
+
+.slide-info h1 {
+  color: white;
+}
+
+.slide-info button {
+  background-color: rgba(164, 89, 255);
+  color: white;
+  font-weight: bold;
+  width: 200px;
+  padding: 15px;
+  border-radius: 5px;
+  border: none;
+  margin-top: 15px;
+}
+
+.slide-info button:hover {
+  cursor: pointer;
+  background-color: rgb(111, 0, 209);
+}
+
+/* --------SPECIFIC CSS FOR EACH SLIDE------ */
+.slide-1 {
+  top: 200px;
+}
+
+.slide-4 {
+  top: 600px;
 }
 
 /* Next & previous buttons */
@@ -324,6 +365,28 @@ video {
   .fa-cart-shopping {
     right: 130px;
   }
+
+  /*--------SLIDES INFO------*/
+  .slide-1 {
+    top: 295px;
+    left: 45px;
+  }
+
+  .slide-2 {
+    top: 589px;
+    left: 408px;
+  }
+
+  .slide-3 {
+    top: 589px;
+    left: 408px;
+  }
+
+  .slide-4 {
+    top: 697px;
+    left: 408px;
+  }
+
 
   h2 {
     text-align: left;

@@ -132,7 +132,7 @@ input[type="date"] {
 }
 
 button[type="submit"]:hover {
-  background-color: rgba(185, 99, 235, 0.5);
+  background-color: rgba(164, 89, 255, 0.925);
   color: white;
   cursor: pointer;
 }
