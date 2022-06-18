@@ -1,18 +1,16 @@
 let slideIndex = 1;
-let timer
-// let i
+let timer //the timer will get a value when showSlides kicks in
 showSlides(slideIndex);
-// autoShowSlides();
 
 // Next/previous controls
 function plusSlides(n) {
-    clearTimeout(timer);
+    clearTimeout(timer); //reset timer each time we change slides with the arrows
     showSlides((slideIndex += n));
 }
 
 // dot image controls
 function currentSlide(n) {
-    clearTimeout(timer);
+    clearTimeout(timer); //reset timer each time we select a slide manually
     showSlides((slideIndex = n));
 }
 
@@ -20,10 +18,9 @@ function showSlides(n) {
     let i;
     let slides = document.getElementsByClassName("mySlides");
     let dots = document.getElementsByClassName("dot");
-    if (n === undefined) { slideIndex++ }
-    console.log(slideIndex)
+    if (n === undefined) { slideIndex++ } //Auto start the slideshow
+    //the or.. prevents the auto mechanism to hit an empty index
     if (n > slides.length || slideIndex > slides.length) {
-        console.log("vuelve a 1")
         slideIndex = 1;
     }
     if (n < 1) {
@@ -37,5 +34,5 @@ function showSlides(n) {
     }
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
-    timer = setTimeout(showSlides, 16000)
+    timer = setTimeout(showSlides, 16000) //timer starts
 }
