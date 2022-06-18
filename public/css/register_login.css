@@ -8,10 +8,6 @@
 body {
   /* background-image: url(/img/register-background2\(mobile\).jpg); */
   background-color: rgba(26, 26, 26);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
   /* position: relative; */
   display: flex;
   flex-wrap: wrap;
@@ -113,15 +109,11 @@ input[type="date"] {
 
 #eye {
   color: rgb(226, 222, 222);
-
   margin: 5.9px 0 0 0;
   margin-left: -20px;
-
   float: right;
   position: relative;
   right: 1.5%;
-  /* top: -50%; */
-
   cursor: pointer;
 }
 
@@ -142,6 +134,7 @@ input[type="date"] {
 button[type="submit"]:hover {
   background-color: rgba(185, 99, 235, 0.5);
   color: white;
+  cursor: pointer;
 }
 
 .btns-container {
@@ -167,6 +160,20 @@ button[type="submit"]:hover {
   width: 85px;
 }
 
+/* Link decoration and status disabled*/
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+  color: rgb(226, 222, 222)
+}
+
+a:hover {
+  text-decoration: none;
+}
+
 footer {
   display: flex;
   align-items: center;
@@ -174,7 +181,7 @@ footer {
   width: 100%;
   color: rgb(226, 222, 222);
   height: 50px;
-  background-color: rgba(38 38 38 / 61%);
+  background-color: rgba(38, 38, 38, .61);
   margin-top: auto;
 }
 
@@ -190,8 +197,7 @@ footer {
   }
 
   footer a {
-    text-decoration: none;
-    color: white;
+    color: rgb(226, 222, 222);
     padding-left: 10px;
   }
 
@@ -208,5 +214,4 @@ footer {
     background-color: rgba(26, 26, 26);
     background-attachment: fixed;
   }
-
 }
