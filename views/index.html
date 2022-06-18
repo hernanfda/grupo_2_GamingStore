@@ -5,9 +5,9 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
+
   <title>GamerXperience</title>
-  <link rel="shortcut icon" href="/brand/iso-bubble-negative.png" type="image/x-icon" />
+  <link rel="shortcut icon" href="/img/bubble-light.svg" type="image/x-icon" />
   <link rel="stylesheet" href="/css/styles.css" />
   <script src="https://kit.fontawesome.com/d5d519f54c.js" crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,13 +21,13 @@
     <a href="/">
       <div class="logo"></div>
     </a>
-    
+
     <div class="cart"><i class="fa-solid fa-cart-shopping"></i></div>
     <div>
       <i class="fa-solid fa-magnifying-glass"></i>
     </div>
     <a href="/login"><i class="fa-solid fa-user"></i></a>
-    
+
     <nav class="navbar">
       <!--Podrian ir links a productos destacados de cada uno?-->
       <a href="/product_detail_keyboard">TECLADOS</a>
@@ -40,20 +40,24 @@
   <main>
     <!-- Slideshow container -->
     <div class="slideshow-container">
-      <!-- Full-width images with number and caption text -->
       <div class="mySlides fade">
-        <img
-          src="/img/mobile-carousel-2.jpg" />
+        <div class="carrousel-imgs">
+          <img src="/img/mobile-carousel-2.jpg" />
+        </div>
       </div>
 
       <div class="mySlides fade">
-        <img
-          src="https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2021/11/pc-gaming-2523335.jpg" />
+        <div class="carrousel-imgs">
+          <img
+            src="https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2021/11/pc-gaming-2523335.jpg" />
+        </div>
       </div>
 
       <div class="mySlides fade">
-        <img
-          src="https://as01.epimg.net/meristation/imagenes/2022/02/09/reportajes/1644403915_252815_1644405384_noticia_normal.jpg" />
+        <div class="carrousel-imgs">
+          <img
+            src="https://as01.epimg.net/meristation/imagenes/2022/02/09/reportajes/1644403915_252815_1644405384_noticia_normal.jpg" />
+        </div>
       </div>
       <!-- Next and previous buttons -->
       <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -157,5 +161,6 @@
 
 </body>
 
-  <script defer src="/js/carrousel.js"></script>
+<script defer src="/js/carrousel.js"></script>
+
 </html>

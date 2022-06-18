@@ -1,101 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GamerXperience</title>
-    <link rel="shortcut icon" href="/brand/iso-bubble-negative.png" type="image/x-icon"/>
-    <link rel="stylesheet" href="/css/product_detail_styles.css" />
-    <script src="https://kit.fontawesome.com/d5d519f54c.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet"/>
-  </head>
 
-  <body>
-    <header>
-      <div class="burger"><i class="fa-solid fa-bars"></i></div>
-      <a href="/">
-        <div class="logo"></div>
-      </a>
-      
-      <div class="cart"><i class="fa-solid fa-cart-shopping"></i></div>
-      <div>
-        <i class="fa-solid fa-magnifying-glass"></i>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GamerXperience</title>
+  <link rel="shortcut icon" href="/img/bubble-light.svg" type="image/x-icon" />
+  <link rel="stylesheet" href="/css/product_detail_styles.css" />
+  <script src="https://kit.fontawesome.com/d5d519f54c.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <header>
+    <div class="burger"><i class="fa-solid fa-bars"></i></div>
+    <a href="/">
+      <div class="logo"></div>
+    </a>
+
+    <div class="cart"><i class="fa-solid fa-cart-shopping"></i></div>
+    <div>
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    <a href="/login"><i class="fa-solid fa-user"></i></a>
+
+    <nav class="navbar">
+      <!--Podrian ir links a productos destacados de cada uno?-->
+      <a href="/product_detail_keyboard">TECLADOS</a>
+      <a href="/">MOUSE</a>
+      <a href="/">SILLONES</a>
+      <a href="/">AURICULARES</a>
+    </nav>
+  </header>
+
+  <section>
+    <div class="titulo">
+      <H2>TECLADOS</H2>
+    </div>
+    <a href="product_detail_Keyboard_logitech">
+      <div class="articulo">
+        <img id="producto" src="/img/product-detail/Product_Keyboard_Logitech_G413_1.webp" />
+        <div class="general">
+          <h3 class="descripcion">TECLADO MECÁNICO LOGITECH</h3>
+          <h4 class="model">G413</h4>
+          <P class="precio">$10.499</P>
+        </div>
+        <div class="especificaciones">
+          <p class="modelo">LOGITECH G413</p>
+          <p>ESPECIFICACIONES:</p>
+          <p>MARCA: LOGITECH</p>
+          <p>MODELO: G413</p>
+          <p>TIPO: MECÁNICO</p>
+          <p>PESO: 500g</p>
+          <p>DISTRIBUCIÓN: QWERTY</p>
+          <P class="precio">PRECIO: $10.499</P>
+          <button id="agregar" type="submit">Agregar al carrito</button>
+        </div>
+
       </div>
-      <a href="/login"><i class="fa-solid fa-user"></i></a>
-      
-      <nav class="navbar">
-        <!--Podrian ir links a productos destacados de cada uno?-->
-        <a href="/product_detail_keyboard">TECLADOS</a>
-        <a href="/">MOUSE</a>
-        <a href="/">SILLONES</a>
-        <a href="/">AURICULARES</a>
-      </nav>
-    </header>
+    </a>
 
-    <section>
-        <div class="titulo"><H2>TECLADOS</H2></div>
-        <a href="product_detail_Keyboard_logitech">
-        <div class="articulo">
-            <img id="producto" src="/img/product-detail/Product_Keyboard_Logitech_G413_1.webp" />
-            <div class="general">
-              <h3 class="descripcion">TECLADO MECÁNICO LOGITECH</h3>
-              <h4 class="model">G413</h4>
-              <P class="precio">$10.499</P>
-            </div>
-            <div class="especificaciones">
-              <p class="modelo">LOGITECH G413</p>
-              <p>ESPECIFICACIONES:</p>              
-              <p>MARCA: LOGITECH</p>
-              <p>MODELO: G413</p>
-              <p>TIPO: MECÁNICO</p>
-              <p>PESO: 500g</p>
-              <p>DISTRIBUCIÓN: QWERTY</p>
-              <P class="precio">PRECIO: $10.499</P>
-              <button id="agregar" type="submit">Agregar al carrito</button>
-            </div>
+    <a href="product_detail_Keyboard_redragon">
+      <div class="articulo">
+        <img id="producto" src="/img/product-detail/Product_Keyboard_REDRAGON_FIZZ_K617_1.webp" />
+        <div class="general">
+          <h3 class="descripcion">TECLADO MECÁNICO REDRAGON</h3>
+          <h4 class="model">FIZZ K617</h4>
+          <P class="precio">$7.499</P>
+        </div>
+        <div class="especificaciones">
+          <p class="modelo">REDRAGON FIZZ K617</p>
+          <p>ESPECIFICACIONES:</p>
+          <p>MARCA: REDRAGON</p>
+          <p>MODELO: FIZZ K617</p>
+          <p>TIPO: MECÁNICO</p>
+          <p>PESO: 550g</p>
+          <p>DISTRIBUCIÓN: QWERTY</p>
+          <P class="precio">PRECIO: $7.499</P>
+          <button id="agregar" type="submit">Agregar al carrito</button>
+        </div>
+      </div>
+    </a>
+  </section>
+  <footer>
+    <a id="logo_footer" href="/">
+      <div class="logo"></div>
+    </a>
 
-          </div>
-        </a>
+    <div class="redes">
+      <a href="https://youtube.com"><i class="fa-brands fa-youtube"></i> </a>
+      <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i>
+      </a>
+      <a href="https://twitter.com"><i class="fa-brands fa-twitter"></i> </a>
+      <a href="https://facebook.com"><i class="fa-brands fa-facebook-f"></i>
+      </a>
+    </div>
+    <p class="copy">Copyright © 2022 GamerXperience S.R.L.</p>
+  </footer>
+</body>
 
-        <a href="product_detail_Keyboard_redragon">
-          <div class="articulo">
-            <img id="producto" src="/img/product-detail/Product_Keyboard_REDRAGON_FIZZ_K617_1.webp" />
-            <div class="general">
-              <h3 class="descripcion">TECLADO MECÁNICO REDRAGON</h3>
-              <h4 class="model">FIZZ K617</h4>
-              <P class="precio">$7.499</P>
-            </div>
-            <div class="especificaciones">
-              <p class="modelo">REDRAGON FIZZ K617</p>
-              <p>ESPECIFICACIONES:</p>                
-              <p>MARCA: REDRAGON</p>
-              <p>MODELO: FIZZ K617</p>
-              <p>TIPO: MECÁNICO</p>
-              <p>PESO: 550g</p>
-              <p>DISTRIBUCIÓN: QWERTY</p>
-              <P class="precio">PRECIO: $7.499</P>
-              <button id="agregar" type="submit">Agregar al carrito</button>
-            </div>
-          </div>
-        </a>
-    </section>
-    <footer>
-        <a id="logo_footer" href="/">
-            <div class="logo"></div>
-          </a>
-      
-          <div class="redes">
-            <a href="https://youtube.com"><i class="fa-brands fa-youtube"></i> </a>
-            <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://twitter.com"><i class="fa-brands fa-twitter"></i> </a>
-            <a href="https://facebook.com"><i class="fa-brands fa-facebook-f"></i>
-            </a>
-          </div>
-          <p class="copy">Copyright © 2022 GamerXperience S.R.L.</p>
-    </footer>
-  </body>
 </html>
