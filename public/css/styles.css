@@ -169,10 +169,16 @@ img {
   width: 100%;
 }
 
+video {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
 .dot-style {
   text-align: center;
   position: relative;
-  bottom: 90px;
+  bottom: 40px;
 }
 
 /* Hide the images by default */
@@ -243,7 +249,7 @@ img {
 
 .active,
 .dot:hover {
-  background-color: #717171;
+  background-color: rgba(185, 99, 235, 0.5);
 }
 
 /* Fading animation */
@@ -329,6 +335,12 @@ img {
     width: 100%;
     border: solid 1px rgb(179, 179, 179);
     height: 120px;
+  }
+
+  /*--------NEXT/PREVIOUS ARROWS SIZE------*/
+  .prev,
+  .next {
+    font-size: 38px;
   }
 
   /*--------ARTICULOS------*/
