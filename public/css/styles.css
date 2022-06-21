@@ -379,11 +379,8 @@ video {
     left: -2%;
   }
 
-
-  h2 {
-    text-align: left;
-    font-size: 40px;
-    margin-left: 50px;
+  .slide-4 {
+    top: 73%;
   }
 
   .titulo {
@@ -496,6 +493,12 @@ video {
 @media (min-width: 1024px) {
 
   /*--------SLIDES INFO------*/
+  h2 {
+    text-align: left;
+    font-size: 40px;
+    margin-left: 50px;
+  }
+
   .slide-4 {
     top: 74%
   }
