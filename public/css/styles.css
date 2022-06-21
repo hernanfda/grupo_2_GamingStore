@@ -185,14 +185,14 @@ video {
 .mySlides {
   display: none;
   position: relative;
+  align-items: center;
 }
 
 /* --------DEFAULT SLIDE INFORMATION CSS------ */
 .slide-info {
   position: absolute;
-  top: 700px;
+  top: 75%;
   text-align: center;
-  z-index: 1;
   margin: auto;
   width: 100%;
   max-width: 1023px;
@@ -220,11 +220,11 @@ video {
 
 /* --------SPECIFIC CSS FOR EACH SLIDE------ */
 .slide-1 {
-  top: 200px;
+  top: 18%;
 }
 
 .slide-4 {
-  top: 600px;
+  top: 67%;
 }
 
 /* Next & previous buttons */
@@ -367,24 +367,16 @@ video {
   }
 
   /*--------SLIDES INFO------*/
+  .mySlides {
+    justify-content: center;
+  }
+
+  .slide-info {
+    bottom: 10%;
+  }
+
   .slide-1 {
-    top: 295px;
-    left: 45px;
-  }
-
-  .slide-2 {
-    top: 589px;
-    left: 408px;
-  }
-
-  .slide-3 {
-    top: 589px;
-    left: 408px;
-  }
-
-  .slide-4 {
-    top: 697px;
-    left: 408px;
+    left: -2%;
   }
 
 
@@ -498,5 +490,13 @@ video {
 
 
 
+  }
+}
+
+@media (min-width: 1024px) {
+
+  /*--------SLIDES INFO------*/
+  .slide-4 {
+    top: 74%
   }
 }

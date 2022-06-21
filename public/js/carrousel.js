@@ -5,13 +5,13 @@ showSlides(slideIndex);
 
 // Next/previous controls
 function plusSlides(n) {
-    clearTimeout(timer); //reset timer each time we change slides with the arrows
+    // clearTimeout(timer); //reset timer each time we change slides with the arrows
     showSlides((slideIndex += n));
 }
 
 // dot image controls
 function currentSlide(n) {
-    clearTimeout(timer); //reset timer each time we select a slide manually
+    // clearTimeout(timer); //reset timer each time we select a slide manually
     showSlides((slideIndex = n));
 }
 
@@ -37,9 +37,9 @@ function showSlides(n) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
     // "turns on" the selected slide
-    slides[slideIndex - 1].style.display = "block";
+    slides[slideIndex - 1].style.display = "flex";
     // "turns on" the dot marker that bellongs to the active slide
     dots[slideIndex - 1].className += " active";
     //sets the timer for the automatic system and assings it to a variable so we can call it and reset it when we click a manual controll
-    timer = setTimeout(showSlides, 16000)
+    // timer = setTimeout(showSlides, 16000)
 }
