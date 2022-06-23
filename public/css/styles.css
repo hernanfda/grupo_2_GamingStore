@@ -14,7 +14,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: rgb(26, 26, 26);
-  min-width: 375px;
+  min-width: 320px;
   position: relative;
 }
 
@@ -231,6 +231,7 @@ video {
   margin: auto;
   width: 100%;
   max-width: 1023px;
+  z-index: 2;
 }
 
 .slide-info h1 {
@@ -418,7 +419,7 @@ video {
 
   .slide-1 {
     left: 2%;
-    top:60%;
+    top: 60%;
     text-align: left;
 
   }
@@ -523,7 +524,7 @@ video {
     font-size: 20px;
   }
 
- 
+
   .slideshow-container {
     top: -120px;
 
@@ -536,13 +537,11 @@ video {
 
   /*--------SLIDES INFO------*/
   .slide-1 {
-    text-align: center;
+    text-align: left;
   }
 
   .slide-info h2 {
-    text-align: left;
     font-size: 40px;
-    margin-left: 50px;
   }
 
   .slide-4 {
