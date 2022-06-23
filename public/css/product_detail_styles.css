@@ -112,29 +112,17 @@ display: none;
 
 footer {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
-  border-top: solid 1px rgb(179, 179, 179);
   width: 100%;
-}
-
-.copy {
-  width: 100%;
-  color: white;
-  font-size: 1em;
-  padding: 16px;
-}
-
-.fa-brands {
-  padding: 10px;
+  color: rgb(226, 222, 222);
+  height: 50px;
+  background-color: rgba(38, 38, 38, .61);
+  margin-top: auto;
 }
 
 .redes {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  color: white;
-  font-size: 20px;
+  display: none;
 }
 @media (min-width: 768px) {
   
@@ -259,28 +247,20 @@ section a{
 /*--------FOOTER TABLET/DESKTOP-----*/
 
 footer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  border-top: solid 1px rgb(179, 179, 179);
-  width: 100%;
-  height: 70px;
-  position: relative;
-}
-.redes{
-  position: absolute;
-  font-size: 30px;
-  right: 5px;
-  bottom: 12.5px;
-  width: 200px
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-.copy {
-  position: absolute;
-  font-size: 10px;
-  left: 10px;
-  bottom: 12.5px;
-  width: 250px
+footer a {
+  color: rgb(226, 222, 222);
+  padding-left: 10px;
+}
+
+.redes {
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
 }
 
  

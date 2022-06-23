@@ -14,6 +14,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-width: 320px;
   }
 
 /* MQ Mobile */
@@ -26,9 +27,22 @@
         display: none;
     }
     
-    .cart-footer {
+    footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        color: rgb(226, 222, 222);
+        height: 50px;
+        background-color: rgba(38, 38, 38, .61);
+        margin-top: auto;
+        position: absolute;
+        bottom: 0px;
+      }
+      
+      .redes {
         display: none;
-    }
+      }
 
     /* Hidden, for Desktop */
 
@@ -54,21 +68,20 @@
         position: absolute;
         left: 10px;
         top: 50px;
-        color: rgba(179, 179, 179, 1);
+        color:white ;
+        background-color: rgba(111, 0, 209, 1);
         text-decoration: none;
         font-size: 13px;
         font-weight: bold;
-        -webkit-tap-highlight-color: transparent;
+        padding: 8px;
+        border-radius: 10px;
+        border-width: 0px;
+        border-style: outset;
     }
 
     .cart-header_backbtn:hover {
         color: rgba(164, 89, 255, 1);
         transition: 0.3s;
-    }
-
-    .cart-header_backbtn:visited {
-        text-decoration: none;
-        color: rgba(179, 179, 179, 1);
     }
 
      /* Header ends here */
@@ -452,11 +465,16 @@
         position: absolute;
         left: 10px;
         top: 50px;
-        color: rgba(179, 179, 179, 1);
+        color:white ;
+        background-color: rgba(111, 0, 209, 1);
         text-decoration: none;
         font-size: 13px;
         font-weight: bold;
         -webkit-tap-highlight-color: transparent;
+        padding: 8px;
+        border-radius: 10px;
+        border-width: 0px;
+        border-style: outset;
     }
 
     .cart-header_backbtn:hover {
@@ -464,10 +482,7 @@
         transition: 0.3s;
     }
 
-    .cart-header_backbtn:visited {
-        text-decoration: none;
-        color: rgba(179, 179, 179, 1);
-    }
+
 
      /* Header ends here */
 
@@ -855,14 +870,32 @@
 
     /* Footer starts here */
 
-    .cart-footer {
+    footer {
         display: flex;
-        width: 90vw;
-        margin: auto;
-        margin-top: 30px;
+        align-items: center;
+        width: 100%;
+        color: rgb(226, 222, 222);
+        height: 50px;
+        background-color: rgba(38, 38, 38, .61);
+        margin-top: auto;
+        position: absolute;
+        bottom: 0px;
+        justify-content: space-between;
+        padding-left: 10px;
+        padding-right: 10px;
+
+      }
+    
+      footer a {
+        color: rgb(226, 222, 222);
+        padding-left: 10px;
+      }
+    
+      .redes {
+        display: flex;
         justify-content: center;
-        border-top: 1px solid rgba(179, 179, 179, 0.5);
-    }
+        font-size: 20px;
+      }
 
     /* Footer ends here */
   }
