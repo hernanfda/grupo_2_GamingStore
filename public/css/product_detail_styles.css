@@ -49,7 +49,8 @@ header .logo {
 /*--------TAMAÑO ICONOS/POSITION/FIJADO AL TOP------*/
 .fa-bars,
 .fa-magnifying-glass,
-.fa-cart-shopping,.fa-user {
+.fa-cart-shopping,
+.fa-user {
   height: 18px;
   width: 18px;
   color: white;
@@ -59,8 +60,7 @@ header .logo {
 }
 
 /*--------ICONO DE USER OCULTO------*/
-.fa-solid.fa-user
-{
+.fa-solid.fa-user {
   display: none;
 }
 /*--------ALINEACIÓN MENU HAMBURGUESA------*/
@@ -102,11 +102,9 @@ section {
   color: rgb(111, 0, 209);
 }
 /*--------OCULTA ESPECIFICACIONES PARA VIEW DESKTOP------*/
-.especificaciones
-{
-display: none;
+.especificaciones {
+  display: none;
 }
-
 
 /*--------FOOTER------*/
 
@@ -117,16 +115,24 @@ footer {
   width: 100%;
   color: rgb(226, 222, 222);
   height: 50px;
-  background-color: rgba(38, 38, 38, .61);
+  background-color: rgba(38, 38, 38, 0.61);
   margin-top: auto;
 }
 
 .redes {
   display: none;
 }
+
+#Specs {
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+  background-color: rgb(111, 0, 209);
+  border-width: 0px;
+  border-style: outset;
+}
 @media (min-width: 768px) {
-  
-/*--------HEADER CON NUEVA ALTURA------*/
+  /*--------HEADER CON NUEVA ALTURA------*/
   header {
     color: rgb(179, 179, 179);
     display: flex;
@@ -139,7 +145,7 @@ footer {
   .burger {
     display: none;
   }
-/*--------CAMBIO EL LOGO------*/
+  /*--------CAMBIO EL LOGO------*/
   .logo {
     height: 60px;
     width: 300px;
@@ -148,7 +154,7 @@ footer {
     background-repeat: no-repeat;
     background-position: center;
   }
-  nav{
+  nav {
     width: 70%;
     min-width: 420px;
     max-width: 840px;
@@ -161,107 +167,101 @@ footer {
     justify-content: space-evenly;
   }
 
-/*--------ALINEACION USER------*/
-  .fa-solid.fa-user
-{
-  display: block;
-  right: 80px;
-
-}
-
-/*--------ALINEACIÓN LUPA------*/
-.fa-magnifying-glass {
-  right: 30px;
-}
-
-/*--------ALINEACIÓN CARRITO------*/
-.fa-cart-shopping {
-  right: 130px;
-}
-h2{
-  text-align: left;
-  font-size: 40px;
-  margin-left: 50px;
+  /*--------ALINEACION USER------*/
+  .fa-solid.fa-user {
+    display: block;
+    right: 80px;
   }
-.titulo{
-  width: 100%;
-  border: solid 1px rgb(179, 179, 179);
-  height: 120px;
-}
-/*--------ARTICULOS------*/
-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: left;
-}
-.articulo {
-  width: 100%;
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  margin: 30px 0 30px 0;
-  border-top: none;
-  align-items: center ;
-}
-.articulo img {
-  width: 55%;
-  align-items: center;
-  max-width:500px;
-  margin-left: 50px;
-}
-.articulo .modelo {
-  color: rgb(111, 0, 209);
-  font-weight: 900;
-  font-size: 30px;
-  margin-bottom: 20px;
-}
-.general
-{
-  display: none;
-}
-/*--------DESACTIVA LINKS ARTICULO------*/
-section a{
-  pointer-events: none;
-  cursor: default;
-  text-decoration: none;
-  width: 100%;
-}
 
-/*--------DESCRIPCIONES DE PRODUCTO------*/
-.especificaciones
-{
-  display: block;
-  width: 320px;
-  height: 220px;
-  margin: 100px;
-}
+  /*--------ALINEACIÓN LUPA------*/
+  .fa-magnifying-glass {
+    right: 30px;
+  }
 
-/*--------BOTON CARRITO------*/
-#agregar{
-  padding: 10px;
-  color: white;
-  border-radius: 10px;
-  background-color: rgb(111, 0, 209);
-}
+  /*--------ALINEACIÓN CARRITO------*/
+  .fa-cart-shopping {
+    right: 130px;
+  }
+  h2 {
+    text-align: left;
+    font-size: 40px;
+    margin-left: 50px;
+  }
+  .titulo {
+    width: 100%;
+    border: solid 1px rgb(179, 179, 179);
+    height: 120px;
+  }
+  /*--------ARTICULOS------*/
+  section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+  }
+  .articulo {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin: 30px 0 30px 0;
+    border-top: none;
+    align-items: center;
+  }
+  .articulo img {
+    width: 55%;
+    align-items: center;
+    max-width: 500px;
+    margin-left: 50px;
+  }
+  .articulo .modelo {
+    color: rgb(111, 0, 209);
+    font-weight: 900;
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  .general {
+    display: none;
+  }
+  /*--------DESACTIVA LINKS ARTICULO------*/
+  section a {
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+    width: 100%;
+  }
 
-/*--------FOOTER TABLET/DESKTOP-----*/
+  /*--------DESCRIPCIONES DE PRODUCTO------*/
+  .especificaciones {
+    display: block;
+    width: 320px;
+    height: 220px;
+    margin: 100px;
+  }
 
-footer {
-  justify-content: space-between;
-  padding-left: 10px;
-  padding-right: 10px;
-}
+  /*--------BOTON CARRITO------*/
+  #agregar {
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    background-color: rgb(111, 0, 209);
+  }
 
-footer a {
-  color: rgb(226, 222, 222);
-  padding-left: 10px;
-}
+  /*--------FOOTER TABLET/DESKTOP-----*/
 
-.redes {
-  display: flex;
-  justify-content: center;
-  font-size: 20px;
-}
+  footer {
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 
- 
+  footer a {
+    color: rgb(226, 222, 222);
+    padding-left: 10px;
+  }
+
+  .redes {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+  }
 }
