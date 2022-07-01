@@ -19,7 +19,9 @@
   },
   "homepage": "https://github.com/hernanfda/grupo_2_GamingStore#readme",
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "express-generator": "^4.16.1",
+    "install": "^0.13.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.16"
