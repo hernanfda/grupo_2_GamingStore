@@ -107,6 +107,20 @@ input[type="date"] {
   left: 8%;
 } */
 
+.image-input {
+  width: 100%;
+  color: white;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  line-height: 7;
+  padding: 5px;
+  background: rgba(151, 149, 149, 0.2);
+  box-shadow: inset 4px 6px 10px -4px rgba(0, 0, 0, 0.3),
+    0 1px 1px -1px rgba(255, 255, 255, 0.3);
+}
+
 #eye {
   color: rgb(226, 222, 222);
   margin: 5.9px 0 0 0;
@@ -131,7 +145,8 @@ input[type="date"] {
   line-height: 1;
 }
 
-button[type="submit"]:hover {
+button[type="submit"]:hover,
+[type="reset"]:hover {
   background-color: rgba(164, 89, 255, 0.925);
   color: white;
   cursor: pointer;
@@ -141,6 +156,10 @@ button[type="submit"]:hover {
   display: flex;
   justify-content: center;
   margin-top: 10px;
+}
+
+.btn-crud {
+  margin: 5px;
 }
 
 .already-signed {
