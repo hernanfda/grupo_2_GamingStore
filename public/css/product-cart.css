@@ -48,26 +48,40 @@
 
     /* Header starts here */
 
-    .cart-header {
-        width: 100vw;
-        height: 70px;
-        text-align: center;
-        padding: 5px;
+    header {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 64px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 30px;
+        padding-right: 30px;
+        align-items: center;
+        /*   position: absolute; */
+        z-index: 1;
+    }
+
+    #logo {
+        height: 60px;
+        width: 60px;
       }
+      
 
     .cart_header_btn {
         -webkit-tap-highlight-color: transparent;
     }
-      
-    .cart-header_img {
-        height: 43px;
-        width: 43px;
+
+    .cart-backbtn_container {
+        display: flex;
+        width: 95%;
     }
 
-    .cart-header_backbtn {
-        position: absolute;
-        left: 10px;
-        top: 50px;
+    .cart-backbtn {
+        text-align: center;
+        width: 36%;
+        margin-top: 20px;
+        margin-bottom: 20px;
         color:white ;
         background-color: rgba(111, 0, 209, 1);
         text-decoration: none;
@@ -445,32 +459,45 @@
     
     /* Header starts here */
 
-    .cart-header {
-        width: 100vw;
-        height: 70px;
-        text-align: center;
-        padding: 5px;
+    header {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 64px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 30px;
+        padding-right: 30px;
+        align-items: center;
+        /*   position: absolute; */
+        z-index: 1;
+    }
+
+    #logo {
+        height: 60px;
+        width: 60px;
       }
+      
 
     .cart_header_btn {
         -webkit-tap-highlight-color: transparent;
     }
-      
-    .cart-header_img {
-        height: 43px;
-        width: 43px;
+
+    .cart-backbtn_container {
+        display: flex;
+        width: 80%;
     }
 
-    .cart-header_backbtn {
-        position: absolute;
-        left: 10px;
-        top: 50px;
+    .cart-backbtn {
+        text-align: center;
+        width: 20%;
+        margin-top: 20px;
+        margin-bottom: 20px;
         color:white ;
         background-color: rgba(111, 0, 209, 1);
         text-decoration: none;
         font-size: 13px;
         font-weight: bold;
-        -webkit-tap-highlight-color: transparent;
         padding: 8px;
         border-radius: 10px;
         border-width: 0px;
