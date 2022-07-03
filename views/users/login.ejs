@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- HEAD  -->
+<%- include('../partials/head') %>
+
+    <body>
+        <!-- HEADER  -->
+        <%- include('../partials/headerForm') %>
+
+            <main class="register">
+                <div class="register-title">
+                    <h1>Ingresá</h1>
+                </div>
+                <form action="/" method="get" class="register-container">
+                    <div class="control-formulario register-container">
+                        <input type="text" name="username" placeholder="Nombre de usuario" class="text-input" required>
+                    </div>
+                    <div class="register-container">
+                        <input type="password" name="password" placeholder="Contraseña" class="text-input" id="pwd"
+                            required>
+                        <span>
+                            <i class="fa fa-eye" aria-hidden="true" type="button" id="eye"></i>
+                        </span>
+                    </div>
+                    <div class="register-container btns-container">
+                        <button type="submit" class="btn-login">Ingresar</button>
+                    </div>
+                    <div class="register-container">
+                        <a href="/" class="already-signed">
+                            <p>¿Olvidaste tu contraseña?</p>
+                        </a>
+                        <a href="/users/register" class="already-signed">
+                            <p>¿No tenés cuenta?</p>
+                        </a>
+                    </div>
+                </form>
+            </main>
+
+            <!-- FOOTER -->
+            <%- include('../partials/footer') %>
+
+                <script src="/js/show_hide_pw.js"></script>
+    </body>
+
+</html>

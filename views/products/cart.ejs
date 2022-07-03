@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- HEAD  -->
+<%- include('../partials/head') %>
+
+    <body>
+        <!-- HEADER  -->
+        <%- include('../partials/headerForm') %>
+            <button onclick="history.go(-1)" class="cart-header_backbtn">
+                <p>Volver Atrás</p>
+            </button>
+
+            <main class="container">
+                <div class="cart-content">
+                    <p class="cart-content_text">Envíos gratis y hasta 12 cuotas sin interés desde $5.000</p>
+                    <div class="cart-content_products">
+                        <div class="products-details">
+                            <img class="products-details_img"
+                                src="/img/product-detail/Product_Keyboard_Logitech_G413_1.webp">
+                            <div class="products-details_text">
+                                <h3 class="product-title">Logitech G413</h3>
+                                <p class="product-price_before">$15.000,00</p>
+                                <p class="product-price">$9.999,00</p>
+                            </div>
+                        </div>
+                        <div class="cart-content_actions">
+                            <form class="actions-form">
+                                <div class="actions-form_left">
+                                    <button type="reset" class="actions-form_delete">Eliminar Producto</button>
+                                </div>
+                                <div class="actions-form_right">
+                                    <button class="actions-form_btn">&minus;</button>
+                                    <input type="number" class="actions-form_input">
+                                    <button class="actions-form_btn">&plus;</button>
+                                </div>
+                            </form>
+                            <div class="actions-line"></div>
+                        </div>
+                        <div class="products-details">
+                            <img class="products-details_img"
+                                src="/img/product-detail/Product_Keyboard_REDRAGON_FIZZ_K617_1.webp">
+                            <div class="products-details_text">
+                                <h3 class="product-title">Redragon Fizz K617</h3>
+                                <p class="product-price_before">$15.000,00</p>
+                                <p class="product-price">$9.999,00</p>
+                            </div>
+                        </div>
+                        <div class="cart-content_actions">
+                            <form class="actions-form">
+                                <div class="actions-form_left">
+                                    <button type="reset" class="actions-form_delete">Eliminar Producto</button>
+                                </div>
+                                <div class="actions-form_right">
+                                    <button class="actions-form_btn">&minus;</button>
+                                    <input type="number" class="actions-form_input" name="qty">
+                                    <button class="actions-form_btn">&plus;</button>
+                                </div>
+                            </form>
+                            <div class="actions-line"></div>
+                        </div>
+                        <div class="cart-content_empty">
+                            <button class="content-empty_btn">Vaciar carrito</butto>
+                        </div>
+                    </div>
+                    <div class="cart-content_checkout">
+                        <h3 class="checkout-text">Resumen de Compra</h3>
+                        <div class="checkout-line_top"></div>
+                        <div class="checkout-discount">
+                            <input class="checkout-discount_input" placeholder="Código de Descuento">
+                        </div>
+                        <div class="checkout-line_bottom"></div>
+                        <div class="checkout-summary">
+                            <div class="summary-text_left">
+                                <p class="summary-text_subtotal">Subtotal</p>
+                                <p class="summary-text_discounts">Descuentos</p>
+                                <h3 class="summary-text_total">Total</h3>
+                            </div>
+                            <div class="summary-text_right">
+                                <p class="summary-number_subtotal">$30.000,00</p>
+                                <p class="summary-number_discounts">$-10.002,00</p>
+                                <h3 class="summary-number_total">$19.998,00</h3>
+                            </div>
+                        </div>
+                        <div class="checkout-line_end"></div>
+                        <div class="checkout-end">
+                            <button class="checkout-end_btn">Iniciar Compra</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-cards">
+                    <div class="cart-cards_card">
+                        <i class="fa-solid fa-truck-fast"></i>
+                        <p class="card-text">Envíos a todo el País</p>
+                    </div>
+                    <div class="cart-cards_card">
+                        <i class="fa-solid fa-credit-card"></i>
+                        <p class="card-text">Cuotas y Formas de Pago</p>
+                    </div>
+                    <div class="cart-cards_card">
+                        <i class="fa-solid fa-star"></i>
+                        <p class="card-text">Garantía Especial</p>
+                    </div>
+                </div>
+            </main>
+
+            <!-- FOOTER -->
+            <%- include('../partials/footer') %>
+
+    </body>
+
+</html>

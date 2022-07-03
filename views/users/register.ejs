@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- HEAD  -->
+<%- include('../partials/head') %>
+
+    <body>
+        <!-- HEADER  -->
+        <%- include('../partials/headerForm') %>
+
+            <main>
+                <div class="register">
+                    <div class="register-title">
+                        <h1>Crea tu cuenta</h1>
+                    </div>
+                    <form action="/" method="GET">
+                        <div class="register-container">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" name="nombre" id="nombre" class="text-input" required />
+                            <!-- <span>
+                        <i class="fa fa-user-circle form-icons"></i>
+                    </span> -->
+                        </div>
+
+                        <div class="register-container">
+                            <label for="nombre">Apellido</label>
+                            <input type="text" name="apellido" id="apellido" class="text-input" required />
+                        </div>
+
+                        <div class="register-container">
+                            <label for="usuario">Correo electronico</label>
+                            <input type="email" name="correo-electronico" id="correo-electronico" class="text-input"
+                                required />
+                        </div>
+
+                        <div class="register-container">
+                            <label for="fecha-de-nacimiento">Fecha de nacimiento</label>
+                            <input type="date" name="fecha-de-nacimiento" id="fecha-de-nacimiento" required />
+                        </div>
+
+                        <div class="register-container">
+                            <label for="clave">Contraseña</label>
+                            <input type="password" name="contraseña" id="pwd" class="text-input" required />
+                            <span>
+                                <i class="fa fa-eye" aria-hidden="true" type="button" id="eye"></i>
+                            </span>
+                        </div>
+
+                        <div class="register-container">
+                            <label for="confirmar-clave">Confirmar contraseña</label>
+                            <input type="password" name="confirmar-contraseña" id="confirmar-contraseña"
+                                class="text-input" required />
+                        </div>
+
+                        <div class="register-container">
+                            <p>Revisa los terminos y condiciones de nuestros servicios</p>
+                            <input type="checkbox" name="tos" id="tos" class="text-input" required />
+                            <label for="tos">Acepto los terminos y condiciones</label>
+                        </div>
+
+                        <div class="btns-container">
+                            <button type="submit" name="enviar">
+                                CREAR
+                            </button>
+                        </div>
+                    </form>
+                    <div class="already-signed">
+                        <p>¿Ya tenes una cuenta?</p>
+                        <a href="/users/login"> <button type="submit" name="ingresar">
+                                INGRESAR
+                            </button></a>
+
+                    </div>
+                </div>
+            </main>
+
+            <!-- FOOTER -->
+            <%- include('../partials/footer') %>
+
+                <script src="/js/show_hide_pw.js"></script>
+    </body>
+
+</html>
