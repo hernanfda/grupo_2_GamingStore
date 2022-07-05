@@ -8,77 +8,32 @@
     <!-- HEADER -->
     <%- include('../partials/header') %>
 
-      <a href="product-cart"><i class="fa-solid fa-cart-shopping"></i></a>
-      <div>
-        <i class="fa-solid fa-magnifying-glass"></i>
-      </div>
-      <a href="/login"><i class="fa-solid fa-user"></i></a>
-
-      <nav class="navbar">
-        <!--Podrian ir links a productos destacados de cada uno?-->
-        <a href="/product_detail_keyboard">TECLADOS</a>
-        <a href="/">MOUSE</a>
-        <a href="/">SILLONES</a>
-        <a href="/">AURICULARES</a>
-      </nav>
-      </header>
-
       <section>
         <div class="titulo">
           <H2>TECLADOS</H2>
         </div>
 
         <div class="articulo">
-          <img id="producto" src="/img/product-detail/Product_Keyboard_Logitech_G413_1.webp" />
-          <div class="general">
-            <h3 class="descripcion">TECLADO MECÁNICO LOGITECH</h3>
-            <h4 class="model">G413</h4>
-            <P class="precio">$10.499</P>
-            <a href="product_detail_Keyboard_logitech">
 
-              <button id="Specs">Ver Especificaciones</button>
-
+          
+          <% for(let i=0; i < menu.length; i++){ %>
+            <a href="./detalleMenu/<%=menu[i].id%>">
+              <h4>
+                <%= menu[i].titulo %>
+              </h4>
             </a>
-          </div>
-          <div class="especificaciones">
-            <p class="modelo">LOGITECH G413</p>
-            <p>ESPECIFICACIONES:</p>
-            <p>MARCA: LOGITECH</p>
-            <p>MODELO: G413</p>
-            <p>TIPO: MECÁNICO</p>
-            <p>PESO: 500g</p>
-            <p>DISTRIBUCIÓN: QWERTY</p>
-            <P class="precio">PRECIO: $10.499</P>
+            <p class="ps-text-grey">
+              <%= menu[i].descripcion %>
+                <%= menu[i].price %>
+            </p>
+            <% } %>
+
+
+
+
             <button id="agregar" type="submit">Agregar al carrito</button>
           </div>
 
-        </div>
-
-
-
-        <div class="articulo">
-          <img id="producto" src="/img/product-detail/Product_Keyboard_REDRAGON_FIZZ_K617_1.webp" />
-          <div class="general">
-            <h3 class="descripcion">TECLADO MECÁNICO REDRAGON</h3>
-            <h4 class="model">FIZZ K617</h4>
-            <P class="precio">$7.499</P>
-            <a href="product_detail_Keyboard_redragon">
-
-              <button id="Specs">Ver Especificaciones</button>
-
-            </a>
-          </div>
-          <div class="especificaciones">
-            <p class="modelo">REDRAGON FIZZ K617</p>
-            <p>ESPECIFICACIONES:</p>
-            <p>MARCA: REDRAGON</p>
-            <p>MODELO: FIZZ K617</p>
-            <p>TIPO: MECÁNICO</p>
-            <p>PESO: 550g</p>
-            <p>DISTRIBUCIÓN: QWERTY</p>
-            <P class="precio">PRECIO: $7.499</P>
-            <button id="agregar" type="submit">Agregar al carrito</button>
-          </div>
         </div>
 
       </section>
