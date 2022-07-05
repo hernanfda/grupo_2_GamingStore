@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- HEAD  -->
+<%- include('./partials/head') %>
+<body>
+    <!-- HEADER  -->
+     <%- include('./partials/headerForm') %>
+     <main class="container">
+        <div class="backbtn-modifier">
+            <%- include('./partials/backbtn') %>
+        </div>
+        <div class="notfound">
+            <h2>Lo sentimos,</h1>
+            <p>La página solicitada no existe, o no se encuentra disponible.</p>
+        </div>
+        <div class="notfound-img">
+            <img src="/img/404broken.png" class="img-broken">
+        </div>
+    </main>
+    <!-- FOOTER -->
+    <%- include('./partials/footer') %>
+</body>
+</html>

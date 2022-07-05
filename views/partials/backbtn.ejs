@@ -1,0 +1,50 @@
+<style>
+    .cart_header_btn {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .cart-backbtn_container {
+        display: flex;
+        width: 95%;
+    }
+
+    .cart-backbtn {
+        text-align: center;
+        width: 36%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        color:white ;
+        background-color: rgba(111, 0, 209, 1);
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: bold;
+        padding: 8px;
+        border-radius: 10px;
+        border-width: 0px;
+        border-style: outset;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .cart-backbtn:hover {
+        background-color: rgba(164, 89, 255, 1);
+    }
+
+    @media (min-width: 769px) {
+        .cart-backbtn_container {
+        display: flex;
+        width: 80%;
+    }
+
+   .cart-backbtn{
+        max-width: 200px;
+   }
+        
+}
+
+</style>
+
+<div class="cart-backbtn_container">
+    <button onclick="history.go(-1)" class="cart-backbtn">
+        <p>Volver Atrás</p>
+    </button>
+</div>

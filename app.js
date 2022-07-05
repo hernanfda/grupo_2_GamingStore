@@ -17,6 +17,11 @@ app.use('/users', userRoutes);
 // CART, DETAIL, CREATE & MODIFY
 app.use('/products', productRoutes);
 
+// 404 REDIRECT
+app.use((req, res, next) => {
+  res.status(404).render('404', { styles: "404" });
+});
+
 //TODO: Agregar vista de detalle y lista de productos
 // app.get("/product_detail_keyboard_logitech", (req, res) => {
 //   res.sendFile(__dirname + "/views/product_detail_keyboard_logitech.html");
