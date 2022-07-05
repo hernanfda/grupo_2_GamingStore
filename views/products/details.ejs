@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- HEAD  -->
+<%- include('../partials/head') %>
+
+  <body>
+    <!-- HEADER -->
+    <%- include('../partials/header') %>
+      <%- include('../partials/backbtn.ejs') %>
+        <section>
+          <div class="articulo">
+            <img id="producto" src=<%=product.image%> />
+          </div>
+          <div class="especificaciones">
+            <p class="modelo">
+              <%= `${product.brand} ${product.model}` %>
+            </p>
+            <p>ESPECIFICACIONES:</p>
+            <p>MARCA: <%= product.brand %>
+            </p>
+            <p>MODELO: <%= product.model %>
+            </p>
+            <P class="precio">PRECIO: $<%= product.price %>
+            </P>
+            <p>
+              <%= `12 cuotas de $${(product.price / 12).toFixed(2)}` %>
+            </p>
+            <p>DESCRIPCION:</p>
+            <button id="agregar" type="submit">Agregar al carrito</button>
+          </div>
+
+          </div>
+        </section>
+        <!-- FOOTER -->
+        <%- include('../partials/footer') %>
+  </body>
+
+</html>

@@ -10,29 +10,23 @@
 
       <section>
         <div class="titulo">
-          <H2>TECLADOS</H2>
+          <h2>TECLADOS</h2>
         </div>
 
         <div class="articulo">
-
-          
-          <% for(let i=0; i < menu.length; i++){ %>
-            <a href="./detalleMenu/<%=menu[i].id%>">
+          <% for(let i=0; i < productList.length; i++){ %>
+            <a href="/products/details/<%= productList[i].id %> ">
               <h4>
-                <%= menu[i].titulo %>
+                <%= `${productList[i].brand} ${productList[i].model} `%>
               </h4>
             </a>
             <p class="ps-text-grey">
-              <%= menu[i].descripcion %>
-                <%= menu[i].price %>
+              <img src="<%= productList[i].image %>" alt="">
+              $<%= productList[i].price %>
             </p>
-            <% } %>
-
-
-
-
             <button id="agregar" type="submit">Agregar al carrito</button>
-          </div>
+            <% } %>
+        </div>
 
         </div>
 

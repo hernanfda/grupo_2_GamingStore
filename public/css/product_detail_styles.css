@@ -26,6 +26,7 @@ header {
   width: 100%;
   position: relative;
 }
+
 .logo {
   height: 60px;
   width: 60px;
@@ -34,6 +35,7 @@ header {
   background-repeat: no-repeat;
   background-position: center;
 }
+
 nav {
   display: none;
 }
@@ -63,10 +65,12 @@ header .logo {
 .fa-solid.fa-user {
   display: none;
 }
+
 /*--------ALINEACIÓN MENU HAMBURGUESA------*/
 .fa-bars {
   left: 30px;
 }
+
 /*--------ALINEACIÓN LUPA------*/
 .fa-magnifying-glass {
   right: 30px;
@@ -88,6 +92,7 @@ section {
   flex-wrap: wrap;
   justify-content: center;
 }
+
 .articulo {
   display: flex;
   flex-wrap: wrap;
@@ -95,12 +100,15 @@ section {
   margin: 30px 0 30px 0;
   border-top: solid 1px rgb(179, 179, 179);
 }
+
 .articulo img {
   width: 80%;
 }
+
 .articulo h3 {
   color: rgb(111, 0, 209);
 }
+
 /*--------OCULTA ESPECIFICACIONES PARA VIEW DESKTOP------*/
 .especificaciones {
   display: none;
@@ -131,7 +139,9 @@ footer {
   border-width: 0px;
   border-style: outset;
 }
+
 @media (min-width: 768px) {
+
   /*--------HEADER CON NUEVA ALTURA------*/
   header {
     color: rgb(179, 179, 179);
@@ -145,6 +155,7 @@ footer {
   .burger {
     display: none;
   }
+
   /*--------CAMBIO EL LOGO------*/
   .logo {
     height: 60px;
@@ -154,6 +165,7 @@ footer {
     background-repeat: no-repeat;
     background-position: center;
   }
+
   nav {
     width: 70%;
     min-width: 420px;
@@ -182,22 +194,26 @@ footer {
   .fa-cart-shopping {
     right: 130px;
   }
+
   h2 {
     text-align: left;
     font-size: 40px;
     margin-left: 50px;
   }
+
   .titulo {
     width: 100%;
     border: solid 1px rgb(179, 179, 179);
     height: 120px;
   }
+
   /*--------ARTICULOS------*/
   section {
     display: flex;
     flex-wrap: wrap;
     justify-content: left;
   }
+
   .articulo {
     width: 100%;
     display: flex;
@@ -207,28 +223,32 @@ footer {
     border-top: none;
     align-items: center;
   }
+
   .articulo img {
     width: 55%;
     align-items: center;
     max-width: 500px;
     margin-left: 50px;
   }
+
   .articulo .modelo {
     color: rgb(111, 0, 209);
     font-weight: 900;
     font-size: 30px;
     margin-bottom: 20px;
   }
+
   .general {
     display: none;
   }
+
   /*--------DESACTIVA LINKS ARTICULO------*/
-  section a {
+  /* section a {
     pointer-events: none;
     cursor: default;
     text-decoration: none;
     width: 100%;
-  }
+  } */
 
   /*--------DESCRIPCIONES DE PRODUCTO------*/
   .especificaciones {

@@ -1,10 +1,12 @@
+const { urlencoded } = require("express")
+
 const productList = [
     {
         id: 1,
         brand: "LOGITECH",
         model: "G413",
         type: "keyboard",
-        price: "$10.499",
+        price: 10499,
         image: "/img/product-detail/Product_Keyboard_Logitech_G413_1.webp",
         offers: true, //Va a la seccion "en oferta"
         popular: true, //Va a la seccion "destacados"
@@ -17,7 +19,7 @@ const productList = [
         price: "$8.499",
         image: "/img/product-detail/Product_Keyboard_REDRAGON_FIZZ_K617_1.webp",
         offers: true,
-        popular: true, 
+        popular: true,
     },
     {
         id: 3,
@@ -27,7 +29,7 @@ const productList = [
         price: "$6.299",
         image: "/img/product-detail/Product_Mouse_REDRAGON_STORM_M808_1.webp",
         offers: true,
-        popular: true, 
+        popular: true,
     },
     {
         id: 4,
@@ -37,7 +39,7 @@ const productList = [
         price: "$9.499",
         image: "/img/product-detail/Product_Mouse_Logitech_PRO_1.webp",
         offers: true,
-        popular: true, 
+        popular: true,
     },
     {
         id: 5,
@@ -47,7 +49,7 @@ const productList = [
         price: "$10.799",
         image: "/img/product-detail/Product_Headset_REDRAGON_H510_ZEUS-X_1.webp",
         offers: true,
-        popular: true, 
+        popular: true,
     },
     {
         id: 6,
@@ -57,7 +59,7 @@ const productList = [
         price: "$21.799",
         image: "/img/product-detail/Product_Headset_Logitech_G733_1.webp",
         offers: true,
-        popular: true, 
+        popular: true,
     },
     {
         id: 7,
@@ -67,7 +69,7 @@ const productList = [
         price: "$38.000",
         image: "/img/product-detail/Product_GamingChairs_SecretLab_TitanXL_01.webp",
         offers: true,
-        popular: true, 
+        popular: true,
     },
     {
         id: 8,
@@ -77,7 +79,7 @@ const productList = [
         price: "$84.899",
         image: "/img/product-detail/Product_GamingChairs_Corsair_T3_RUSH_01.webp",
         offers: true,
-        popular: true, 
+        popular: true,
     },
 ]
 
@@ -85,8 +87,21 @@ const productControllers = {
     productCart: (req, res) => {
         res.render('products/cart', { styles: "product-cart" })
     },
+    productList: (req, res) => {
+        res.render('products/list', { styles: "product_detail_styles", productList: productList })
+    },
+    // productFilter: (req, res)
+    // productDetail: (req, res) => {
+    //     res.render('products/details', { styles: "product_detail_styles", productList: productList })
     productDetail: (req, res) => {
-        res.render('products/detail', { styles: "product_detail_styles" })
+        let id = req.params.id;
+        let product = productList.find(e => e.id == id)
+        // for (let i = 0; i < productList.length; i++) {
+        //     if (productList[i].id == id) {
+        //         product = productList[i];
+        //     }
+        // }
+        res.render('products/details', { styles: "product_detail_styles", product: product })
     },
     add: (req, res) => {
         res.render('products/add', { styles: "register_login" })
