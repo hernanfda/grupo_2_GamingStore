@@ -8,8 +8,8 @@ const productList = [
         type: "keyboard",
         price: 10499,
         image: "/img/product-detail/Product_Keyboard_Logitech_G413_1.webp",
-        offers: true, //Va a la seccion "en oferta"
-        popular: true, //Va a la seccion "destacados"
+        offers: false, //Va a la seccion "en oferta"
+        popular: false, //Va a la seccion "destacados"
     },
     {
         id: 2,
@@ -19,7 +19,7 @@ const productList = [
         price: 8499,
         image: "/img/product-detail/Product_Keyboard_REDRAGON_FIZZ_K617_1.webp",
         offers: true,
-        popular: true,
+        popular: false,
     },
     {
         id: 3,
@@ -29,7 +29,7 @@ const productList = [
         price: 6299,
         image: "/img/product-detail/Product_Mouse_REDRAGON_STORM_M808_1.webp",
         offers: true,
-        popular: true,
+        popular: false,
     },
     {
         id: 4,
@@ -38,7 +38,7 @@ const productList = [
         type: "mouse",
         price: 9499,
         image: "/img/product-detail/Product_Mouse_Logitech_PRO_1.webp",
-        offers: true,
+        offers: false,
         popular: true,
     },
     {
@@ -49,7 +49,7 @@ const productList = [
         price: 10799,
         image: "/img/product-detail/Product_Headset_REDRAGON_H510_ZEUS-X_1.webp",
         offers: true,
-        popular: true,
+        popular: false,
     },
     {
         id: 6,
@@ -58,7 +58,7 @@ const productList = [
         type: "headset",
         price: 21799,
         image: "/img/product-detail/Product_Headset_Logitech_G733_1.webp",
-        offers: true,
+        offers: false,
         popular: true,
     },
     {
@@ -68,8 +68,8 @@ const productList = [
         type: "chair",
         price: 38000,
         image: "/img/product-detail/Product_GamingChairs_SecretLab_TitanXL_01.webp",
-        offers: true,
-        popular: true,
+        offers: false,
+        popular: false,
     },
     {
         id: 8,
@@ -79,7 +79,7 @@ const productList = [
         price: 84899,
         image: "/img/product-detail/Product_GamingChairs_Corsair_T3_RUSH_01.webp",
         offers: true,
-        popular: true,
+        popular: false,
     },
 ]
 
