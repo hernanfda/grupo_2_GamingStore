@@ -89,30 +89,56 @@ a {
 /*--------ARTICULOS------*/
 section {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  
+}
+.titulo{
+  margin:20px 0 20px 0; 
 }
 
+h4{
+  color: rgb(111, 0, 209);  
+}
 .articulo {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 30px 0 30px 0;
-  border-top: solid 1px rgb(179, 179, 179);
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 30px;
+  justify-content: space-between;
 }
 
 .articulo img {
   width: 80%;
+  height: auto;  
 }
 
-.articulo h3 {
-  color: rgb(111, 0, 209);
+.img {
+  width: 80%;
+  text-align: center;
+}
+/*--------BOTON CARRITO------*/
+#agregar{
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+  background-color: rgb(111, 0, 209);
 }
 
-/*--------OCULTA ESPECIFICACIONES PARA VIEW DESKTOP------*/
-.especificaciones {
-  display: none;
+p{
+font-size: 20px;
 }
+/*--------DESCRIPCIONES DE PRODUCTO------*/
+.especificaciones
+{
+
+  width: 320px;
+  height: 220px;
+  
+}
+
 
 /*--------FOOTER------*/
 
@@ -131,157 +157,99 @@ footer {
   display: none;
 }
 
-#Specs {
-  padding: 10px;
-  color: white;
-  border-radius: 10px;
-  background-color: rgb(111, 0, 209);
-  border-width: 0px;
-  border-style: outset;
+@media (min-width: 768px) {
+/*--------HEADER CON NUEVA ALTURA------*/
+header {
+  color: rgb(179, 179, 179);
+  display: flex;
+  flex-wrap: wrap;
+  height: 120px;
+  width: 100%;
+  position: relative;
 }
 
-@media (min-width: 768px) {
+.burger {
+  display: none;
+}
+/*--------CAMBIO EL LOGO------*/
+.logo {
+  height: 60px;
+  width: 300px;
+  background-image: url(/img/logo-light.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+nav{
+  width: 70%;
+  min-width: 420px;
+  max-width: 840px;
+  display: flex;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 10px;
+  font-size: 20px;
+  justify-content: space-evenly;
+}
 
-  /*--------HEADER CON NUEVA ALTURA------*/
-  header {
-    color: rgb(179, 179, 179);
-    display: flex;
-    flex-wrap: wrap;
-    height: 120px;
-    width: 100%;
-    position: relative;
-  }
+/*--------ALINEACION USER------*/
+.fa-solid.fa-user
+{
+display: block;
+right: 80px;
 
-  .burger {
-    display: none;
-  }
+}
 
-  /*--------CAMBIO EL LOGO------*/
-  .logo {
-    height: 60px;
-    width: 300px;
-    background-image: url(/img/logo-light.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
+/*--------ALINEACIÓN LUPA------*/
+.fa-magnifying-glass {
+right: 30px;
+}
 
-  nav {
-    width: 70%;
-    min-width: 420px;
-    max-width: 840px;
-    display: flex;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 10px;
-    font-size: 20px;
-    justify-content: space-evenly;
-  }
+/*--------ALINEACIÓN CARRITO------*/
+.fa-cart-shopping {
+right: 130px;
+}
+h2{
+text-align: left;
+font-size: 40px;
+margin-left: 50px;
+}
+.titulo{
+width: 100%;
+border: solid 1px rgb(179, 179, 179);
+height: 120px;
+}
 
-  /*--------ALINEACION USER------*/
-  .fa-solid.fa-user {
-    display: block;
-    right: 80px;
-  }
+section{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+.articulo {
+  display: flex;
+  width: 30vw;
+  align-items: center;
+}
+ 
 
-  /*--------ALINEACIÓN LUPA------*/
-  .fa-magnifying-glass {
-    right: 30px;
-  }
 
-  /*--------ALINEACIÓN CARRITO------*/
-  .fa-cart-shopping {
-    right: 130px;
-  }
+footer {
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+}
 
-  h2 {
-    text-align: left;
-    font-size: 40px;
-    margin-left: 50px;
-  }
+footer a {
+  color: rgb(226, 222, 222);
+  padding-left: 10px;
+}
 
-  .titulo {
-    width: 100%;
-    border: solid 1px rgb(179, 179, 179);
-    height: 120px;
-  }
+.redes {
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+}
 
-  /*--------ARTICULOS------*/
-  section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: left;
-  }
-
-  .articulo {
-    width: 100%;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    margin: 30px 0 30px 0;
-    border-top: none;
-    align-items: center;
-  }
-
-  .articulo img {
-    width: 55%;
-    align-items: center;
-    max-width: 500px;
-    margin-left: 50px;
-  }
-
-  .articulo .modelo {
-    color: rgb(111, 0, 209);
-    font-weight: 900;
-    font-size: 30px;
-    margin-bottom: 20px;
-  }
-
-  .general {
-    display: none;
-  }
-
-  /*--------DESACTIVA LINKS ARTICULO------*/
-  /* section a {
-    pointer-events: none;
-    cursor: default;
-    text-decoration: none;
-    width: 100%;
-  } */
-
-  /*--------DESCRIPCIONES DE PRODUCTO------*/
-  .especificaciones {
-    display: block;
-    width: 320px;
-    height: 220px;
-    margin: 100px;
-  }
-
-  /*--------BOTON CARRITO------*/
-  #agregar {
-    padding: 10px;
-    color: white;
-    border-radius: 10px;
-    background-color: rgb(111, 0, 209);
-  }
-
-  /*--------FOOTER TABLET/DESKTOP-----*/
-
-  footer {
-    justify-content: space-between;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  footer a {
-    color: rgb(226, 222, 222);
-    padding-left: 10px;
-  }
-
-  .redes {
-    display: flex;
-    justify-content: center;
-    font-size: 20px;
-  }
 }
