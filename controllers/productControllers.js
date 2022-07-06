@@ -90,17 +90,16 @@ const productControllers = {
     productList: (req, res) => {
         res.render('products/list', { styles: "product_detail_styles", productList: productList })
     },
-    // productFilter: (req, res)
-    // productDetail: (req, res) => {
-    //     res.render('products/details', { styles: "product_detail_styles", productList: productList })
+    productFilter: (req, res) => {
+        let productType = req.params.type
+        let filteredList = productList.filter(element => element.type == productType);
+
+        res.render('products/list', { styles: "product_detail_styles", productList: filteredList })
+    },
     productDetail: (req, res) => {
         let id = req.params.id;
         let product = productList.find(e => e.id == id)
-        // for (let i = 0; i < productList.length; i++) {
-        //     if (productList[i].id == id) {
-        //         product = productList[i];
-        //     }
-        // }
+
         res.render('products/details', { styles: "product_detail_styles", product: product })
     },
     add: (req, res) => {
