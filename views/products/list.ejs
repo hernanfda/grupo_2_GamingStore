@@ -10,10 +10,11 @@
 
     <section>
         <div class="titulo">
-          <h2>
+          <a href="/products/list"><h2>
             PRODUCTOS
             <!-- <%= productList[0].type.toUpperCase() %> -->
           </h2>
+        </a>
         </div>
 
 
@@ -30,6 +31,7 @@
               
               <img src="<%= productList[i].image %>" alt="">
             </a>
+            <div class="priceCart">
             <p>
               $<%= productList[i].price %>
             </p>
@@ -38,6 +40,7 @@
                 Agregar al carrito
               </button>
             </a>
+          </div>
           </div>
             <% } %>
 

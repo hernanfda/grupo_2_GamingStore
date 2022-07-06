@@ -10,6 +10,7 @@ const productList = [
         image: "/img/product-detail/Product_Keyboard_Logitech_G413_1.webp",
         offers: false, //Va a la seccion "en oferta"
         popular: false, //Va a la seccion "destacados"
+        description: "TECLADO MECÁNICO CON RETROILUMINACIÓN PARA JUEGOS",
     },
     {
         id: 2,
@@ -20,6 +21,7 @@ const productList = [
         image: "/img/product-detail/Product_Keyboard_REDRAGON_FIZZ_K617_1.webp",
         offers: true,
         popular: false,
+        description: "TECLADO MECÁNICO CON RETROILUMINACIÓN PARA JUEGOS",
     },
     {
         id: 3,
@@ -30,6 +32,7 @@ const productList = [
         image: "/img/product-detail/Product_Mouse_REDRAGON_STORM_M808_1.webp",
         offers: true,
         popular: false,
+        description: "TECLADO MECÁNICO CON RETROILUMINACIÓN PARA JUEGOS",
     },
     {
         id: 4,
@@ -40,6 +43,7 @@ const productList = [
         image: "/img/product-detail/Product_Mouse_Logitech_PRO_1.webp",
         offers: false,
         popular: true,
+        description: "TECLADO MECÁNICO CON RETROILUMINACIÓN PARA JUEGOS",
     },
     {
         id: 5,
@@ -50,6 +54,7 @@ const productList = [
         image: "/img/product-detail/Product_Headset_REDRAGON_H510_ZEUS-X_1.webp",
         offers: true,
         popular: false,
+        description: "TECLADO MECÁNICO CON RETROILUMINACIÓN PARA JUEGOS",
     },
     {
         id: 6,
@@ -60,6 +65,7 @@ const productList = [
         image: "/img/product-detail/Product_Headset_Logitech_G733_1.webp",
         offers: false,
         popular: true,
+        description: "TECLADO MECÁNICO CON RETROILUMINACIÓN PARA JUEGOS",
     },
     {
         id: 7,
@@ -70,6 +76,7 @@ const productList = [
         image: "/img/product-detail/Product_GamingChairs_SecretLab_TitanXL_01.webp",
         offers: false,
         popular: false,
+        description: "TECLADO MECÁNICO CON RETROILUMINACIÓN PARA JUEGOS",
     },
     {
         id: 8,
@@ -80,6 +87,7 @@ const productList = [
         image: "/img/product-detail/Product_GamingChairs_Corsair_T3_RUSH_01.webp",
         offers: true,
         popular: false,
+        description: "TECLADO MECÁNICO CON RETROILUMINACIÓN PARA JUEGOS",
     },
 ]
 

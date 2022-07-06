@@ -16,7 +16,7 @@
             <p class="modelo">
               <%= `${product.brand} ${product.model}` %>
             </p>
-            <p>ESPECIFICACIONES:</p>
+            <!-- <p>ESPECIFICACIONES:</p> -->
             <p>MARCA: <%= product.brand %>
             </p>
             <p>MODELO: <%= product.model %>
@@ -26,7 +26,9 @@
             <p>
               <%= `12 cuotas de $${(product.price / 12).toFixed(2)}` %>
             </p>
-            <p>DESCRIPCION:</p>
+
+            <p class="description">DESCRIPCIÓN:</br>
+              <%= product.description %></p>
             <button id="agregar" type="submit">Agregar al carrito</button>
           </div>
 
