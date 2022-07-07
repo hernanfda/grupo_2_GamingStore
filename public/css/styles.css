@@ -86,6 +86,7 @@ header .logo {
 /*--------ESTILOS <a>------*/
 a {
   text-decoration: none;
+  text-align: center;
 }
 
 /*--------ARTICULOS------*/
@@ -117,7 +118,7 @@ section h2 {
 }
 
 .articulo h3 {
-  color: rgb(111, 0, 209);
+  color: rgba(164, 89, 255);
   font-size: 12px;
 }
 

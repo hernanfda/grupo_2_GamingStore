@@ -82,12 +82,13 @@
           <% for(let i=0; i < productList.length; i++){ %>
             <% if(productList[i].offers==true){ %>
               <div class="articulo">
+                <a class="img" href="/products/details/<%= productList[i].id %> ">
                 <img id="producto" src=" <%= productList[i].image %> " />
                 <div class="general">
                   <p class="precio">$<%= productList[i].price %>
                   </p>
                   <p class="descuento">20% OFF</p>
-                  <a class="img" href="/products/details/<%= productList[i].id %> ">
+                  
                     <h3 class="descripcion">
                       <%= `${productList[i].brand} ${productList[i].model}` %>
                     </h3>
@@ -134,9 +135,10 @@
           <% for(let i=0; i < productList.length; i++){ %>
             <% if(productList[i].popular==true){ %>
               <div class="articulo">
+                <a class="img" href="/products/details/<%= productList[i].id %> ">
                 <img id="producto" src=" <%= productList[i].image %> " />
                 <div class="general">
-                  <a class="img" href="/products/details/<%= productList[i].id %> ">
+                  
                     <h3 class="descripcion">
                       <%= `${productList[i].brand} ${productList[i].model}` %>
                     </h3>
