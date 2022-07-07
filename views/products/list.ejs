@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <!-- HEAD  -->
@@ -8,44 +8,45 @@
     <!-- HEADER -->
     <%- include('../partials/header') %>
 
-    <section>
+      <section>
         <div class="titulo">
-          <a href="/products/list"><h2>
-            PRODUCTOS
-            <!-- <%= productList[0].type.toUpperCase() %> -->
-          </h2>
-        </a>
+          <a href="/products/list">
+            <h2>
+              PRODUCTOS
+              <!-- <%= productList[0].type.toUpperCase() %> -->
+            </h2>
+          </a>
         </div>
 
 
-          <% for(let i=0; i < productList.length; i++){ %>
-            <div class="articulo">
+        <% for(let i=0; i < productList.length; i++){ %>
+          <div class="articulo">
             <a href="/products/details/<%= productList[i].id %> ">
               <h4>
                 <%= `${productList[i].brand} ${productList[i].model} `%>
               </h4>
-              
+
             </a>
 
-            <a class = "img" href="/products/details/<%= productList[i].id %> ">
-              
+            <a class="img" href="/products/details/<%= productList[i].id %> ">
+
               <img src="<%= productList[i].image %>" alt="">
             </a>
             <div class="priceCart">
-            <p>
-              $<%= productList[i].price %>
-            </p>
-            <a href="/../products/cart">
-              <button id="agregar" type="submit">
-                Agregar al carrito
-              </button>
-            </a>
+              <p>
+                $<%= productList[i].price %>
+              </p>
+              <a href="/../products/cart">
+                <button id="agregar" type="submit">
+                  Agregar al carrito
+                </button>
+              </a>
+            </div>
           </div>
-          </div>
-            <% } %>
+          <% } %>
 
 
-        </div>
+            </div>
 
       </section>
 
