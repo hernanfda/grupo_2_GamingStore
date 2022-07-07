@@ -1,4 +1,4 @@
-const listObject = [
+const productList = [
     {
         id: 1,
         brand: "LOGITECH",
@@ -7,7 +7,7 @@ const listObject = [
         price: 10499,
         image: "/img/product-detail/Product_Keyboard_Logitech_G413_1.webp",
         offers: false, //Va a la seccion "en oferta"
-        popular: false, //Va a la seccion "destacados"
+        popular: true, //Va a la seccion "destacados"
     },
     {
         id: 2,
@@ -80,8 +80,6 @@ const listObject = [
         popular: false,
     },
 ]
-
-let productList = JSON.stringify(listObject)
 
 const mainControllers = {
     index: (req, res) => {

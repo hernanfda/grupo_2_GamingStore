@@ -39,7 +39,7 @@
           <div class="mySlides fade">
             <div class="slide-info slide-3">
               <h1>TECLADOS PREMIUM</h1>
-              <a href="/products/detail">
+              <a href="/products/list/keyboard">
                 <button type="submit">CONOCELOS</button>
               </a>
             </div>
@@ -79,60 +79,87 @@
 
         <section class="ofertas">
           <h2>OFERTAS</h2>
-          <div class="articulo">
-            <img id="producto" src="/img/product-detail/Product_Keyboard_REDRAGON_FIZZ_K617_1.webp" />
-            <div class="general">
-              <p class="precio">$230.000</p>
-              <p class="descuento">20% OFF</p>
-              <h3 class="descripcion">TECLADO RD</h3>
-            </div>
-          </div>
-          <div class="articulo">
-            <img id="producto" src="/img/product-detail/Product_Mouse_REDRAGON_STORM_M808_1.webp" />
-            <div class="general">
-              <p class="precio">$230.000</p>
-              <p class="descuento">20% OFF</p>
-              <h3 class="descripcion">MOUSE RD</h3>
-            </div>
-          </div>
-          <div class="articulo">
-            <img id="producto" src="/img/product-detail/Product_Headset_REDRAGON_H510_ZEUS-X_1.webp" />
-            <div class="general">
-              <p class="precio">$230.000</p>
-              <p class="descuento">20% OFF</p>
-              <h3 class="descripcion">AURICULARES RD</h3>
-            </div>
-          </div>
-          <div class="articulo">
-            <img id="producto" src="/img/product-detail/Product_GamingChairs_Corsair_T3_RUSH_01.webp" />
-            <div class="general">
-              <p class="precio">$230.000</p>
-              <p class="descuento">20% OFF</p>
-              <h3 class="descripcion">SILLA CORSAIR</h3>
-            </div>
-          </div>
+          <% for(let i=0; i < productList.length; i++){ %>
+            <% if(productList[i].offers==true){ %>
+              <div class="articulo">
+                <img id="producto" src=" <%= productList[i].image %> " />
+                <div class="general">
+                  <p class="precio">$<%= productList[i].price %>
+                  </p>
+                  <p class="descuento">20% OFF</p>
+                  <h3 class="descripcion">
+                    <%= `${productList[i].brand} ${productList[i].model}` %>
+                  </h3>
+                </div>
+              </div>
+              <% } %>
+                <% } %>
+                  <!-- <div class="articulo">
+                    <img id="producto" src="/img/product-detail/Product_Keyboard_REDRAGON_FIZZ_K617_1.webp" />
+                    <div class="general">
+                      <p class="precio">$230.000</p>
+                      <p class="descuento">20% OFF</p>
+                      <h3 class="descripcion">TECLADO RD</h3>
+                    </div>
+                  </div>
+                  <div class="articulo">
+                    <img id="producto" src="/img/product-detail/Product_Mouse_REDRAGON_STORM_M808_1.webp" />
+                    <div class="general">
+                      <p class="precio">$230.000</p>
+                      <p class="descuento">20% OFF</p>
+                      <h3 class="descripcion">MOUSE RD</h3>
+                    </div>
+                  </div>
+                  <div class="articulo">
+                    <img id="producto" src="/img/product-detail/Product_Headset_REDRAGON_H510_ZEUS-X_1.webp" />
+                    <div class="general">
+                      <p class="precio">$230.000</p>
+                      <p class="descuento">20% OFF</p>
+                      <h3 class="descripcion">AURICULARES RD</h3>
+                    </div>
+                  </div>
+                  <div class="articulo">
+                    <img id="producto" src="/img/product-detail/Product_GamingChairs_Corsair_T3_RUSH_01.webp" />
+                    <div class="general">
+                      <p class="precio">$230.000</p>
+                      <p class="descuento">20% OFF</p>
+                      <h3 class="descripcion">SILLA CORSAIR</h3>
+                    </div>
+                  </div> -->
         </section>
         <section class="destacados">
           <h2>PRODUCTOS DESTACADOS</h2>
-          <div class="articulo">
-            <img id="producto" src="/img/product-detail/Product_Mouse_Logitech_PRO_1.webp" />
-            <div class="general">
-              <h3 class="descripcion">MOUSE LOGI</h3>
-            </div>
-          </div>
-          <div class="articulo">
-            <img id="producto" src="/img/product-detail/Product_Keyboard_Logitech_G413_1.webp" />
-            <div class="general">
-              <h3 class="descripcion">TECLADO MECÁNICO</h3>
-            </div>
-          </div>
+          <% for(let i=0; i < productList.length; i++){ %>
+            <% if(productList[i].popular==true){ %>
+              <div class="articulo">
+                <img id="producto" src=" <%= productList[i].image %> " />
+                <div class="general">
+                  <h3 class="descripcion">
+                    <%= `${productList[i].brand} ${productList[i].model}` %>
+                  </h3>
+                </div>
+              </div>
+              <% } %>
+                <% } %>
+                  <!-- <div class="articulo">
+                    <img id="producto" src="/img/product-detail/Product_Mouse_Logitech_PRO_1.webp" />
+                    <div class="general">
+                      <h3 class="descripcion">MOUSE LOGI</h3>
+                    </div>
+                  </div>
+                  <div class="articulo">
+                    <img id="producto" src="/img/product-detail/Product_Keyboard_Logitech_G413_1.webp" />
+                    <div class="general">
+                      <h3 class="descripcion">TECLADO MECÁNICO</h3>
+                    </div>
+                  </div>
 
-          <div class="articulo">
-            <img id="producto" src="/img/product-detail/Product_Headset_Logitech_G733_1.webp" />
-            <div class="general">
-              <h3 class="descripcion">AURICULARES LOL</h3>
-            </div>
-          </div>
+                  <div class="articulo">
+                    <img id="producto" src="/img/product-detail/Product_Headset_Logitech_G733_1.webp" />
+                    <div class="general">
+                      <h3 class="descripcion">AURICULARES LOL</h3>
+                    </div>
+                  </div> -->
         </section>
 
         <section class="reviews">
