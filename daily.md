@@ -1,4 +1,4 @@
-## daily
+## daily sprint 2
 
 El grupo coincidió en que no era necesario hacer reuniones diarías en discord, pero si mantener una comunicación fluida en el canal de whatsapp.
     -En esta daily no se diferenciará ningun integrante del grupo, sino que haremos referencia a las tareas, decisiones grupales y como fuimos avanzando en el proyecto.
@@ -60,3 +60,39 @@ Se nos requirió que eliminemos las vistas html de los demás productos para sim
 ## 22/06 a presentar el trabajo
 
 Despues de más de dos semanas del sprint ya estamos listos para la presentación de nuestras vistas.
+
+
+## daily sprint 3
+
+Al igual que para el sprint anterior no fue necesario mantener reuniones diarias para avanzar en el proyecto. Al inicio del sprint aún nos faltaban ver algunos contenidos del curso para poder comenzar con el trabajo.
+
+## 30/06 vistas dinamicas con EJS.
+
+El grupo coincidió en que ya teniamos todos lo necesario para avanzar con el sprint sin ningún bloqueo. Se programó reunión para el domingo  03/07.
+En este sprint la división de trabajo es un poco más complicada de lograr. Decidimos programar en conjuntos en la reunión grupal programada.
+
+## 03/07 aplicación de EJS, formularios de carga y modificación.
+
+En nuestra primera reunión logramos todos los objetivos del sprint. 
+    -Completamos los partials de todos los componentes que se repiten en reiteradas ocasiones.
+    -Agregamos controllers, routes y modificamos nuestro entry point para que los consuma.
+    -Se cargaron los fomularios de agregado y modificación de productos (products/add + products/modify).
+    -Se automatizó la carga de CSS en relación a la vista mostrada.
+
+Proximo objetivos:
+    -Crear objeto con los productos de la tienda
+    -Parametrizar el acceso a lista de productos y detalle de producto.
+
+
+## 05/07 clase Practica 21
+
+Aprovechamos la clase práctica para cumplir con los objetivos que quedaron pendientes de la reunión anterior.
+
+Pendientes:
+    -ajustar CSS.
+
+    
+## 06/07 ajuste de CSS y cierre de sprint.
+Se ajustó el css para corregir algunos errores y se subio el repo a git.
+
+SPRINT 3 LISTO PARA ENTREGAR.
