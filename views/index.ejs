@@ -87,9 +87,11 @@
                   <p class="precio">$<%= productList[i].price %>
                   </p>
                   <p class="descuento">20% OFF</p>
-                  <h3 class="descripcion">
-                    <%= `${productList[i].brand} ${productList[i].model}` %>
-                  </h3>
+                  <a class="img" href="/products/details/<%= productList[i].id %> ">
+                    <h3 class="descripcion">
+                      <%= `${productList[i].brand} ${productList[i].model}` %>
+                    </h3>
+                  </a>
                 </div>
               </div>
               <% } %>
@@ -134,9 +136,11 @@
               <div class="articulo">
                 <img id="producto" src=" <%= productList[i].image %> " />
                 <div class="general">
-                  <h3 class="descripcion">
-                    <%= `${productList[i].brand} ${productList[i].model}` %>
-                  </h3>
+                  <a class="img" href="/products/details/<%= productList[i].id %> ">
+                    <h3 class="descripcion">
+                      <%= `${productList[i].brand} ${productList[i].model}` %>
+                    </h3>
+                  </a>
                 </div>
               </div>
               <% } %>

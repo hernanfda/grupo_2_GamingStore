@@ -481,13 +481,6 @@ video {
   }
 
 
-  /*--------DESACTIVA LINKS ARTICULO------*/
-  section a {
-    pointer-events: none;
-    cursor: default;
-    text-decoration: none;
-    width: 100%;
-  }
 
   /*--------DESCRIPCIONES DE PRODUCTO------*/
   .especificaciones {
