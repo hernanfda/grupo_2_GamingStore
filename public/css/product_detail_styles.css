@@ -229,6 +229,12 @@ footer {
     height: 120px;
   }
 
+  .backbtn-modifier {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
   section {
     display: flex;
     flex-direction: row;
