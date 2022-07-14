@@ -1,95 +1,8 @@
 const { urlencoded } = require("express")
+const fs = require("fs");
+const productList = require("../data/products-list.json");
 
-const productList = [
-    {
-        id: 1,
-        brand: "LOGITECH",
-        model: "G413",
-        type: "keyboard",
-        price: 10499,
-        image: "/img/product-detail/Product_Keyboard_Logitech_G413_1.webp",
-        offers: false, //Va a la seccion "en oferta"
-        popular: true, //Va a la seccion "destacados"
-        description: "TECLADO MECÁNICO CON RETROILUMINACIÓN PARA JUEGOS",
-    },
-    {
-        id: 2,
-        brand: "REDDRAGON",
-        model: "FIZZ K617",
-        type: "keyboard",
-        price: 8499,
-        image: "/img/product-detail/Product_Keyboard_REDRAGON_FIZZ_K617_1.webp",
-        offers: true,
-        popular: false,
-        description: "TECLADO MECÁNICO CON RETROILUMINACIÓN PARA JUEGOS",
-    },
-    {
-        id: 3,
-        brand: "REDDRAGON",
-        model: "STORM M808",
-        type: "mouse",
-        price: 6299,
-        image: "/img/product-detail/Product_Mouse_REDRAGON_STORM_M808_1.webp",
-        offers: true,
-        popular: false,
-        description: "TECLADO MECÁNICO CON RETROILUMINACIÓN PARA JUEGOS",
-    },
-    {
-        id: 4,
-        brand: "LOGITECH",
-        model: "PRO WIRELESS",
-        type: "mouse",
-        price: 9499,
-        image: "/img/product-detail/Product_Mouse_Logitech_PRO_1.webp",
-        offers: false,
-        popular: true,
-        description: "TECLADO MECÁNICO CON RETROILUMINACIÓN PARA JUEGOS",
-    },
-    {
-        id: 5,
-        brand: "REDDRAGON",
-        model: "H510 ZEUS-X",
-        type: "headset",
-        price: 10799,
-        image: "/img/product-detail/Product_Headset_REDRAGON_H510_ZEUS-X_1.webp",
-        offers: true,
-        popular: false,
-        description: "TECLADO MECÁNICO CON RETROILUMINACIÓN PARA JUEGOS",
-    },
-    {
-        id: 6,
-        brand: "LOGITECH",
-        model: "G733",
-        type: "headset",
-        price: 21799,
-        image: "/img/product-detail/Product_Headset_Logitech_G733_1.webp",
-        offers: false,
-        popular: true,
-        description: "TECLADO MECÁNICO CON RETROILUMINACIÓN PARA JUEGOS",
-    },
-    {
-        id: 7,
-        brand: "SECRETLAB",
-        model: "TITANXL",
-        type: "chair",
-        price: 38000,
-        image: "/img/product-detail/Product_GamingChairs_SecretLab_TitanXL_01.webp",
-        offers: false,
-        popular: false,
-        description: "TECLADO MECÁNICO CON RETROILUMINACIÓN PARA JUEGOS",
-    },
-    {
-        id: 8,
-        brand: "CORSAIR",
-        model: "T3 RUSH",
-        type: "chair",
-        price: 84899,
-        image: "/img/product-detail/Product_GamingChairs_Corsair_T3_RUSH_01.webp",
-        offers: true,
-        popular: false,
-        description: "TECLADO MECÁNICO CON RETROILUMINACIÓN PARA JUEGOS",
-    },
-]
+
 
 const productControllers = {
     productCart: (req, res) => {
@@ -110,12 +23,27 @@ const productControllers = {
 
         res.render('products/details', { styles: "product_detail_styles", product: product })
     },
-    add: (req, res) => {
+    addProduct: (req, res) => {
         res.render('products/add', { styles: "register_login" })
     },
-    modify: (req, res) => {
-        res.render('products/modify', { styles: "register_login" })
+    saveProduct: (req, res) => {
+        let product = req.body;
+        product.id = productList.length + 1;
+        if (req.file) {
+            product.image = req.file.filename;
+        }
+        productList.push(product);
+
+        fs.writeFileSync("./data/products-list.json", JSON.stringify(productList, null, 2));
+        res.redirect('/products/list');
+    },
+    editProduct: (req, res) => {
+        let id = req.params.id;
+        let product = productList.find(e => e.id == id)
+        res.render('products/edit', { styles: "register_login", product: product })
     }
 }
+
+//fs.writeFileSync('../data/products-list.json', JSON.stringify(productList, null, 2), 'utf-8')
 
 module.exports = productControllers

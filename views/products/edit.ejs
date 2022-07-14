@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <!-- HEAD  -->
+    <%- include('../partials/head') %>
+
+        <body>
+            <!-- HEADER  -->
+            <%- include('../partials/headerForm') %>
+
+                <main>
+                    <div class="register">
+                        <div class="register-title">
+                            <h1>Modificar Producto</h1>
+                        </div>
+                        <form action="/" method="GET">
+                            <div class="register-container">
+                                <label for="brand">Marca</label>
+                                <input type="text" name="brand" id="marca" class="text-input" value="<%= product.brand %>"  required />
+                                <!-- <span>
+                        <i class="fa fa-user-circle form-icons"></i>
+                    </span> -->
+                            </div>
+                            <div class="register-container">
+                                <label for="model">Modelo</label>
+                                <input type="text" name="model" id="modelo" class="text-input" value="<%= product.model %>" required />
+                            </div>
+
+                            <div class="register-container">
+                                <label for="type">Tipo</label>
+                                <input type="text" name="type" id="tipo" class="text-input" value="<%= product.type %>"  required />
+                            </div>
+
+                            <div class="register-container">
+                                <label for="price">Precio</label>
+                                <input type="text" name="price" id="price" class="text-input" value="<%= product.price %>"  required />
+                            </div>
+
+                            <div class="register-container">
+                                <label for="description">Descripción</label>
+                                <input type="text" name="description" id="description" class="text-input" value="<%= product.description %>"  required />
+                            </div>
+
+                            <div>
+                                <label for="offers">Oferta</label>
+                                <input type="checkbox" name="offers" id="offers" value="<%= product.offers %>" >
+                                <label for="popular">Destacado</label>
+                                <input type="checkbox" name="popular" id="popular" value="<%= product.popular %>" >
+                            </div>
+
+                            <div class="register-container">
+                                <label for="image">Imagen</label>
+                                <input type="file" name="image" id="imagenProducto" required />
+                            </div>
+
+                            <div class="btns-container">
+                                <button type="submit" name="enviar" class="btn-crud">
+                                    MODIFICAR
+                                </button>
+                                <button type="reset" name="enviar" class="btn-crud">
+                                    DESCARTAR
+                                </button>
+                            </div>
+                        </form>
+
+                    </div>
+                    </div>
+                </main>
+                <!-- FOOTER -->
+                <%- include('../partials/footer') %>
+
+                    <script src="/js/show_hide_pw.js"></script>
+        </body>
+
+</html>

@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "first_name": "Colby",
+        "last_name": "Natt",
+        "email": "cnatt0@amazon.com",
+        "birth-date": "11/2/1987",
+        "password": "df3960794524774ab62fde7dcac16cbe9af4e378",
+        "user-role": ""
+    },
+    {
+        "id": 2,
+        "first_name": "Robinetta",
+        "last_name": "Golder",
+        "email": "rgolder1@skype.com",
+        "birth-date": "8/30/2005",
+        "password": "df3960794524774ab62fde7dcac16cbe9af4e378",
+        "user-role": ""
+    },
+    {
+        "id": 3,
+        "first_name": "Frayda",
+        "last_name": "Saladin",
+        "email": "fsaladin2@theguardian.com",
+        "birth-date": "10/8/2006",
+        "password": "df3960794524774ab62fde7dcac16cbe9af4e378",
+        "user-role": ""
+    },
+    {
+        "id": 4,
+        "first_name": "Tab",
+        "last_name": "Simonnot",
+        "email": "tsimonnot3@123-reg.co.uk",
+        "birth-date": "1/11/1983",
+        "password": "df3960794524774ab62fde7dcac16cbe9af4e378",
+        "user-role": ""
+    },
+    {
+        "id": 5,
+        "first_name": "Brook",
+        "last_name": "MattiCCI",
+        "email": "bmatticci4@businessweek.com",
+        "birth-date": "10/31/1963",
+        "password": "df3960794524774ab62fde7dcac16cbe9af4e378",
+        "user-role": ""
+    },
+    {
+        "id": 6,
+        "first_name": "Jamil",
+        "last_name": "Turmall",
+        "email": "jturmall5@4shared.com",
+        "birth-date": "6/19/1986",
+        "password": "df3960794524774ab62fde7dcac16cbe9af4e378",
+        "user-role": ""
+    },
+    {
+        "id": 7,
+        "first_name": "Malia",
+        "last_name": "Weed",
+        "email": "mweed6@photobucket.com",
+        "birth-date": "6/2/1984",
+        "password": "df3960794524774ab62fde7dcac16cbe9af4e378",
+        "user-role": ""
+    },
+    {
+        "id": 8,
+        "first_name": "Alicea",
+        "last_name": "Stanyforth",
+        "email": "astanyforth7@google.ru",
+        "birth-date": "9/25/2020",
+        "password": "df3960794524774ab62fde7dcac16cbe9af4e378",
+        "user-role": ""
+    },
+    {
+        "id": 9,
+        "first_name": "Cchaddie",
+        "last_name": "Brandi",
+        "email": "cbrandi8@xing.com",
+        "birth-date": "2/17/1967",
+        "password": "df3960794524774ab62fde7dcac16cbe9af4e378",
+        "user-role": ""
+    },
+    {
+        "id": 10,
+        "first_name": "Dory",
+        "last_name": "Skerratt",
+        "email": "dskerratt9@fda.gov",
+        "birth-date": "8/10/1953",
+        "password": "df3960794524774ab62fde7dcac16cbe9af4e378",
+        "user-role": ""
+    }
+]
