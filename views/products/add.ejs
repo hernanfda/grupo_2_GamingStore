@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- HEAD  -->
-<%- include('../partials/head') %>
+    <!-- HEAD  -->
+    <%- include('../partials/head') %>
 
-    <body>
-        <!-- HEADER  -->
-        <%- include('../partials/headerForm') %>
+        <body>
+            <!-- HEADER  -->
+            <%- include('../partials/headerForm') %>
 
-            <main>
-                <div class="register">
-                    <div class="register-title">
-                        <h1>Crear Producto</h1>
-                    </div>
-          <form action="/" method="GET">
+                <main>
+                    <div class="register">
+                        <div class="register-title">
+                            <h1>Crear Producto</h1>
+                        </div>
+                        <form action="pepe/list" method="POST">
                             <div class="register-container">
                                 <label for="brand">Marca</label>
                                 <input type="text" name="brand" id="marca" class="text-input" required />
@@ -36,7 +36,7 @@
                                 <label for="price">Precio</label>
                                 <input type="text" name="price" id="price" class="text-input" required />
                             </div>
-                            
+
                             <div class="register-container">
                                 <label for="description">Descripción</label>
                                 <input type="text" name="description" id="description" class="text-input" required />
@@ -64,13 +64,13 @@
                             </div>
                         </form>
 
-                </div>
-                </div>
-            </main>
-            <!-- FOOTER -->
-            <%- include('../partials/footer') %>
+                    </div>
+                    </div>
+                </main>
+                <!-- FOOTER -->
+                <%- include('../partials/footer') %>
 
-                <script src="/js/show_hide_pw.js"></script>
-    </body>
+                    <script src="/js/show_hide_pw.js"></script>
+        </body>
 
 </html>

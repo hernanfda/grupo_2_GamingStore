@@ -27,6 +27,7 @@ const productControllers = {
         res.render('products/add', { styles: "register_login" })
     },
     saveProduct: (req, res) => {
+        console.log(req.body);
         let product = req.body;
         product.id = productList.length + 1;
         if (req.file) {
@@ -35,7 +36,7 @@ const productControllers = {
         productList.push(product);
 
         fs.writeFileSync("./data/products-list.json", JSON.stringify(productList, null, 2));
-        res.redirect('/products/list');
+        res.redirect('products/list');
     },
     editProduct: (req, res) => {
         let id = req.params.id;
