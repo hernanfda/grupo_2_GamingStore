@@ -13,7 +13,7 @@
                         <div class="register-title">
                             <h1>Crear Producto</h1>
                         </div>
-                        <form action="pepe/list" method="POST">
+                        <form action="/products/list" method="POST" enctype="multipart/form-data">
                             <div class="register-container">
                                 <label for="brand">Marca</label>
                                 <input type="text" name="brand" id="marca" class="text-input" required />
@@ -43,8 +43,8 @@
                             </div>
 
                             <div>
-                                <label for="offers">Oferta</label>
-                                <input type="checkbox" name="offer" id="offer">
+                                <label for="offer">Oferta</label>
+                                <input type="checkbox" name="offer" id="offer" >
                                 <label for="popular">Destacado</label>
                                 <input type="checkbox" name="popular" id="popular">
                             </div>
@@ -55,10 +55,10 @@
                             </div>
 
                             <div class="btns-container">
-                                <button type="submit" name="enviar" class="btn-crud">
+                                <button type="submit" class="btn-crud">
                                     CREAR
                                 </button>
-                                <button type="reset" name="enviar" class="btn-crud">
+                                <button type="reset"class="btn-crud">
                                     DESCARTAR
                                 </button>
                             </div>
