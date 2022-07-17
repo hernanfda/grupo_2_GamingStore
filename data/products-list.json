@@ -86,5 +86,16 @@
     "offers": true,
     "popular": false,
     "description": "TECLADO MECÁNICO CON RETROILUMINACIÓN PARA JUEGOS"
+  },
+  {
+    "brand": "Diego Maradona",
+    "model": "1969",
+    "type": "mejor",
+    "price": "10",
+    "description": "el diego no es un persona cualquiera",
+    "offers": false,
+    "id": 9,
+    "popular": false,
+    "image": "product-1658016989770-diego.png"
   }
 ]
