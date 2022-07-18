@@ -46,13 +46,15 @@
                                 <input type="text" name="description" id="description" class="text-input"
                                     value="<%= product.description %>" required />
                             </div>
-<!-- POR AHORA SIN MANDAR COMO ESTABA EL CHECKBOX, PORQUE NO SE COMO 
-HACER PARA QUE LO TOME CHEKED. ME REFIERO AL VALUE="" -->
                             <div>
                                 <label for="offers">Oferta</label>
-                                <input type="checkbox" name="offers" id="offers">
+                                <input type="checkbox" name="offers" id="offers" <% if (product.offers==true) { %>
+                                checked
+                                <% } %>>
                                 <label for="popular">Destacado</label>
-                                <input type="checkbox" name="popular" id="popular">
+                                <input type="checkbox" name="popular" id="popular" <% if (product.popular==true) { %>
+                                checked
+                                <% } %>>
                             </div>
 
                             <div class="register-container">
