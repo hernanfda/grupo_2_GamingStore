@@ -31,7 +31,13 @@
 
             <p class="description">DESCRIPCIÓN:</br>
               <%= product.description %></p>
-            <button id="agregar" type="submit">Agregar al carrito</button>
+            <button class="btn-agregar" type="submit">Agregar al carrito</button>
+            <a href="/products/edit/<%=product.id%>">
+            <button class="btn-edit" type="submit">Editar</button>
+            </a>
+            <form action="/products/delete/<%=product.id%>?_method=delete" method="POST">
+            <button class="btn-delete" id="eliminar" type="submit">Eliminar</button>
+            </form>
           </div>
 
           </div>

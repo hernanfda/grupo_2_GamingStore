@@ -121,11 +121,17 @@ h4 {
   text-align: center;
 }
 /*--------BOTON CARRITO------*/
-#agregar {
+.btn-agregar, .btn-edit, .btn-delete {
   padding: 10px;
   color: white;
   border-radius: 10px;
   background-color: rgb(111, 0, 209);
+}
+.btn-edit {
+  background-color: rgb(123, 125, 3);
+}
+.btn-delete {
+  background-color: rgb(209, 0, 0);
 }
 
 p {

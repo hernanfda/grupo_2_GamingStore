@@ -65,6 +65,13 @@ const productControllers = {
         fs.writeFileSync("./data/products-list.json", JSON.stringify(productList, null, 2));
         res.redirect("/products");
     },
+    deleteProduct: (req, res) => {
+        let id = req.params.id;
+        let index = productList.findIndex((e) => e.id == id);
+        productList.splice(index, 1);
+        fs.writeFileSync("./data/products-list.json", JSON.stringify(productList, null, 2));
+        res.redirect("/products");
+    }
 };
 
 function setOffersAndPopular(req, product) {

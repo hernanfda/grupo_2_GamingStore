@@ -48,9 +48,9 @@
     "brand": "REDDRAGON",
     "model": "H510 ZEUS-X",
     "type": "headset",
-    "price": 10799,
+    "price": "10799",
     "image": "Product_Headset_REDRAGON_H510_ZEUS-X_1.webp",
-    "offers": true,
+    "offers": false,
     "popular": false,
     "description": "TECLADO MECÁNICO CON RETROILUMINACIÓN PARA JUEGOS"
   },
@@ -86,16 +86,5 @@
     "offers": true,
     "popular": false,
     "description": "TECLADO MECÁNICO CON RETROILUMINACIÓN PARA JUEGOS"
-  },
-  {
-    "brand": "Diego Maradona",
-    "model": "1969",
-    "type": "mejor",
-    "price": "10",
-    "description": "el diego no es un persona cualquiera",
-    "offers": false,
-    "id": 9,
-    "popular": false,
-    "image": "product-1658016989770-diego.png"
   }
 ]
