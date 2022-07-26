@@ -96,3 +96,17 @@ Pendientes:
 Se ajustó el css para corregir algunos errores y se subio el repo a git.
 
 SPRINT 3 LISTO PARA ENTREGAR.
+
+## daily sprint 4
+
+Mantenemos metodología de trabajo. No se requieren reuniones diarias. Mantenemos comunicación diariamente por whatsapp y alineamos días para reunirnos.
+
+
+## 14/07 primera reunion. Trabajo en form edit, create, agregando multer.
+Reunión muy productiva, pudimos avanzar en el edit,create y agregamos el uso de multer. 
+Pendiente: Delete.
+
+## 25/07 segunda reunion. Trabajando en el Delete.
+Se finalizó el delete.
+
+SPRINT 4 LISTO PARA ENTREGAR.
