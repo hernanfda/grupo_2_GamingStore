@@ -13,10 +13,18 @@
                     <div class="register-title">
                         <h1>Crea tu cuenta</h1>
                     </div>
-                    <form action="/" method="GET">
+                    <form action="/users/register" method="POST" enctype="multipart/form-data">
                         <div class="register-container">
                             <label for="nombre">Nombre</label>
-                            <input type="text" name="nombre" id="nombre" class="text-input" required />
+                            <input type="text" name="nombre" id="nombre" class="text-input" value="<%= locals.old ? old.nombre: null %>" required />
+                            
+                            <% if(locals.errors && errors.nombre) { %>
+                                <div class="mensajeError">
+                                    <h4><%= errors.nombre.msg %></h4>
+                                </div>
+                            <% } %>
+                            
+
                             <!-- <span>
                         <i class="fa fa-user-circle form-icons"></i>
                     </span> -->
@@ -24,42 +32,59 @@
 
                         <div class="register-container">
                             <label for="nombre">Apellido</label>
-                            <input type="text" name="apellido" id="apellido" class="text-input" required />
+                            <input type="text" name="apellido" id="apellido" class="text-input">
+                            <% if(locals.errors && errors.apellido) { %>
+                                <div class="mensajeError">
+                                    <h4><%= errors.apellido.msg %></h4>
+                                </div>
+                            <% } %>
                         </div>
 
                         <div class="register-container">
-                            <label for="usuario">Correo electronico</label>
-                            <input type="email" name="correo-electronico" id="correo-electronico" class="text-input"
-                                required />
+                            <label for="email">Correo electronico</label>
+                            <input type="email" name="email" id="email" class="text-input" value="<%= locals.old ? old.email: null %>" required />
+                            <% if(locals.errors && errors.email) { %>
+                                <div class="mensajeError">
+                                    <h4><%= errors.email.msg %></h4>
+                                </div>
+                            <% } %>
                         </div>
 
                         <div class="register-container">
-                            <label for="fecha-de-nacimiento">Fecha de nacimiento</label>
-                            <input type="date" name="fecha-de-nacimiento" id="fecha-de-nacimiento" required />
+                            <label for="birthDate">Fecha de nacimiento</label>
+                            <input type="date" name="birthDate" id="birthDate" value="<%= locals.old ? old.birthDate: null %>" required />
+                            <% if(locals.errors && errors.birthDate) { %>
+                                <div class="mensajeError">
+                                    <h4><%= errors.birthDate.msg %></h4>
+                                </div>
+                            <% } %>
                         </div>
 
                         <div class="register-container">
-                            <label for="clave">Contraseña</label>
-                            <input type="password" name="contraseña" id="pwd" class="text-input" required />
+                            <label for="password">Contraseña</label>
+                            <input type="password" name="password" id="pwd" class="text-input" value="<%= locals.old ? old.password: null %>" required />
                             <span>
                                 <i class="fa fa-eye" aria-hidden="true" type="button" id="eye"></i>
                             </span>
+                            <% if(locals.errors && errors.password) { %>
+                                <div class="mensajeError">
+                                    <h4><%= errors.password.msg %></h4>
+                                </div>
+                            <% } %>
                         </div>
 
                         <div class="register-container">
-                            <label for="confirmar-clave">Confirmar contraseña</label>
-                            <input type="password" name="confirmar-contraseña" id="confirmar-contraseña"
-                                class="text-input" required />
-                        </div>
-
-                        <div class="register-container">
-                            <p>Revisa los terminos y condiciones de nuestros servicios</p>
-                            <input type="checkbox" name="tos" id="tos" class="text-input" required />
-                            <label for="tos">Acepto los terminos y condiciones</label>
+                            <label for="image">Imagen</label>
+                            <input type="file" name="userAvatar" id="imagenProducto" />
+                            <% if(locals.errors && errors.userAvatar) { %>
+                                <div class="mensajeError">
+                                    <h4><%= errors.userAvatar.msg %></h4>
+                                </div>
+                            <% } %>
                         </div>
 
                         <div class="btns-container">
-                            <button type="submit" name="enviar">
+                            <button type="submit">
                                 CREAR
                             </button>
                         </div>
@@ -69,8 +94,8 @@
                         <a href="/users/login"> <button type="submit" name="ingresar">
                                 INGRESAR
                             </button></a>
-
                     </div>
+
                 </div>
             </main>
 

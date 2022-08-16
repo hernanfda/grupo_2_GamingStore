@@ -12,9 +12,12 @@
                 <div class="register-title">
                     <h1>Ingresá</h1>
                 </div>
-                <form action="/" method="get" class="register-container">
+                <form action="/users/login" method="POST" class="register-container">
                     <div class="control-formulario register-container">
-                        <input type="text" name="username" placeholder="Nombre de usuario" class="text-input" required>
+                        <input type="text" name="email" placeholder="Email de usuario" class="text-input" required>
+                        <% if(locals.errors && errors.email) { %>
+                            <h3><%= errors.email.msg %></h3>
+                        <% } %>
                     </div>
                     <div class="register-container">
                         <input type="password" name="password" placeholder="Contraseña" class="text-input" id="pwd"
@@ -22,7 +25,10 @@
                         <span>
                             <i class="fa fa-eye" aria-hidden="true" type="button" id="eye"></i>
                         </span>
-                    </div>
+                        <% if(locals.errors && errors.email) { %>
+                            <h3><%= errors.email.msg %></h3>
+                        <% } %>
+                        </div>
                     <div class="register-container btns-container">
                         <button type="submit" class="btn-login">Ingresar</button>
                     </div>
@@ -34,7 +40,7 @@
                             <p>¿No tenés cuenta?</p>
                         </a>
                     </div>
-                </form>
+                    </form>
             </main>
 
             <!-- FOOTER -->
