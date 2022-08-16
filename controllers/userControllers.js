@@ -55,7 +55,7 @@ const userControllers = {
 
 
         fs.writeFileSync("./data/users.json", JSON.stringify(allUsers, null, 2))
-        res.render("users/login");
+        res.render("users/login", { styles: "register_login" });
     },
 }
 

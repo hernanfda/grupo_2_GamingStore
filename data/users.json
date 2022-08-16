@@ -267,5 +267,25 @@
     "userAvatar": "userAvatar-1660612513401-Dope-PC-Wallpaper-4k.jpg",
     "userRole": "",
     "id": 27
+  },
+  {
+    "nombre": "joselito3",
+    "apellido": "TERCERO",
+    "email": "joselito3@gmail.com",
+    "birthDate": "2222-02-22",
+    "password": "$2a$10$epLABBy4oHCrpIrQ5r.7AeotrLOHqKt4yAKmHdIUWP45NqT5KH6.C",
+    "userAvatar": "userAvatar-1660617650989-Best-Live-Wallpaper-Apps-for-Android.jpg",
+    "userRole": "",
+    "id": 28
+  },
+  {
+    "nombre": "joselito3",
+    "apellido": "TERCERO",
+    "email": "joselito3@gmail.com",
+    "birthDate": "2222-02-22",
+    "password": "$2a$10$jYkeUXipn1I.IZUmfFH4wOcwTH/2yZQXA0tQmekXjhXLU7csuUcU6",
+    "userAvatar": "userAvatar-1660617714559-Best-Live-Wallpaper-Apps-for-Android.jpg",
+    "userRole": "",
+    "id": 29
   }
 ]
