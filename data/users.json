@@ -287,5 +287,15 @@
     "userAvatar": "userAvatar-1660617714559-Best-Live-Wallpaper-Apps-for-Android.jpg",
     "userRole": "",
     "id": 29
+  },
+  {
+    "nombre": "joselio",
+    "apellido": "adasdas",
+    "email": "joselito4@gmail.com",
+    "birthDate": "2222-02-22",
+    "password": "$2a$10$EG1INvLeJqt1FwOFZx6A3eD6gCPz5BkHXxO6D.QNeTwCLiQGDnrya",
+    "userAvatar": "userAvatar-1660618605983-Cool-Desktop-Background-4k.jpg",
+    "userRole": "",
+    "id": 30
   }
 ]

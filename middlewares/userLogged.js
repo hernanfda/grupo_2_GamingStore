@@ -7,7 +7,6 @@ function userLogged(req, res, next) {
         res.locals.isLogged = true;
         res.locals.userLogged = req.cookies.userCookie;
     }
-    console.log(res.locals.userLogged)
     next();
 }
 

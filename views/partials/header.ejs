@@ -8,8 +8,22 @@
     <div>
         <i class="fa-solid fa-magnifying-glass"></i>
     </div>
-    <a href="/users/login"><i class="fa-solid fa-user"></i></a>
-    
+    <div class="userPanel">
+        <% if(locals.isLogged) { %>
+            <div class="profile">
+                <a href="/users/profile">
+                    <div class="userProfile">
+                        <img src="/img/usersAvatar/<%= locals.userLogged.userAvatar %>">
+                    </div>
+                </a>
+            </div>
+            <a href="users/logout">Logout</a>
+        <% } else { %>
+                <a href="/users/login"><i class="fa-solid fa-user"></i></a>
+                <a href="/users/register">Register</a>
+                <a href="/users/login">Login</a>
+            <% } %>
+    </div>
 
     <nav class="navbar">
         <!--Podrian ir links a productos destacados de cada uno?-->

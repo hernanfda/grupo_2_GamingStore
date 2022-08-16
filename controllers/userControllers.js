@@ -40,22 +40,40 @@ const userControllers = {
                 styles: "register_login",
             })
         }
-        let newUser = {
-            nombre: req.body.nombre,
-            apellido: req.body.apellido,
-            email: req.body.email,
-            birthDate: req.body.birthDate,
-            password: bcrypt.hashSync(req.body.password, 10),
-            userAvatar: req.file.filename,
-            userRole: "",
-            id: allUsers.length + 1,
+
+        let userExists = allUsers.find(user => user.email === req.body.email);
+        if(userExists) {
+            return res.render('users/register', {
+                errors:{
+                    email:{
+                        msg:'Ya esta registrado este email'
+                    }
+                },
+                styles: "register_login"
+            })
+        }else {
+            let newUser = {
+                nombre: req.body.nombre,
+                apellido: req.body.apellido,
+                email: req.body.email,
+                birthDate: req.body.birthDate,
+                password: bcrypt.hashSync(req.body.password, 10),
+                userAvatar: req.file.filename,
+                userRole: "",
+                id: allUsers.length + 1,
+            }
+    
+            allUsers.push(newUser)
+    
+    
+            fs.writeFileSync("./data/users.json", JSON.stringify(allUsers, null, 2))
+            res.render("users/login", { styles: "register_login" });
         }
-
-        allUsers.push(newUser)
-
-
-        fs.writeFileSync("./data/users.json", JSON.stringify(allUsers, null, 2))
-        res.render("users/login", { styles: "register_login" });
+    },
+    logout: (req, res) => {
+        res.clearCookie('userCookie');
+        req.session.destroy();
+        res.redirect('/');
     },
 }
 

@@ -7,6 +7,7 @@ const productRoutes = require('./routes/productRoutes');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const cookies = require('cookie-parser');
+const userLogged = require('./middlewares/userLogged');
 const PORT = process.env.PORT || 3000;
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -20,6 +21,7 @@ app.use(session({
   saveUninitialized: false,
 }));
 app.use(cookies());
+app.use(userLogged)
 
 // INDEX 
 app.use('/', mainRoutes);

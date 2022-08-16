@@ -5,9 +5,10 @@ const validator = require('../middlewares/validator');
 const multer = require('../middlewares/multer');
 const userLogged = require('../middlewares/userLogged')
 
-router.get("/login", userLogged,userControllers.login);
+router.get("/login", userLogged ,userControllers.login);
 router.post("/login", userControllers.processLogin);
 router.get("/register", userControllers.register);
 router.post("/register", multer.single('userAvatar'),validator.register, userControllers.processRegister);
+router.get("/logout", userControllers.logout);
 
 module.exports = router

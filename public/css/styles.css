@@ -42,6 +42,28 @@ nav {
   display: none;
 }
 
+.profile {
+  position: relative;
+}
+
+.userProfile {
+  position: absolute;
+  top: -40px;
+  width: 40px;
+  height: 40px;
+}
+
+.userProfile img {
+  border-radius: 50%;
+
+}
+
+.userPanel {
+  position: absolute;
+  right: 40px;
+  top: 50px;
+}
+
 /*--------CENTRADO EL LOGO EN EL HEADER------*/
 header .logo {
   position: absolute;
