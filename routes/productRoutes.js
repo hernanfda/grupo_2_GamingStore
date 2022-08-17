@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const productControllers = require('../controllers/productControllers');
-const upload = require('../middlewares/multer'); 
+const upload = require('../middlewares/multer');
+const adminMiddleware = require('../middlewares/adminMiddleware');
 
 //get all products
 router.get("/", productControllers.productList);
@@ -12,12 +13,12 @@ router.get("/details/:id", productControllers.productDetail);
 //filter by type
 router.get("/list/:type", productControllers.productFilter);
 //create and store product
-router.get("/create", productControllers.createProduct);
+router.get("/create", adminMiddleware, productControllers.createProduct);
 router.post("/", upload.single('image'), productControllers.saveProduct);
 //edit product
-router.get("/edit/:id", productControllers.editProduct);
+router.get("/edit/:id", adminMiddleware, productControllers.editProduct);
 router.put("/:id", upload.single('image'), productControllers.updateProduct);
 //delete product
-router.delete("/delete/:id", productControllers.deleteProduct);
+router.delete("/delete/:id", adminMiddleware, productControllers.deleteProduct);
 
 module.exports = router

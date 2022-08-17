@@ -14,7 +14,7 @@ const userControllers = {
             if(passwordCheck) {
                 delete userToLogin.password;
                 req.session.userLogged = userToLogin;
-                res.cookie('userCookie', req.session.userLogged, { maxAge: (1000 * 60) * 30 });
+                res.cookie('userCookie', userToLogin.email, { maxAge: (1000 * 60) * 30 });
                 return res.redirect('/')
             }
         }
@@ -74,6 +74,9 @@ const userControllers = {
         res.clearCookie('userCookie');
         req.session.destroy();
         res.redirect('/');
+    },
+    profile: (req, res) => {
+        return res.render('users/profile', {user: req.session.userLogged, styles: "register_login"})
     },
 }
 

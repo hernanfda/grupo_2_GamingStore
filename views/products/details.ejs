@@ -32,12 +32,14 @@
             <p class="description">DESCRIPCIÓN:</br>
               <%= product.description %></p>
             <button class="btn-agregar" type="submit">Agregar al carrito</button>
+            <% if(locals.userLogged.userRole == 2) { %>
             <a href="/products/edit/<%=product.id%>">
             <button class="btn-edit" type="submit">Editar</button>
             </a>
             <form action="/products/delete/<%=product.id%>?_method=delete" method="POST">
             <button class="btn-delete" id="eliminar" type="submit">Eliminar</button>
             </form>
+            <% } %>
           </div>
 
           </div>
