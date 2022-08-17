@@ -1,7 +1,9 @@
 const { validationResult } = require("express-validator")
 const fs = require('fs');
 const bcrypt = require('bcryptjs');
-const allUsers = require('../data/users.json');
+const path = require('path')
+const allUsersPath = path.resolve(__dirname,'../data/users.json');
+const allUsers = JSON.parse(fs.readFileSync(allUsersPath, 'utf-8'));
 
 const userControllers = {
     login: (req, res) => {
@@ -9,12 +11,15 @@ const userControllers = {
     },
     processLogin: (req, res) => {
         let userToLogin = allUsers.find(user => user.email === req.body.email);
+        console.log(req.body.remember_me)
         if(userToLogin) {
             let passwordCheck = bcrypt.compareSync(req.body.password, userToLogin.password);
             if(passwordCheck) {
                 delete userToLogin.password;
                 req.session.userLogged = userToLogin;
-                res.cookie('userCookie', userToLogin.email, { maxAge: (1000 * 60) * 30 });
+                if(req.body.remember_me == "on") {
+                    res.cookie('userEmail', userToLogin.email, { maxAge: (1000 * 60) * 30 });
+                }
                 return res.redirect('/')
             }
         }
@@ -71,7 +76,7 @@ const userControllers = {
         }
     },
     logout: (req, res) => {
-        res.clearCookie('userCookie');
+        res.clearCookie('userEmail');
         req.session.destroy();
         res.redirect('/');
     },
