@@ -70,7 +70,7 @@ const userControllers = {
         res.redirect('/');
     },
     profile: (req, res) => {
-        return res.render('users/profile', { user: req.session.userLogged, styles: "register_login" })
+        return res.render('users/profile', { user: req.session.userLogged, styles: "userProfile" })
     },
 }
 

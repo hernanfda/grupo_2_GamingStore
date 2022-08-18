@@ -8,83 +8,58 @@
         <!-- HEADER  -->
         <%- include('../partials/headerForm') %>
 
-        <h3>Bienvenido <%= user.nombre %></h3>
-        <form action="/users/edit/<%= user.id %>" method="POST" enctype="multipart/form-data">
-            <div class="register-container">
-                <label for="nombre">Nombre</label>
-                <input type="text" name="nombre" id="nombre" class="text-input" value="<%= locals.old ? old.nombre: null %>" required />
-                
-                <% if(locals.errors && errors.nombre) { %>
-                    <div class="mensajeError">
-                        <h4><%= errors.nombre.msg %></h4>
+        <main>
+            <div class="register">
+                <div class="register-title">
+                    <h1>Bienvenido a GX</h1>
+                    <h1><%= user.nombre %></h1>
+                </div>
+                <div class="UserAvatar">
+                    <img id="Avatar" src="/img/usersAvatar/<%=user.userAvatar%>"/>
+                  </div>
+
+                <prueba>
+                    <div class="register-container">
+                        <label for="name">Nombre</label>
+                        <input type="text" name="name" id="nombre" class="text-input"
+                            value="<%= user.nombre %>" required />
+
                     </div>
-                <% } %>
-                
-
-                <!-- <span>
-            <i class="fa fa-user-circle form-icons"></i>
-        </span> -->
-            </div>
-
-            <div class="register-container">
-                <label for="nombre">Apellido</label>
-                <input type="text" name="apellido" id="apellido" class="text-input">
-                <% if(locals.errors && errors.apellido) { %>
-                    <div class="mensajeError">
-                        <h4><%= errors.apellido.msg %></h4>
+                    <div class="register-container">
+                        <label for="surname">Apellido</label>
+                        <input type="text" name="surname" id="apellido" class="text-input"
+                            value="<%= user.apellido %>" required />
                     </div>
-                <% } %>
-            </div>
 
-            <div class="register-container">
-                <label for="email">Correo electronico</label>
-                <input type="email" name="email" id="email" class="text-input" value="<%= locals.old ? old.email: null %>" required />
-                <% if(locals.errors && errors.email) { %>
-                    <div class="mensajeError">
-                        <h4><%= errors.email.msg %></h4>
+                    <div class="register-container">
+                        <label for="email">Email</label>
+                        <input type="text" name="email" id="email" class="text-input" value="<%= user.email %>"
+                            required />
                     </div>
-                <% } %>
-            </div>
 
-            <div class="register-container">
-                <label for="birthDate">Fecha de nacimiento</label>
-                <input type="date" name="birthDate" id="birthDate" value="<%= locals.old ? old.birthDate: null %>" required />
-                <% if(locals.errors && errors.birthDate) { %>
-                    <div class="mensajeError">
-                        <h4><%= errors.birthDate.msg %></h4>
-                    </div>
-                <% } %>
-            </div>
+                    <div class="register-container">
+                        <label for="birthDate">Fecha de nacimiento</label>
+                        <input type="text" name="birthDate" id="birthDate" class="text-input"
+                            value="<%= user.birthDate %>" required />
+                    </div>    
+                    
 
-            <div class="register-container">
-                <label for="password">Contraseña</label>
-                <input type="password" name="password" id="pwd" class="text-input" value="<%= locals.old ? old.password: null %>" required />
-                <span>
-                    <i class="fa fa-eye" aria-hidden="true" type="button" id="eye"></i>
-                </span>
-                <% if(locals.errors && errors.password) { %>
-                    <div class="mensajeError">
-                        <h4><%= errors.password.msg %></h4>
-                    </div>
-                <% } %>
-            </div>
 
-            <div class="register-container">
-                <label for="image">Imagen</label>
-                <input type="file" name="userAvatar" id="imagenProducto" />
-                <% if(locals.errors && errors.userAvatar) { %>
-                    <div class="mensajeError">
-                        <h4><%= errors.userAvatar.msg %></h4>
-                    </div>
-                <% } %>
-            </div>
+                     <div class="btns-container">
+                        <a href="/users/logout">
+                            <button type="submit" class="btn-crud">
+                                LOGOUT
+                            </button>
+                            </a>
+                        </div>
+                    
 
-            <div class="btns-container">
-                <button type="submit">
-                    Editar
-                </button>
+                    </prueba>
+
             </div>
-        </form>
+            </div>
+        </main>   
+        
             <!-- FOOTER -->
             <%- include('../partials/footer') %>
 

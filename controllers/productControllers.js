@@ -28,7 +28,7 @@ const productControllers = {
         res.render("products/details", {
             styles: "product_detail_styles",
             product: product,
-        });
+          });
     },
     createProduct: (req, res) => {
         res.render("products/create", { styles: "register_login" });

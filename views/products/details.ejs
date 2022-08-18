@@ -32,6 +32,7 @@
             <p class="description">DESCRIPCIÓN:</br>
               <%= product.description %></p>
             <button class="btn-agregar" type="submit">Agregar al carrito</button>
+
             <% if(locals.userLogged.userRole == 2) { %>
             <a href="/products/edit/<%=product.id%>">
             <button class="btn-edit" type="submit">Editar</button>

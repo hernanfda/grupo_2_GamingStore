@@ -42,25 +42,17 @@ nav {
   display: none;
 }
 
-.profile {
-  position: relative;
-}
-
-.userProfile {
-  position: absolute;
-  top: -40px;
-  width: 40px;
-  height: 40px;
-}
 
 .userProfile img {
   border-radius: 50%;
+  width: 34px;
+  height: 34px;
 }
 
 .userPanel {
   position: absolute;
-  right: 40px;
-  top: 50px;
+  right: 106px;
+  top: 17px;
 }
 
 /*--------CENTRADO EL LOGO EN EL HEADER------*/
@@ -74,14 +66,20 @@ header .logo {
 /*--------TAMAÑO ICONOS/POSITION/FIJADO AL TOP------*/
 .fa-bars,
 .fa-magnifying-glass,
-.fa-cart-shopping,
-.fa-user {
+.fa-cart-shopping {
   height: 18px;
   width: 18px;
   color: white;
   font-size: 30px;
   position: absolute;
   top: 17px;
+}
+
+.fa-user {
+  height: 18px;
+  width: 18px;
+  color: white;
+  font-size: 30px;
 }
 
 /*--------ICONO DE USER OCULTO------*/
@@ -409,9 +407,20 @@ video {
 
   /*--------ALINEACION USER------*/
   .fa-solid.fa-user {
-    display: block;
-    right: 80px;
+    display: flex;
+    justify-content: flex-end;
+  }
 
+  .userProfile img {
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+  }
+  
+  .userPanel {
+    position: absolute;
+    right: 65px;
+    top: 17px;
   }
 
   /*--------ALINEACIÓN LUPA------*/
