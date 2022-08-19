@@ -1,6 +1,8 @@
 const { urlencoded } = require("express");
 const fs = require("fs");
-const productList = require("../data/products-list.json");
+const path = require("path");
+const productListPath = path.resolve(__dirname, "../data/products-list.json");
+const productList = JSON.parse(fs.readFileSync(productListPath, "utf8"));
 
 const productControllers = {
     productCart: (req, res) => {

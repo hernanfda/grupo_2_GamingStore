@@ -11,58 +11,55 @@
         <main>
             <div class="register">
                 <div class="register-title">
-                    <h1>Bienvenido a GX</h1>
+                    <h1>Bienvenido a GX,</h1>
                     <h1><%= user.nombre %></h1>
                 </div>
                 <div class="UserAvatar">
                     <img id="Avatar" src="/img/usersAvatar/<%=user.userAvatar%>"/>
                   </div>
 
-                <prueba>
+                <form>
                     <div class="register-container">
                         <label for="name">Nombre</label>
                         <input type="text" name="name" id="nombre" class="text-input"
-                            value="<%= user.nombre %>" required />
+                            value="<%= user.nombre %>" disabled />
 
                     </div>
                     <div class="register-container">
                         <label for="surname">Apellido</label>
                         <input type="text" name="surname" id="apellido" class="text-input"
-                            value="<%= user.apellido %>" required />
+                            value="<%= user.apellido %>" disabled />
                     </div>
 
                     <div class="register-container">
                         <label for="email">Email</label>
                         <input type="text" name="email" id="email" class="text-input" value="<%= user.email %>"
-                            required />
+                        disabled />
                     </div>
 
                     <div class="register-container">
                         <label for="birthDate">Fecha de nacimiento</label>
                         <input type="text" name="birthDate" id="birthDate" class="text-input"
-                            value="<%= user.birthDate %>" required />
+                            value="<%= user.birthDate %>" disabled />
                     </div>    
                     
+                        </form>
 
-
-                     <div class="btns-container">
-                        <a href="/users/logout">
-                            <button type="submit" class="btn-crud">
-                                LOGOUT
-                            </button>
+                        <div class="btns-container">
+                            <a href="/users/logout">
+                                <button type="submit" class="btn-crud">
+                                    LOGOUT
+                                </button>
                             </a>
                         </div>
 
                         <div class="btns-container">
                             <a href="/users/edit">
-                                <button type="" class="btn-crud">
+                                <button type="submit" class="btn-crud">
                                     EDICIÓN
                                 </button>
-                                </a>
-                            </div>
-                    
-
-                    </prueba>
+                            </a>
+                        </div>
 
             </div>
             </div>

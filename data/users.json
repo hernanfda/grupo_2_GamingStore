@@ -10,12 +10,12 @@
     "id": 1
   },
   {
-    "nombre": "user",
-    "apellido": "uss",
+    "nombre": "Admin 1",
+    "apellido": "Admin Super",
     "email": "admin@gmail.com",
     "birthDate": "2222-02-22",
     "password": "$2a$10$B2RW5y5SVU0vppEMQH62/On9erEB3JZANfDaVRsbOGQLUfLB/zYaK",
-    "userAvatar": "userAvatar-1660705784657-Dope-PC-Wallpaper-4k.jpg",
+    "userAvatar": "userAvatar-1660875094875-head2.png",
     "userRole": "2",
     "id": 2
   }

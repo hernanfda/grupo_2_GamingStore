@@ -1,10 +1,9 @@
 const { validationResult } = require("express-validator")
 const fs = require('fs');
 const bcrypt = require('bcryptjs');
-const path = require('path')
+const path = require('path');
 const allUsersPath = path.resolve(__dirname, '../data/users.json');
-const allUsers = JSON.parse(fs.readFileSync(allUsersPath, 'utf-8'));
-
+const allUsers = JSON.parse(fs.readFileSync(allUsersPath, 'utf8'));
 const userControllers = {
     
     login: (req, res) => {
@@ -31,6 +30,7 @@ const userControllers = {
     register: (req, res) => {
         res.render('users/register', { styles: "register_login" })
     },
+      
     processRegister: (req, res) => {
         let errors = validationResult(req)
 
@@ -64,19 +64,23 @@ const userControllers = {
             res.render("users/login", { styles: "register_login" });
         }
     },
+
     logout: (req, res) => {
         res.clearCookie('userEmail');
         req.session.destroy();
         res.redirect('/');
     },
+
     profile: (req, res) => {
         return res.render('users/profile', { user: req.session.userLogged, styles: "userProfile" })
     },
+
     edit: (req, res) => {
         const user = req.session.userLogged
         return res.render('users/edit', { user: user, styles: "userProfile" })
     },
-    processEdit: (req, res) => {
+    
+    processEdit: async (req, res) => {
         let id = req.session.userLogged.id;
         let index = allUsers.findIndex((e) => e.id == id);
         allUsers[index].nombre = req.body.nombre || allUsers[index].nombre;
@@ -86,7 +90,9 @@ const userControllers = {
         }
 
         fs.writeFileSync("./data/users.json", JSON.stringify(allUsers, null, 2))
-        return res.redirect('/users/profile')
+
+        req.session.userLogged = allUsers[index];
+        res.redirect('/users/profile');
     }
 }   
 
