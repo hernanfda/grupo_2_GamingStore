@@ -72,6 +72,22 @@ const userControllers = {
     profile: (req, res) => {
         return res.render('users/profile', { user: req.session.userLogged, styles: "userProfile" })
     },
-}
+    edit: (req, res) => {
+        const user = req.session.userLogged
+        return res.render('users/edit', { user: user, styles: "userProfile" })
+    },
+    processEdit: (req, res) => {
+        let id = req.session.userLogged.id;
+        let index = allUsers.findIndex((e) => e.id == id);
+        allUsers[index].nombre = req.body.nombre || allUsers[index].nombre;
+        allUsers[index].apellido = req.body.apellido || allUsers[index].apellido;
+        if (req.file) {
+            allUsers[index].userAvatar = req.file.filename;
+        }
+
+        fs.writeFileSync("./data/users.json", JSON.stringify(allUsers, null, 2))
+        return res.redirect('/users/profile')
+    }
+}   
 
 module.exports = userControllers
