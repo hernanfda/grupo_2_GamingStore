@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- HEAD  -->
+<%- include('../partials/head') %>
+
+<body>
+     <!-- HEADER  -->
+     <%- include('../partials/headerForm') %>
+     <main>
+        <div class="register">
+            <div class="register-title">
+                <h1>Bienvenido a GX</h1>
+                <h1><%= user.nombre %></h1>
+            </div>
+            <div class="UserAvatar">
+                <img id="Avatar" src="/img/usersAvatar/<%=user.userAvatar%>"/>
+              </div>
+
+            <form action="/users/edit?_method=PUT" method="POST" enctype="multipart/form-data">
+
+                <div class="register-container">
+                    <label for="name">Nombre</label>
+                    <input type="text" name="name" id="nombre" class="text-input"
+                        value="<%= user.nombre %>"/>
+                </div>
+
+                <div class="register-container">
+                    <label for="surname">Apellido</label>
+                    <input type="text" name="surname" id="apellido" class="text-input"
+                        value="<%= user.apellido %>"/>
+                </div>
+                
+                <div class="register-container">
+                    <label for="userAvatar">Imagen</label>
+                    <input type="file" name="userAvatar" id="imagenProducto" value="<%= user.userAvatar %>"/>
+                </div>
+
+                <div class="btns-container">
+                    <button type="submit" class="btn-crud">
+                        EDITAR
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <!-- FOOTER -->
+    <%- include('../partials/footer') %>
+</body>
+</html>
