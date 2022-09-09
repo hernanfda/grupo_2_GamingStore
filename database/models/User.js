@@ -32,5 +32,13 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false,
     };
     const User = sequelize.define(alias, cols, config);
+
+    User.associate = (models) => {
+        User.belongsTo(models.User_profiles, {
+            as: "user_profile",
+            foreignKey: "user_profile_id",
+        });
+    };
+
     return User;
 };
