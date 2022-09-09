@@ -1,46 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <!-- HEAD  -->
-  <%- include('../partials/head') %>
+<!-- HEAD  -->
+<%- include('../partials/head') %>
 
-    <body>
-      <!-- HEADER -->
-      <%- include('../partials/header') %>
+  <body>
+    <!-- HEADER -->
+    <%- include('../partials/header') %>
 
-        <section>
+      <section>
 
-          <% for(let i=0; i < productList.length; i++){ %>
-            <div class="articulo">
-              <a href="/products/details/<%= productList[i].id %> ">
-                <h4>
-                  <%= `${productList[i].brand} ${productList[i].model} `%>
-                </h4>
+        <% for(let i=0; i < productList.length; i++){ %>
+          <div class="articulo">
+            <a href="/products/details/<%= productList[i].id %> ">
+              <h4>
+                <%= `${productList[i].brands.name} ${productList[i].model} `%>
+              </h4>
+            </a>
+            <a class="img" href="/products/details/<%= productList[i].id %> ">
+              <img src="/img/product-detail/<%= productList[i].image %>" alt="">
+            </a>
+            <div class="priceCart">
+              <p>
+                $<%= productList[i].price %>
+              </p>
+              <a href="/../products/cart">
+                <button class="btn-agregar" id="agregar" type="submit">
+                  Agregar al carrito
+                </button>
               </a>
-              <a class="img" href="/products/details/<%= productList[i].id %> ">
-                <img src="/img/product-detail/<%= productList[i].image %>" alt="">
-              </a>
-              <div class="priceCart">
-                <p>
-                  $<%= productList[i].price %>
-                </p>
-                <a href="/../products/cart">
-                  <button class="btn-agregar"id="agregar" type="submit">
-                    Agregar al carrito
-                  </button>
-                </a>
-              </div>
             </div>
-            <% } %>
+          </div>
+          <% } %>
 
 
-              </div>
+            </div>
 
-        </section>
+      </section>
 
-        <!-- FOOTER -->
-        <%- include('../partials/footer') %>
+      <!-- FOOTER -->
+      <%- include('../partials/footer') %>
 
-    </body>
+  </body>
 
 </html>

@@ -1,18 +1,32 @@
 const { urlencoded } = require("express");
 const fs = require("fs");
 const path = require("path");
-const productListPath = path.resolve(__dirname, "../data/products-list.json");
-const productList = JSON.parse(fs.readFileSync(productListPath, "utf8"));
+// const productListPath = path.resolve(__dirname, "../data/products-list.json");
+// const productList = JSON.parse(fs.readFileSync(productListPath, "utf8"));
+const db = require("../database/models");
+const sequelize = db.sequelize;
+const { Op } = require("sequelize");
+
+const productList = db.Products;
 
 const productControllers = {
     productCart: (req, res) => {
         res.render("products/cart", { styles: "product-cart" });
     },
-    productList: (req, res) => {
-        res.render("products/list", {
-            styles: "product_detail_styles",
-            productList,
-        });
+    productList: async (req, res) => {
+        await productList
+            .findAll({
+                include: ["brands", "categories"],
+            })
+            .then((productList) => {
+                res.render("products/list", {
+                    styles: "product_detail_styles",
+                    productList,
+                });
+            })
+            .catch((error) => {
+                console.error(error);
+            });
     },
     productFilter: (req, res) => {
         let productType = req.params.type;
@@ -30,7 +44,7 @@ const productControllers = {
         res.render("products/details", {
             styles: "product_detail_styles",
             product: product,
-          });
+        });
     },
     createProduct: (req, res) => {
         res.render("products/create", { styles: "register_login" });
@@ -73,7 +87,7 @@ const productControllers = {
         productList.splice(index, 1);
         fs.writeFileSync("./data/products-list.json", JSON.stringify(productList, null, 2));
         res.redirect("/products");
-    }
+    },
 };
 
 function setOffersAndPopular(req, product) {
