@@ -15,23 +15,30 @@
                         </div>
                         <form action="/products" method="POST" enctype="multipart/form-data">
                             <div class="register-container">
-                                <label for="brand">Marca</label>
-                                <input type="text" name="brand" id="marca" class="text-input" required />
-                                <!-- <span>
-                        <i class="fa fa-user-circle form-icons"></i>
-                    </span> -->
+                                <label for="brand_id">Marca</label>
+                                <select name="brand_id" id="" class="text-input" required>
+                                    <option value="" disabled selected>- Marca - </option>
+                                    <% brands.forEach(brand=> { %>
+                                        <option value="<%= brand.id %>">
+                                            <%= brand.name %>
+                                        </option>
+                                        <% }); %>
+                                </select>
+                  
+                                <label for="type_id">Tipo</label>
+                                <select name="type_id" id="tipo" class="text-input" required>
+                                    <option value="" disabled selected>- Tipo - </option>
+                                    <% categories.forEach(category=> { %>
+                                        <option value="<%= category.id %>">
+                                            <%= category.name %>
+                                        </option>
+                                        <% }); %>
+                                </select>
                             </div>
-
                             <div class="register-container">
                                 <label for="model">Modelo</label>
                                 <input type="text" name="model" id="modelo" class="text-input" required />
                             </div>
-
-                            <div class="register-container">
-                                <label for="type">Tipo</label>
-                                <input type="text" name="type" id="tipo" class="text-input" required />
-                            </div>
-
                             <div class="register-container">
                                 <label for="price">Precio</label>
                                 <input type="text" name="price" id="price" class="text-input" required />
@@ -44,7 +51,7 @@
 
                             <div>
                                 <label for="offers">Oferta</label>
-                                <input type="checkbox" name="offers" id="offers" >
+                                <input type="checkbox" name="offers" id="offers">
                                 <label for="popular">Destacado</label>
                                 <input type="checkbox" name="popular" id="popular">
                             </div>
@@ -58,7 +65,7 @@
                                 <button type="submit" class="btn-crud">
                                     CREAR
                                 </button>
-                                <button type="reset"class="btn-crud">
+                                <button type="reset" class="btn-crud">
                                     DESCARTAR
                                 </button>
                             </div>

@@ -13,7 +13,7 @@ router.get("/details/:id", productControllers.productDetail);
 //filter by type
 router.get("/list/:type", productControllers.productFilter);
 //create and store product
-router.get("/create", adminMiddleware, productControllers.createProduct);
+router.get("/create", productControllers.createProduct); ///OJO QUE SAQUE EL MIDDLEWARE
 router.post("/", upload.single('image'), productControllers.saveProduct);
 //edit product
 router.get("/edit/:id", adminMiddleware, productControllers.editProduct);

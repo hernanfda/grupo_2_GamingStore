@@ -5,25 +5,23 @@ const db = require("../database/models");
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 const Category = require("../database/models/Category");
+const { request } = require("http");
 
-const productList = db.Products;
-const categories = db.Categories;
-//const brands = db.Brands;
+const ProductList = db.Products;
+const Categories = db.Categories;
+const Brands = db.Brands;
 
 const productControllers = {
     productCart: (req, res) => {
         res.render("products/cart", { styles: "product-cart" });
     },
     productList: async (req, res) => {
-        await productList
-            .findAll({
-                include: ["brands", "categories"],
-            })
-            .then((productList) => {
-                res.render("products/list", {
-                    styles: "product_detail_styles",
-                    productList,
-                });
+        await ProductList.findAll({
+            include: ["brands", "categories"],
+        })
+            .then((productList, brands) => {
+                console.log(productList);
+                res.render("products/list", { styles: "product_detail_styles", productList, brands});
             })
             .catch((error) => {
                 console.error(error);
@@ -31,19 +29,18 @@ const productControllers = {
     },
     productFilter: async (req, res) => {
         let productType = req.params.type;
-        await productList
-            .findAll({
-                include: [
-                    "brands",
-                    {
-                        model: categories,
-                        as: "categories",
-                        where: {
-                            name: productType,
-                        },
+        await ProductList.findAll({
+            include: [
+                "brands",
+                {
+                    model: Categories,
+                    as: "categories",
+                    where: {
+                        name: productType,
                     },
-                ],
-            })
+                },
+            ],
+        })
             .then((filteredList) => {
                 res.render("products/list", {
                     styles: "product_detail_styles",
@@ -54,28 +51,51 @@ const productControllers = {
                 console.error(error);
             });
     },
-    productDetail: (req, res) => {
+    productDetail: async (req, res) => {
         let id = req.params.id;
-        let product = productList.find((e) => e.id == id);
+        await ProductList.findByPk(id)
+            .then((product) => {
+                res.render("products/details", {
+                    styles: "product_detail_styles",
+                    product,
+                });
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    },
+    createProduct: async (req, res) => {
+        let brandForm = Brands.findAll();
+        let categoryForm = Categories.findAll();
 
-        res.render("products/details", {
-            styles: "product_detail_styles",
-            product: product,
-        });
+        Promise.all([categoryForm, brandForm])
+            .then(([categories, brands]) => {
+                //console.log(brands);
+                return res.render("products/create", { styles: "register_login", categories, brands });
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+       
     },
-    createProduct: (req, res) => {
-        res.render("products/create", { styles: "register_login" });
-    },
-    saveProduct: (req, res) => {
-        let product = req.body;
-        product.id = productList.length + 1;
-        setOffersAndPopular(req, product);
-        if (req.file) {
-            product.image = req.file.filename;
-        }
-        productList.push(product);
-        fs.writeFileSync("./data/products-list.json", JSON.stringify(productList, null, 2));
-        res.redirect("products");
+    saveProduct: async (req, res) => {
+       // setOffersAndPopular(req, product);
+        await ProductList.create({
+            brand: req.body.brand,
+            model: req.body.model,
+            type: req.body.type,
+            price: req.body.price,
+            description: req.body.description,
+            offer: req.body.offer ? 1 : 0,
+            popular: req.body.popular ? 1 : 0,
+            image: req.file.filename,
+        })
+            .then(() => {
+                res.json(data);
+            })
+            .catch((err) => {
+                console.error(err);
+            });
     },
     editProduct: (req, res) => {
         let id = req.params.id;
