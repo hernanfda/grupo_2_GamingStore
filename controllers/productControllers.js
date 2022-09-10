@@ -1,13 +1,14 @@
 const { urlencoded } = require("express");
 const fs = require("fs");
 const path = require("path");
-// const productListPath = path.resolve(__dirname, "../data/products-list.json");
-// const productList = JSON.parse(fs.readFileSync(productListPath, "utf8"));
 const db = require("../database/models");
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
+const Category = require("../database/models/Category");
 
 const productList = db.Products;
+const categories = db.Categories;
+//const brands = db.Brands;
 
 const productControllers = {
     productCart: (req, res) => {
@@ -30,18 +31,20 @@ const productControllers = {
     },
     productFilter: async (req, res) => {
         let productType = req.params.type;
-        //console.log(productType);
         await productList
-            .findAll(
-                { include: ["brands", "categories"] },
-                {
-                    where: {
-                        category_name: productType,
+            .findAll({
+                include: [
+                    "brands",
+                    {
+                        model: categories,
+                        as: "categories",
+                        where: {
+                            name: productType,
+                        },
                     },
-                }
-            )
+                ],
+            })
             .then((filteredList) => {
-                console.log(filteredList);
                 res.render("products/list", {
                     styles: "product_detail_styles",
                     productList: filteredList,
@@ -50,11 +53,6 @@ const productControllers = {
             .catch((error) => {
                 console.error(error);
             });
-
-        // res.render("products/list", {
-        //     styles: "product_detail_styles",
-        //     productList: filteredList,
-        // });
     },
     productDetail: (req, res) => {
         let id = req.params.id;
