@@ -28,14 +28,33 @@ const productControllers = {
                 console.error(error);
             });
     },
-    productFilter: (req, res) => {
+    productFilter: async (req, res) => {
         let productType = req.params.type;
-        let filteredList = productList.filter((element) => element.type == productType);
+        //console.log(productType);
+        await productList
+            .findAll(
+                { include: ["brands", "categories"] },
+                {
+                    where: {
+                        category_name: productType,
+                    },
+                }
+            )
+            .then((filteredList) => {
+                console.log(filteredList);
+                res.render("products/list", {
+                    styles: "product_detail_styles",
+                    productList: filteredList,
+                });
+            })
+            .catch((error) => {
+                console.error(error);
+            });
 
-        res.render("products/list", {
-            styles: "product_detail_styles",
-            productList: filteredList,
-        });
+        // res.render("products/list", {
+        //     styles: "product_detail_styles",
+        //     productList: filteredList,
+        // });
     },
     productDetail: (req, res) => {
         let id = req.params.id;
