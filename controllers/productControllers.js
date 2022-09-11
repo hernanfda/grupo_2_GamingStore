@@ -20,8 +20,8 @@ const productControllers = {
             include: ["brands", "categories"],
         })
             .then((productList, brands) => {
-                console.log(productList);
-                res.render("products/list", { styles: "product_detail_styles", productList, brands});
+                //console.log(productList);
+                res.render("products/list", { styles: "product_detail_styles", productList, brands });
             })
             .catch((error) => {
                 console.error(error);
@@ -67,7 +67,6 @@ const productControllers = {
     createProduct: async (req, res) => {
         let brandForm = Brands.findAll();
         let categoryForm = Categories.findAll();
-
         Promise.all([categoryForm, brandForm])
             .then(([categories, brands]) => {
                 //console.log(brands);
@@ -76,31 +75,38 @@ const productControllers = {
             .catch((error) => {
                 console.error(error);
             });
-       
     },
     saveProduct: async (req, res) => {
-       // setOffersAndPopular(req, product);
         await ProductList.create({
-            brand: req.body.brand,
+            brand_id: req.body.brand_id,
             model: req.body.model,
-            type: req.body.type,
             price: req.body.price,
-            description: req.body.description,
-            offer: req.body.offer ? 1 : 0,
-            popular: req.body.popular ? 1 : 0,
             image: req.file.filename,
+            offer: req.body.offer ? 1 : 0,
+            description: req.body.description,
+            popular: req.body.popular ? 1 : 0,
+            category_id: req.body.category_id,
         })
-            .then(() => {
-                res.json(data);
+            .then((data) => {
+                res.redirect('products');
             })
             .catch((err) => {
                 console.error(err);
             });
     },
-    editProduct: (req, res) => {
+    editProduct: async (req, res) => {
         let id = req.params.id;
-        let product = productList.find((e) => e.id == id);
-        res.render("products/edit", { styles: "register_login", product });
+        let productForm = ProductList.findByPk(id)
+        let brandForm = Brands.findAll();
+        let categoryForm = Categories.findAll();
+        Promise.all([categoryForm, brandForm, productForm])
+            .then(([categories, brands, product]) => {
+                //console.log(brands);
+                return res.render("products/edit", { styles: "register_login", categories, brands, product });
+            })
+            .catch((error) => {
+                console.error(error);
+            });
     },
     updateProduct: (req, res) => {
         let id = req.params.id;
@@ -126,18 +132,18 @@ const productControllers = {
         res.redirect("/products");
     },
 };
-
-function setOffersAndPopular(req, product) {
-    if (req.body.offers == "on") {
-        product.offers = true;
-    } else {
-        product.offers = false;
-    }
-    if (req.body.offers == "on") {
-        product.popular = true;
-    } else {
-        product.popular = false;
-    }
+//ESTA SE VA A ELIMINAR MUAJAJA
+// function setOffersAndPopular(req, product) {
+//     if (req.body.offers == "on") {
+//         product.offers = true;
+//     } else {
+//         product.offers = false;
+//     }
+//     if (req.body.offers == "on") {
+//         product.popular = true;
+//     } else {
+//         product.popular = false;
+//     }
 }
 
 module.exports = productControllers;
