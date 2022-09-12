@@ -53,7 +53,7 @@ const productControllers = {
     },
     productDetail: async (req, res) => {
         let id = req.params.id;
-        await ProductList.findByPk(id)
+        await ProductList.findByPk(id, {include:["brands"]})
             .then((product) => {
                 res.render("products/details", {
                     styles: "product_detail_styles",
@@ -96,7 +96,7 @@ const productControllers = {
     },
     editProduct: async (req, res) => {
         let id = req.params.id;
-        let productForm = ProductList.findByPk(id)
+        let productForm = ProductList.findByPk(id, {include:["brands", "categories"]});
         let brandForm = Brands.findAll();
         let categoryForm = Categories.findAll();
         Promise.all([categoryForm, brandForm, productForm])
@@ -119,8 +119,7 @@ const productControllers = {
         if (req.file) {
             productList[index].image = req.file.filename;
         }
-        setOffersAndPopular(req, productList[index]);
-        //console.log(setOffersAndPopular(req, productList[index]));
+
         fs.writeFileSync("./data/products-list.json", JSON.stringify(productList, null, 2));
         res.redirect("/products");
     },
@@ -132,18 +131,6 @@ const productControllers = {
         res.redirect("/products");
     },
 };
-//ESTA SE VA A ELIMINAR MUAJAJA
-// function setOffersAndPopular(req, product) {
-//     if (req.body.offers == "on") {
-//         product.offers = true;
-//     } else {
-//         product.offers = false;
-//     }
-//     if (req.body.offers == "on") {
-//         product.popular = true;
-//     } else {
-//         product.popular = false;
-//     }
-}
+
 
 module.exports = productControllers;
