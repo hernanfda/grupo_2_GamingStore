@@ -13,10 +13,10 @@ router.get("/details/:id", productControllers.productDetail);
 //filter by type
 router.get("/list/:type", productControllers.productFilter);
 //create and store product
-router.get("/create", productControllers.createProduct); ///OJO QUE SAQUE EL MIDDLEWARE
+router.get("/create", adminMiddleware, productControllers.createProduct);
 router.post("/", upload.single('image'), productControllers.saveProduct);
 //edit product
-router.get("/edit/:id", productControllers.editProduct);
+router.get("/edit/:id", adminMiddleware, productControllers.editProduct);
 router.put("/:id", upload.single('image'), productControllers.updateProduct);
 //delete product
 router.delete("/delete/:id", adminMiddleware, productControllers.deleteProduct);

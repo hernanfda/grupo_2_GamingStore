@@ -11,10 +11,10 @@
         <div class="register">
             <div class="register-title">
                 <h1>Bienvenido a GX</h1>
-                <h1><%= user.nombre %></h1>
+                <h1><%= user.name %></h1>
             </div>
             <div class="UserAvatar">
-                <img id="Avatar" src="/img/usersAvatar/<%=user.userAvatar%>"/>
+                <img id="Avatar" src="/img/usersAvatar/<%=user.user_avatar%>"/>
               </div>
 
             <form action="/users/edit?_method=PUT" method="POST" enctype="multipart/form-data">
@@ -22,18 +22,18 @@
                 <div class="register-container">
                     <label for="nombre">Nombre</label>
                     <input type="text" name="nombre" id="nombre" class="text-input"
-                        value="<%= user.nombre %>"/>
+                        value="<%= user.name %>"/>
                 </div>
 
                 <div class="register-container">
                     <label for="apellido">Apellido</label>
                     <input type="text" name="apellido" id="apellido" class="text-input"
-                        value="<%= user.apellido %>"/>
+                        value="<%= user.last_name %>"/>
                 </div>
                 
                 <div class="register-container">
                     <label for="userAvatar">Imagen</label>
-                    <input type="file" name="userAvatar" id="imagenProducto" value="<%= user.userAvatar %>"/>
+                    <input type="file" name="userAvatar" id="imagenProducto" value="<%= user.user_avatar %>"/>
                 </div>
 
                 <div class="btns-container">
