@@ -1,86 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <!-- HEAD  -->
-    <%- include('../partials/head') %>
+<!-- HEAD  -->
+<%- include('../partials/head') %>
 
-        <body>
-            <!-- HEADER  -->
-            <%- include('../partials/headerForm') %>
+    <body>
+        <!-- HEADER  -->
+        <%- include('../partials/headerForm') %>
 
-                <main>
-                    <div class="register">
-                        <div class="register-title">
-                            <h1>Modificar Producto</h1>
-                        </div>
-                        <form action="/products/<%= product.id %>?_method=PUT" method="POST"
-                            enctype="multipart/form-data">
-                            <div class="register-container">
-                                <label for="brand">Marca</label>
-                                <select name="brand_id" id="" class="text-input" required>
-                                    <!-- <option value="" disabled >- Marca - </option> -->
-                                    <% brands.forEach(brand=> { %>
-                                        <option value="<%= brand.id %>">
+            <main>
+                <div class="register">
+                    <div class="register-title">
+                        <h1>Modificar Producto</h1>
+                    </div>
+                    <form action="/products/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                        <div class="register-container">
+                            <label for="brand">Marca</label>
+                            <select name="brand_id" id="" class="text-input" required>
+                                <!-- <option value="" disabled >- Marca - </option> -->
+                                <% brands.forEach(brand=> { %>
+                                    <%if(product.brands.name == brand.name){%>
+                                            <option value="<%= brand.id %>" selected>
                                             <%= brand.name %>
                                         </option>
-                                        <% }); %>
-                                </select>
+                                        <% }else{ %>
+                                            <option value="<%= brand.id %>">
+                                                <%= brand.name %>
+                                            </option>
+                                    <% } %>
+                                    <% }) %>
+                            </select>
 
-                                <label for="category_id">Tipo</label>
-                                <select name="category_id" id="tipo" class="text-input" required>
-                                    <!-- <option value="" disabled>- Tipo - </option> -->
-                                    <% categories.forEach(category=> { %>
-                                        <option value="<%= category.id %>">
+                            <label for="category_id">Tipo</label>
+                            <select name="category_id" id="tipo" class="text-input" required>
+                                <!-- <option value="" disabled>- Tipo - </option> -->
+                                <% categories.forEach(category=> { %>
+                                    <%if(product.categories.name == category.name){%>
+                                            <option value="<%= category.id %>" selected>
                                             <%= category.name %>
                                         </option>
-                                        <% }); %>
-                                </select>
+                                        <% }else{ %>
+                                            <option value="<%= category.id %>">
+                                                <%= category.name %>
+                                            </option>
+                                    <% } %>
+                                    <% }) %>
+                            </select>
 
-                                <div class="register-container">
-                                    <label for="price">Precio</label>
-                                    <input type="text" name="price" id="price" class="text-input"
-                                        value="<%= product.price %>" required />
-                                </div>
+                            <div class="register-container">
+                                <label for="price">Precio</label>
+                                <input type="text" name="price" id="price" class="text-input"
+                                    value="<%= product.price %>" required />
+                            </div>
 
-                                <div class="register-container">
-                                    <label for="description">Descripción</label>
-                                    <input type="text" name="description" id="description" class="text-input"
-                                        value="<%= product.description %>" required />
-                                </div>
-                                <div>
-                                    <label for="offers">Oferta</label>
-                                    <input type="checkbox" name="offers" id="offers" <% if (product.offer==true) { %>
+                            <div class="register-container">
+                                <label for="description">Descripción</label>
+                                <input type="text" name="description" id="description" class="text-input"
+                                    value="<%= product.description %>" required />
+                            </div>
+                            <div>
+                                <label for="offers">Oferta</label>
+                                <input type="checkbox" name="offers" id="offers" <% if (product.offer==true) { %>
+                                checked
+                                <% } %>>
+                                    <label for="popular">Destacado</label>
+                                    <input type="checkbox" name="popular" id="popular" <% if (product.popular==true) {
+                                        %>
                                     checked
                                     <% } %>>
-                                        <label for="popular">Destacado</label>
-                                        <input type="checkbox" name="popular" id="popular" <% if (product.popular==true)
-                                            { %>
-                                        checked
-                                        <% } %>>
-                                </div>
+                            </div>
 
-                                <div class="register-container">
-                                    <label for="image">Imagen</label>
-                                    <input type="file" name="image" id="imagenProducto" />
-                                </div>
+                            <div class="register-container">
+                                <label for="image">Imagen</label>
+                                <input type="file" name="image" id="imagenProducto" value="<%= product.image %>" />
+                            </div>
+                            <div class="register-container">
+                                <label for="image">Imagen</label>
+                                <input type="text" name="image" id="imagenProducto" value="<%= product.image %>" />
+                            </div>
 
-                                <div class="btns-container">
-                                    <button type="submit" class="btn-crud">
-                                        MODIFICAR
-                                    </button>
-                                    <button type="reset" name="enviar" class="btn-crud">
-                                        DESCARTAR
-                                    </button>
-                                </div>
-                        </form>
+                            <div class="btns-container">
+                                <button type="submit" class="btn-crud">
+                                    MODIFICAR
+                                </button>
+                                <button type="reset" name="enviar" class="btn-crud">
+                                    DESCARTAR
+                                </button>
+                            </div>
+                    </form>
 
-                    </div>
-                    </div>
-                </main>
-                <!-- FOOTER -->
-                <%- include('../partials/footer') %>
+                </div>
+                </div>
+            </main>
+            <!-- FOOTER -->
+            <%- include('../partials/footer') %>
 
-                    <script src="/js/show_hide_pw.js"></script>
-        </body>
+                <script src="/js/show_hide_pw.js"></script>
+    </body>
 
 </html>
