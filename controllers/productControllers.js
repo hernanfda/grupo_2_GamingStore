@@ -102,7 +102,6 @@ const productControllers = {
         let selected = "selected";
         Promise.all([categoryForm, brandForm, productForm])
             .then(([categories, brands, product]) => {
-                //console.log(brands);
                 return res.render("products/edit", { styles: "register_login", categories, brands, product, selected });
             })
             .catch((error) => {
@@ -117,6 +116,7 @@ const productControllers = {
                 brand_id: req.body.brand_id,
                 model: req.body.model,
                 price: req.body.price,
+                // image: req.file.filename, <-- ASI LO TIENE ROCKO
                 image: req.body.image ? req.body.image : product.image,
                 offer: req.body.offer ? 1 : 0,
                 description: req.body.description,
