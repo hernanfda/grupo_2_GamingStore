@@ -87,7 +87,7 @@ const productControllers = {
             popular: req.body.popular ? 1 : 0,
             category_id: req.body.category_id,
         })
-            .then((data) => {
+            .then(() => {
                 res.redirect("products");
             })
             .catch((err) => {
@@ -110,14 +110,13 @@ const productControllers = {
     },
     updateProduct: async (req, res) => {
         let id = req.params.id;
-        let product = ProductList.findByPk(id, { include: ["brands", "categories"] });
+        let file = req.file;
         await ProductList.update(
             {
                 brand_id: req.body.brand_id,
                 model: req.body.model,
                 price: req.body.price,
-                // image: req.file.filename, <-- ASI LO TIENE ROCKO
-                image: req.body.image ? req.body.image : product.image,
+                image: file ? req.file.filename : req.body.image,
                 offer: req.body.offer ? 1 : 0,
                 description: req.body.description,
                 popular: req.body.popular ? 1 : 0,
@@ -125,21 +124,16 @@ const productControllers = {
             },
             { where: { id: id } }
         )
-            .then((data) => {
+            .then(() => {
                 res.redirect("/products");
             })
             .catch((err) => {
                 console.error(err);
             });
-
-        // fs.writeFileSync("./data/products-list.json", JSON.stringify(productList, null, 2));
-        // res.redirect("/products");
     },
-    deleteProduct: (req, res) => {
+    deleteProduct: async (req, res) => {
         let id = req.params.id;
-        let index = productList.findIndex((e) => e.id == id);
-        productList.splice(index, 1);
-        fs.writeFileSync("./data/products-list.json", JSON.stringify(productList, null, 2));
+        await ProductList.destroy({ where: { id: id } });
         res.redirect("/products");
     },
 };
