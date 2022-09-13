@@ -58,7 +58,7 @@ const userControllers = {
                 birth_date: req.body.birthDate,
                 user_password: bcrypt.hashSync(req.body.password, 10),
                 user_avatar: req.file.filename,
-                user_profile_id: 1,
+                // user_profile_id: 1,
             },
         });
         if (!created) {
@@ -67,7 +67,7 @@ const userControllers = {
                 styles: "register_login",
             });
         } else {
-            return res.render('users/login', { styles: "register_login" });
+            return res.render("users/login", { styles: "register_login" });
         }
     },
 
@@ -76,22 +76,32 @@ const userControllers = {
         req.session.destroy();
         res.redirect("/");
     },
-
+    //para que el user llegue a profile, tuvimos que acceder al Object, con dataValues
     profile: (req, res) => {
-        return res.render("users/profile", { user: req.session.userLogged, styles: "userProfile" });
+        let user = req.session.userLogged.dataValues;
+        return res.render("users/profile", { user, styles: "userProfile" });
     },
-
+    //para que el user llegue a edit, tuvimos que acceder al Object, con dataValues
     edit: (req, res) => {
-        const user = req.session.userLogged;
+        const user = req.session.userLogged.dataValues;
         return res.render("users/edit", { user: user, styles: "userProfile" });
     },
- // HASTA ACA LLEGAMOS LOCO
     processEdit: async (req, res) => {
-        Users.findOne({ where: { id: req.session.userLogged.id } })
-        //let id = req.session.userLogged.id;
-            .then(() => {
-            // HASTA ACA LLEGAMOS LOCO
-        })
+        let file = req.file;
+        let user = req.session.userLogged.dataValues;
+        //console.log(user)
+        await Users.update(
+            {
+                name: req.body.nombre,
+                last_name: req.body.apellido,
+                user_avatar: file ? req.file.filename : req.body.image,
+            },
+            { where: { id: user.id } }
+        ).then((user) => {
+            console.log("procEdit:", user);
+            req.session.userLogged = user;
+            res.redirect("/users/profile");
+        });
         // let index = allUsers.findIndex((e) => e.id == id);
         // allUsers[index].nombre = req.body.nombre || allUsers[index].nombre;
         // allUsers[index].apellido = req.body.apellido || allUsers[index].apellido;
@@ -101,8 +111,7 @@ const userControllers = {
 
         // fs.writeFileSync("./data/users.json", JSON.stringify(allUsers, null, 2));
 
-        req.session.userLogged = allUsers[index];
-        res.redirect("/users/profile");
+        //   req.session.userLogged = allUsers[index];
     },
 };
 

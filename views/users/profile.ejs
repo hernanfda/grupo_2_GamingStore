@@ -12,23 +12,23 @@
             <div class="register">
                 <div class="register-title">
                     <h1>Bienvenido a GX,</h1>
-                    <h1><%= user.nombre %></h1>
+                    <h1><%= user.name %></h1>
                 </div>
                 <div class="UserAvatar">
-                    <img id="Avatar" src="/img/usersAvatar/<%=user.userAvatar%>"/>
+                    <img id="Avatar" src="/img/usersAvatar/<%=user.user_avatar%>"/>
                   </div>
 
                 <form>
                     <div class="register-container">
                         <label for="name">Nombre</label>
                         <input type="text" name="name" id="nombre" class="text-input"
-                            value="<%= user.nombre %>" disabled />
+                            value="<%= user.name %>" disabled />
 
                     </div>
                     <div class="register-container">
                         <label for="surname">Apellido</label>
                         <input type="text" name="surname" id="apellido" class="text-input"
-                            value="<%= user.apellido %>" disabled />
+                            value="<%= user.last_name %>" disabled />
                     </div>
 
                     <div class="register-container">
@@ -40,7 +40,7 @@
                     <div class="register-container">
                         <label for="birthDate">Fecha de nacimiento</label>
                         <input type="text" name="birthDate" id="birthDate" class="text-input"
-                            value="<%= user.birthDate %>" disabled />
+                            value="<%= user.birth_date %>" disabled />
                     </div>    
                     
                         </form>
@@ -54,7 +54,7 @@
                         </div>
 
                         <div class="btns-container">
-                            <a href="/users/edit/<%= user.id %>">
+                            <a href="/users/edit">
                                 <button type="submit" class="btn-crud">
                                     EDICIÓN
                                 </button>
