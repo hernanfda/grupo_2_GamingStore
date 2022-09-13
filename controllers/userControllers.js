@@ -34,11 +34,9 @@ const userControllers = {
             })
             .catch((err) => console.error(err));
     },
-
     register: (req, res) => {
         res.render("users/register", { styles: "register_login" });
     },
-
     processRegister: async (req, res) => {
         let errors = validationResult(req);
 
@@ -58,7 +56,6 @@ const userControllers = {
                 birth_date: req.body.birthDate,
                 user_password: bcrypt.hashSync(req.body.password, 10),
                 user_avatar: req.file.filename,
-                // user_profile_id: 1,
             },
         });
         if (!created) {
@@ -70,16 +67,16 @@ const userControllers = {
             return res.render("users/login", { styles: "register_login" });
         }
     },
-
     logout: (req, res) => {
         res.clearCookie("userEmail");
         req.session.destroy();
         res.redirect("/");
     },
     //para que el user llegue a profile, tuvimos que acceder al Object, con dataValues
-    profile: (req, res) => {
-        let user = req.session.userLogged.dataValues;
-        return res.render("users/profile", { user, styles: "userProfile" });
+    profile: async (req, res) => {
+        await Users.findOne({ where: { email: req.session.userLogged.dataValues.email } }).then((user) => {
+            return res.render("users/profile", { user, styles: "userProfile" });
+        });
     },
     //para que el user llegue a edit, tuvimos que acceder al Object, con dataValues
     edit: (req, res) => {
@@ -89,7 +86,6 @@ const userControllers = {
     processEdit: async (req, res) => {
         let file = req.file;
         let user = req.session.userLogged.dataValues;
-        //console.log(user)
         await Users.update(
             {
                 name: req.body.nombre,
@@ -97,21 +93,9 @@ const userControllers = {
                 user_avatar: file ? req.file.filename : req.body.image,
             },
             { where: { id: user.id } }
-        ).then((user) => {
-            console.log("procEdit:", user);
-            req.session.userLogged = user;
+        ).then(() => {
             res.redirect("/users/profile");
         });
-        // let index = allUsers.findIndex((e) => e.id == id);
-        // allUsers[index].nombre = req.body.nombre || allUsers[index].nombre;
-        // allUsers[index].apellido = req.body.apellido || allUsers[index].apellido;
-        // if (req.file) {
-        //     allUsers[index].userAvatar = req.file.filename;
-        // }
-
-        // fs.writeFileSync("./data/users.json", JSON.stringify(allUsers, null, 2));
-
-        //   req.session.userLogged = allUsers[index];
     },
 };
 
