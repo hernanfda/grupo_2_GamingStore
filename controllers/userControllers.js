@@ -56,6 +56,7 @@ const userControllers = {
                 birth_date: req.body.birthDate,
                 user_password: bcrypt.hashSync(req.body.password, 10),
                 user_avatar: req.file.filename,
+                user_profile_id: 1,
             },
         });
         if (!created) {
