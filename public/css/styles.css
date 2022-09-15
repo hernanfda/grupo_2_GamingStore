@@ -127,7 +127,9 @@ section {
 section h2 {
   width: 100%;
   text-align: center;
-  font-size: 20px;
+  font-size: 18px;
+  color: rgba(255,255,255,1);
+  padding-bottom: 5px;
 }
 
 .articulo {
@@ -199,13 +201,20 @@ section img {
   width: 50%;
   justify-content: center;
   align-items: center;
-  background-color: rgb(179, 179, 179);
+  background-color: rgb(0,0,0,0.5);
+  padding: 8px;
 
 }
 
 .reviewer h5,
 .reviewer p {
-  color: rgb(26, 26, 26);
+  color: rgb(255,255,255,1);
+}
+
+.reviewer h5 {
+  color: rgba(255,255,255,0.55);
+  font-size: 18px;
+  padding-bottom: 5px;
 }
 
 .review {
@@ -214,7 +223,8 @@ section img {
   justify-content: center;
   max-width: 800px;
   width: 80%;
-
+  color:rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 5px 10px;
 }
 
 /* CSS DEL CARROUSEL!!! */
@@ -263,6 +273,7 @@ video {
   width: 100%;
   max-width: 1023px;
   z-index: 2;
+  filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.5));
 }
 
 .slide-info h1 {
@@ -294,6 +305,7 @@ video {
 }
 
 .slide-4 {
+  filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.5));
   top: 67%;
 }
 
@@ -435,7 +447,7 @@ video {
     display: flex;
     justify-content: flex-end;
     font-size: 23px;
-    padding-right: 5px;
+    padding-right: 8px;
     padding-top: 5px;
   }
 
@@ -478,12 +490,14 @@ video {
 
   .slide-info {
     bottom: 10%;
+    filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.5));
   }
 
   .slide-1 {
     left: 2%;
     top: 60%;
     text-align: left;
+    filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.5));
 
   }
 
@@ -494,6 +508,7 @@ video {
   }
 
   .slide-4 {
+    filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.5));
     top: 73%;
   }
 
@@ -574,7 +589,7 @@ video {
     background-color: rgba(38, 38, 38, .61);
     margin-top: auto;
     padding-right: 10px;
-  padding-left: 10px;
+    padding-left: 10px;
   }
 
   footer a {
@@ -609,6 +624,7 @@ video {
   }
 
   .slide-4 {
+    filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.5));
     top: 74%
   }
 }
