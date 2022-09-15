@@ -23,15 +23,22 @@ header {
   display: flex;
   flex-wrap: wrap;
   height: 64px;
-  width: 100%;
   position: relative;
   background-color: transparent;
   z-index: 10;
 }
 
+.headerActions-Container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
 .logo {
-  height: 60px;
-  width: 60px;
+  width: 50px;
+  height: 50px;
+  padding-top: 5px;
   background-image: URL(/img/iso-light.svg);
   background-size: contain;
   background-repeat: no-repeat;
@@ -60,7 +67,7 @@ header .logo {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 2px;
+  top: 10px;
 }
 
 /*--------TAMAÑO ICONOS/POSITION/FIJADO AL TOP------*/
@@ -73,6 +80,7 @@ header .logo {
   font-size: 30px;
   position: absolute;
   top: 17px;
+  font-size: 23px;
 }
 
 .fa-user {
@@ -100,6 +108,7 @@ header .logo {
 /*--------ALINEACIÓN CARRITO------*/
 .fa-cart-shopping {
   right: 80px;
+  font-size: 23px;
 }
 
 /*--------ESTILOS <a>------*/
@@ -152,11 +161,13 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
   color: rgb(226, 222, 222);
   height: 50px;
   background-color: rgba(38, 38, 38, .61);
   margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
 
 .redes {
@@ -255,6 +266,7 @@ video {
 }
 
 .slide-info h1 {
+  font-size: 35px;
   color: white;
 }
 
@@ -267,10 +279,12 @@ video {
   border-radius: 5px;
   border: none;
   margin-top: 15px;
+  transition: all 0.3s ease-in-out;
 }
 
 .slide-info button:hover {
   cursor: pointer;
+  transform: scale(1.10);
   background-color: rgb(111, 0, 209);
 }
 
@@ -335,8 +349,8 @@ video {
 /* The dots/bullets/indicators */
 .dot {
   cursor: pointer;
-  height: 15px;
-  width: 15px;
+  height: 10px;
+  width: 10px;
   margin: 0 2px;
   background-color: #bbb;
   border-radius: 50%;
@@ -383,8 +397,7 @@ video {
 
   /*--------CAMBIO EL LOGO------*/
   .logo {
-    height: 60px;
-    width: 300px;
+    width: 180px;
     background-image: url(/img/logo-light.svg);
     background-size: contain;
     background-repeat: no-repeat;
@@ -392,9 +405,9 @@ video {
   }
 
   nav {
-    width: 70%;
+    width: 100%;
     min-width: 420px;
-    max-width: 840px;
+    max-width: 1200px;
     display: flex;
     position: absolute;
     left: 50%;
@@ -405,18 +418,33 @@ video {
     justify-content: space-evenly;
   }
 
+  .navbar-a {
+    font-size: 23px;
+    color: rgba(255,255,255,1);
+    filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.5));
+    transition: 0.3s all ease-in-out;
+  }
+
+  .navbar-a:hover {
+    filter: drop-shadow(5px 5px 10px rgba(162, 0, 255, 1));
+    transform: scale(1.10);
+  }
+
   /*--------ALINEACION USER------*/
   .fa-solid.fa-user {
     display: flex;
     justify-content: flex-end;
+    font-size: 23px;
+    padding-right: 5px;
+    padding-top: 5px;
   }
 
   .userProfile img {
-    border-radius: 50%;
+    border-radius: 100%;
     width: 34px;
     height: 34px;
   }
-  
+
   .userPanel {
     position: absolute;
     right: 65px;
@@ -426,11 +454,15 @@ video {
   /*--------ALINEACIÓN LUPA------*/
   .fa-magnifying-glass {
     right: 30px;
+    top: 22px;
+    font-size: 23px;
   }
 
   /*--------ALINEACIÓN CARRITO------*/
   .fa-cart-shopping {
     right: 130px;
+    top: 22px;
+    font-size: 23px;
   }
 
   h2 {
@@ -457,7 +489,7 @@ video {
 
   .slide-info h2 {
     text-align: left;
-    font-size: 35px;
+    font-size: 30px;
     margin-left: 0px;
   }
 
@@ -531,10 +563,18 @@ video {
 
   /*--------FOOTER TABLET/DESKTOP-----*/
 
-  footer {
+
+  .footer-Container {
+    display: flex;
+    align-items: center;
     justify-content: space-between;
-    padding-left: 10px;
+    width: 100%;
+    color: rgb(226, 222, 222);
+    height: 50px;
+    background-color: rgba(38, 38, 38, .61);
+    margin-top: auto;
     padding-right: 10px;
+  padding-left: 10px;
   }
 
   footer a {
@@ -565,7 +605,7 @@ video {
   }
 
   .slide-info h2 {
-    font-size: 40px;
+    font-size: 30px;
   }
 
   .slide-4 {
