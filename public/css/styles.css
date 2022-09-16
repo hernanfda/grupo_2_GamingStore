@@ -236,6 +236,9 @@ section img {
 }
 
 .destacados {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 10px;
   padding: 15px;
   background-color: rgba(0,0,0,0.35);
@@ -244,7 +247,10 @@ section img {
 }
 
 .ofertas {
-  margin-top: -100px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -50px;
   border-radius: 10px;
   padding: 15px;
   margin-bottom: 20px;
@@ -641,7 +647,14 @@ video {
     margin-bottom: 20px;
   }
 
+  .destacados {
+    width: 90%;
+  }
 
+  .ofertas {
+    width: 90%;
+    margin-top: -100px;
+  }
 
   /*--------DESCRIPCIONES DE PRODUCTO------*/
   .especificaciones {
