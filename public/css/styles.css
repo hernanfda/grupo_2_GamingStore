@@ -131,6 +131,8 @@ section h2 {
   font-size: 18px;
   color: rgba(255,255,255,1);
   padding-bottom: 5px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .articulo {
@@ -179,11 +181,12 @@ section h2 {
 .articulo img {
   width: 70%;
   height: auto;
+  filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.5));
 }
 
 .articulo h3 {
   color: rgba(164, 89, 255);
-  filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.5));
+  filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.35));
   font-size: 13px;
   padding: 5px;
 }
