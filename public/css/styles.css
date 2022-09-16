@@ -125,8 +125,9 @@ section {
 }
 
 section h2 {
+  display: flex;
+  justify-content: center;
   width: 100%;
-  text-align: center;
   font-size: 18px;
   color: rgba(255,255,255,1);
   padding-bottom: 5px;
@@ -135,11 +136,44 @@ section h2 {
 .articulo {
   display: flex;
   flex-wrap: wrap;
+  border-radius: 20px;
+  background-color: rgba(255,255,255,0.75);
+  color: rgba(0,0,0,0.55);
+  box-shadow: 5px 5px 10px;
+  padding: 15px;
   width: 20%;
   height: auto;
   justify-content: center;
   margin: 30px 0 30px 0;
+  transition: all 0.3s ease-in-out;
+}
 
+.articulo:hover {
+  transform: scale(1.10);
+  color: rgba(162, 0, 255, 1);
+  box-shadow: (5px 5px 10px);
+}
+
+.articulo:hover .precio {
+  background-color: rgb(212, 0, 255);
+}
+
+.descuento {
+  color: rgba(255,255,255,1);
+  filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.5));
+  font-size: 15px;
+  padding: 5px;
+}
+
+.precio {
+  color: rgba(255,255,255,1);
+  border-radius: 5px;
+  font-weight: bold;
+  background-color: rgba(212, 0, 255, 0.35);
+  filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.5));
+  font-size: 15px;
+  padding: 5px;
+  transition: all 0.3s ease-in-out;
 }
 
 .articulo img {
@@ -149,10 +183,13 @@ section h2 {
 
 .articulo h3 {
   color: rgba(164, 89, 255);
-  font-size: 12px;
+  filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.5));
+  font-size: 13px;
+  padding: 5px;
 }
 
 .general {
+  margin-top: 13px;
   font-size: 12px;
   text-align: center;
 }
@@ -193,6 +230,24 @@ section.reviews {
 section img {
   width: 50%;
   height: auto;
+}
+
+.destacados {
+  border-radius: 10px;
+  padding: 15px;
+  background-color: rgba(0,0,0,0.35);
+  color: rgba(0, 0, 0, 0.65);
+  box-shadow: 5px 5px 10px;
+}
+
+.ofertas {
+  margin-top: -100px;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: rgba(0,0,0,0.35);
+  color: rgba(0, 0, 0, 0.65);
+  box-shadow: 5px 5px 10px;
 }
 
 .reviewer {
@@ -375,6 +430,10 @@ video {
   background-color: rgba(185, 99, 235, 0.5);
 }
 
+.footer-Container {
+  user-select: none;
+}
+
 /* Fading animation */
 .fade {
   animation-name: fade;
@@ -449,6 +508,13 @@ video {
     font-size: 23px;
     padding-right: 8px;
     padding-top: 5px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .fa-solid.fa-user:hover {
+    transform: scale(1.10);
+    color: rgb(212, 0, 255);
+    filter: drop-shadow(5px 5px 10px rgba(162, 0, 255, 0.5));
   }
 
   .userProfile img {
@@ -468,6 +534,13 @@ video {
     right: 30px;
     top: 22px;
     font-size: 23px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .fa-magnifying-glass:hover {
+    transform: scale(1.10);
+    color: rgb(212, 0, 255);
+    filter: drop-shadow(5px 5px 10px rgba(162, 0, 255, 0.5));
   }
 
   /*--------ALINEACIÓN CARRITO------*/
@@ -475,6 +548,13 @@ video {
     right: 130px;
     top: 22px;
     font-size: 23px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .fa-cart-shopping:hover {
+    transform: scale(1.10);
+    color: rgb(212, 0, 255);
+    filter: drop-shadow(5px 5px 10px rgba(162, 0, 255, 0.5));
   }
 
   h2 {
@@ -588,6 +668,7 @@ video {
     height: 50px;
     background-color: rgba(38, 38, 38, .61);
     margin-top: auto;
+    user-select: none;
     padding-right: 10px;
     padding-left: 10px;
   }
@@ -595,6 +676,16 @@ video {
   footer a {
     color: rgb(226, 222, 222);
     padding-left: 10px;
+  }
+
+  .fa-brands {
+    color: rgba(255,255,255,1);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .fa-brands:hover {
+    color: rgb(212, 0, 255);
+    filter: drop-shadow(5px 5px 10px rgba(162, 0, 255, 0.5));
   }
 
   .redes {
