@@ -233,6 +233,8 @@ section.reviews {
 section img {
   width: 50%;
   height: auto;
+  border-radius: 0px 15px 15px 0px;
+  filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.5));
 }
 
 .destacados {
@@ -267,7 +269,9 @@ section img {
   align-items: center;
   background-color: rgb(0,0,0,0.5);
   padding: 8px;
-
+  border-radius: 15px 0px 0px 15px;
+  color: rgba(0,0,0,0.35);
+  box-shadow: 5px 5px 10px;
 }
 
 .reviewer h5,
@@ -288,7 +292,6 @@ section img {
   max-width: 800px;
   width: 80%;
   color:rgba(0, 0, 0, 0.5);
-  box-shadow: 5px 5px 10px;
 }
 
 /* CSS DEL CARROUSEL!!! */
