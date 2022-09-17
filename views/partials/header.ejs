@@ -1,28 +1,28 @@
 <header>
     <div class="burger"><i class="fa-solid fa-bars"></i></div>
     <a href="/" class="logo-Container">
-        <div class="logo">
-            
-        </div>
+        <div class="logo"></div>
     </a>
     <div class="headerActions-Container">
-    <div class="cart"><a href="/products/cart"><i class="fa-solid fa-cart-shopping"></i></a></div>
-    <div>
-        <i class="fa-solid fa-magnifying-glass"></i>
-    </div>
-    <div class="userPanel">
-        <% if(locals.isLogged) { %>
+        <div class="cart">
+            <a href="/products/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+        <div>
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <div class="userPanel">
+            <% if(locals.isLogged) { %>
             <div class="profile">
                 <a href="/users/profile">
                     <div class="userProfile">
-                        <img src="/img/usersAvatar/<%= locals.userLogged.dataValues.user_avatar %>">
+                        <img src="/img/usersAvatar/<%= locals.userLogged.dataValues.user_avatar %>" />
                     </div>
                 </a>
             </div>
-        <% } else { %>
-                <a href="/users/login"><i class="fa-solid fa-user"></i></a>
+            <% } else { %>
+            <a href="/users/login"><i class="fa-solid fa-user"></i></a>
             <% } %>
-    </div>
+        </div>
     </div>
     <nav class="navbar">
         <!--Podrian ir links a productos destacados de cada uno?-->

@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <!-- HEAD  -->
 <%- include('../partials/head') %>
-
   <body>
     <!-- HEADER -->
     <%- include('../partials/header') %>
@@ -19,19 +17,19 @@
               <%= `${product.brands.name} ${product.model}` %>
             </p>
             <!-- <p>ESPECIFICACIONES:</p> -->
-            <p>MARCA: <%= product.brands.name %>
+            <p class="brand" value="<%= product.brands.name %>">Marca: <%= product.brands.name %>
             </p>
-            <p>MODELO: <%= product.model %>
+            <p class="model" value="<%= product.model %>">Modelo: <%= product.model %>
             </p>
-            <P class="precio">PRECIO: $<%= product.price %>
-            </P>
+            <p class="priceCart" value="<%= product.price %>">$<%= product.price %>
+            </p>
             <p>
               <%= `12 cuotas de $${(product.price / 12).toFixed(2)}` %>
             </p>
 
             <p class="description">DESCRIPCIÓN:</br>
               <%= product.description %></p>
-            <button class="btn-agregar" type="submit">Agregar al carrito</button>
+            <button class="btn-agregar" id="add-product" value="<%= product.id %>">Agregar al carrito</button>
 
             <% if(locals.userLogged && locals.userLogged.userRole == 2) { %>
             <a href="/products/edit/<%=product.id%>">
@@ -47,6 +45,8 @@
         </section>
         <!-- FOOTER -->
         <%- include('../partials/footer') %>
+    <script src="/js/shop-cart.js"></script>
+        
   </body>
 
 </html>
