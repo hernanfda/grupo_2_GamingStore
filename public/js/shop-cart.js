@@ -1,5 +1,5 @@
 window.addEventListener("load", () => {
-    const addProduct = document.querySelector("#add-product");
+    const addProduct = document.querySelector(".btn-agregar");
     const cartBrand = document.querySelector(".brand").getAttribute("value");
     const cartModel = document.querySelector(".model").getAttribute("value");
     const cartImage = document.querySelector("img").getAttribute("src");
@@ -20,7 +20,6 @@ window.addEventListener("load", () => {
 
     function addToCart() {
         const cartSpinning = [
-            // { transform: 'rotate(0) scale(1)' },
             { transform: 'rotate(360deg)' }
           ];
           
@@ -40,7 +39,7 @@ window.addEventListener("load", () => {
             shoppingCart.push(newProduct);
             syncLocalStorage(shoppingCart);
             // alert("agregaste");
-            cartIcon.classList.add(display = "none")
+            cartIcon.animate(cartSpinning, timeSpinning);
         } else {
             let shoppingCart = JSON.parse(localStorage.cart);
             shoppingCart.push(newProduct);

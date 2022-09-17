@@ -18,8 +18,6 @@
                 <!-- ME FALTA PODER PONER AL LADO DEL MODELO EL TYPE, PERO COMO ES UN INT AHORA.. -->
               </h4>
             </a>
-            <p class="brand" style="display: none" value="<%= productList[i].brands.name %>"></p>
-            <p class="model" style="display: none" value="<%= productList[i].model %>"></p>
             <a class="img" href="/products/details/<%= productList[i].id %> ">
               <img src="/img/product-detail/<%= productList[i].image %>" alt="">
             </a>
@@ -27,7 +25,11 @@
               <p>
                 $<%= productList[i].price %>
               </p>
-              <button class="btn-agregar" id="add-product" value="<%= productList[i].id %>">Agregar al carrito</button>
+              <!-- <a href="/../products/cart">
+                <button class="btn-agregar" id="agregar" type="submit">
+                  Agregar al carrito
+                </button>
+              </a> -->
             </div>
           </div>
           <% } %>
@@ -39,7 +41,6 @@
 
       <!-- FOOTER -->
       <%- include('../partials/footer') %>
-    <script src="/js/shop-cart.js"></script>
 
   </body>
 
