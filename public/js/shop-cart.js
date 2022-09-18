@@ -7,6 +7,19 @@ window.addEventListener("load", () => {
     const cartId = document.querySelector("#add-product").getAttribute("value");
     const cartIcon = document.querySelector(".fa-cart-shopping")
     let shoppingCart = [];
+    let initialValue = 0;
+
+    //selectors for Cart view
+    const productTitle = document.querySelector(".product-title");
+    const productPriceBefore = document.querySelector(".product-price_before");
+    //const productPrice = document.querySelector(".product-price"); // uso el anterior
+    const productImage = document.querySelector("img").getAttribute("src");
+
+    if (!localStorage.getItem("cart") || localStorage.getItem("cart") == []) {
+        productTitle.innerHTML += "<h3>El carrito esta vacio</h3>";
+        // y el precio es 0, dado que no hay productos
+        productPrice.innerHTML += `<h3> TOTAL: $${initialValue} </h3>`;
+    }
 
     // document.addEventListener("DOMContentLoaded", () => {
     //     shoppingCart = JSON.parse(localStorage.getItem('cart')) || [];

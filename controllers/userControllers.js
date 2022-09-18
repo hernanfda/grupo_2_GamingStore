@@ -14,7 +14,7 @@ const userControllers = {
     },
 
     processLogin: async (req, res) => {
-        await Users.findOne({ where: { email: req.body.email } })
+        await Users.findOne({ where: { email: req.body.email }, raw: true })
             .then((userToLogin) => {
                 //console.log(userToLogin)
                 if (!userToLogin || !bcrypt.compareSync(req.body.password, userToLogin.user_password)) {
@@ -75,18 +75,18 @@ const userControllers = {
     },
     //para que el user llegue a profile, tuvimos que acceder al Object, con dataValues
     profile: async (req, res) => {
-        await Users.findOne({ where: { email: req.session.userLogged.dataValues.email } }).then((user) => {
+        await Users.findOne({ where: { email: req.session.userLogged.email } }).then((user) => {
             return res.render("users/profile", { user, styles: "userProfile" });
         });
     },
     //para que el user llegue a edit, tuvimos que acceder al Object, con dataValues
     edit: (req, res) => {
-        const user = req.session.userLogged.dataValues;
+        const user = req.session.userLogged;
         return res.render("users/edit", { user: user, styles: "userProfile" });
     },
     processEdit: async (req, res) => {
         let file = req.file;
-        let user = req.session.userLogged.dataValues;
+        let user = req.session.userLogged;
         await Users.update(
             {
                 name: req.body.nombre,

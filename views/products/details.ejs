@@ -31,7 +31,7 @@
               <%= product.description %></p>
             <button class="btn-agregar" id="add-product" value="<%= product.id %>">Agregar al carrito</button>
 
-            <% if(locals.userLogged && locals.userLogged.userRole == 2) { %>
+            <% if(locals.userLogged && locals.userLogged.user_profile_id == 2) { %>
             <a href="/products/edit/<%=product.id%>">
             <button class="btn-edit" type="submit">Editar</button>
             </a>
