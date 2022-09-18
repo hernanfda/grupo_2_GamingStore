@@ -29,7 +29,7 @@
 
             <p class="description">DESCRIPCIÓN:</br>
               <%= product.description %></p>
-            <button class="btn-agregar" id="add-product" value="<%= product.id %>">Agregar al carrito</button>
+            <button class="btn-agregar" id="add-product" value="<%= parseInt(product.id) %>">Agregar al carrito</button>
 
             <% if(locals.userLogged && locals.userLogged.user_profile_id == 2) { %>
             <a href="/products/edit/<%=product.id%>">
