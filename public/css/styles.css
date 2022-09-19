@@ -646,8 +646,8 @@ video {
 
   .userPanel {
     position: absolute;
-    right: 65px;
-    top: 17px;
+    right: 70px;
+    top: -91px;
   }
 
   /*--------ALINEACIÓN LUPA------*/
@@ -846,4 +846,5 @@ video {
     filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.5));
     top: 74%
   }
+
 }
