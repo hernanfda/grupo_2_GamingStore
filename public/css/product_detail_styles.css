@@ -279,7 +279,7 @@ h4 {
   box-shadow: (5px 5px 10px);
 }
 
-.articulo:hover p {
+.articulo:hover .precio {
   background-color: rgb(212, 0, 255);
 }
 
@@ -315,7 +315,7 @@ h4 {
   background-color: rgb(209, 0, 0);
 }
 
-p {
+.precio {
   color: rgba(255,255,255,1);
   border-radius: 5px;
   font-weight: bold;
