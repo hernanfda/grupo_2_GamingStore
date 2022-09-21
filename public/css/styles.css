@@ -46,9 +46,116 @@ header {
 }
 
 nav {
-  display: none;
+  width: 100%;
+  height: 0;
+}
+.navbar-a {
+  font-size: 0;
 }
 
+/* BurgerMenu styles empieza acá */
+
+.burger {
+  position: absolute;
+  top: 14px;
+  left: 30px;
+  height: 23px;
+}
+
+.bar {
+  display: block;
+  width: 27px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: white;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+@media(max-width: 767px) {
+  .burger.activo .bar:nth-child(2){
+    opacity: 0;
+  }
+  
+  .burger.activo .bar:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+    transition: all 0.7s;
+  }
+  
+  .burger.activo .bar:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+    transition: all 0.7s;
+  }
+
+  #productsActivo {
+    font-size: 18px;
+    transition: all 0.8s 0.2s;
+  }
+
+  .navbar-a.activo:nth-child(1) {
+    font-size: 18px;
+    transition: all 0.2s 0.2s;
+  }
+
+  .navbar-a.activo:nth-child(2) {
+    font-size: 18px;
+    transition: all 0.4s 0.4s;
+  }
+
+  .navbar-a.activo:nth-child(3) {
+    font-size: 18px;
+    transition: all 0.6s 0.6s;
+  }
+
+  .navbar-a.activo:nth-child(4) {
+    font-size: 18px;
+    transition: all 0.8s 0.8s;
+  }
+
+  .navbar-a.activo:nth-child(5) {
+    font-size: 18px;
+    transition: all 1s 1s;
+  }
+
+  .headerActions-Container.activo {
+    background-color: rgba(0, 0, 0, 0.9);
+    transition: all 1.2s 0.2s;
+  }
+  .navbar.activo {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    top: 63.5px;
+    padding-bottom: 5px;
+    align-items: center;
+    border-bottom: 2px solid rgba(164, 89, 255);
+    background-color: rgba(0, 0, 0, 0.9);
+    transition: all 1.2s 0.2s;
+  }
+  
+  .navbar.activo .navbar-a {
+    color: white;
+    padding-left: 10px;
+    font-weight: 700;
+  }
+
+  .userPanel.activo {
+    position: initial;
+    padding-bottom: 10px;
+    padding-top: 5px;
+  }
+
+  .fa-solid.fa-user.activo {
+    font-size: 20px;
+    color: white;
+    transition: all 1s 0.6s;
+  }
+}
+
+/* BurgerMenu styles termina acá */
 
 .userProfile img {
   border-radius: 50%;
@@ -91,8 +198,10 @@ header .logo {
 }
 
 /*--------ICONO DE USER OCULTO------*/
+/* Modifico linea porque la transicion directa  */
+/* aplicada, de display none a block no es posible */
 .fa-solid.fa-user {
-  display: none;
+  font-size: 0;
 }
 
 /*--------ALINEACIÓN MENU HAMBURGUESA------*/
@@ -537,8 +646,8 @@ video {
 
   .userPanel {
     position: absolute;
-    right: 65px;
-    top: 17px;
+    right: 70px;
+    top: -91px;
   }
 
   /*--------ALINEACIÓN LUPA------*/
@@ -737,4 +846,5 @@ video {
     filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.5));
     top: 74%
   }
+
 }

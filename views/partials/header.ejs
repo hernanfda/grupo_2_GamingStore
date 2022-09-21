@@ -1,5 +1,14 @@
 <header>
-    <div class="burger"><i class="fa-solid fa-bars"></i></div>
+    <div class="burger">
+        <!-- <i class="fa-solid fa-bars"></i> -->
+        <!-- Alternativa de icono burger con span como barras -->
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+        <!-- Requiriendo JS handleClick para burgerMenu -->
+    <script src="/js/burger.js"></script>
+
     <a href="/" class="logo-Container">
         <div class="logo">
             
@@ -10,6 +19,14 @@
     <div>
         <i class="fa-solid fa-magnifying-glass"></i>
     </div>
+</div>
+<nav class="navbar">
+    <!--Podrian ir links a productos destacados de cada uno?-->
+    <a href="/products" class="navbar-a" id="products">PRODUCTOS</a>
+    <a href="/products/list/keyboard" class="navbar-a">TECLADOS</a>
+    <a href="/products/list/mouse" class="navbar-a">MOUSE</a>
+    <a href="/products/list/chair" class="navbar-a">SILLONES</a>
+    <a href="/products/list/headset" class="navbar-a">AURICULARES</a>
     <div class="userPanel">
         <% if(locals.isLogged) { %>
             <div class="profile">
@@ -23,13 +40,5 @@
                 <a href="/users/login"><i class="fa-solid fa-user"></i></a>
             <% } %>
     </div>
-    </div>
-    <nav class="navbar">
-        <!--Podrian ir links a productos destacados de cada uno?-->
-        <a href="/products" class="navbar-a">PRODUCTOS</a>
-        <a href="/products/list/keyboard" class="navbar-a">TECLADOS</a>
-        <a href="/products/list/mouse" class="navbar-a">MOUSE</a>
-        <a href="/products/list/chair" class="navbar-a">SILLONES</a>
-        <a href="/products/list/headset" class="navbar-a">AURICULARES</a>
-    </nav>
+</nav>
 </header>
