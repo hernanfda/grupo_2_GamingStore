@@ -243,10 +243,19 @@ a {
 /*--------ARTICULOS------*/
 section {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   width: 100%;
-  align-items: center;
+  height: 100vh;
 }
+
+.section-Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
 .titulo {
   margin: 20px 0 20px 0;
 }
@@ -481,21 +490,6 @@ footer {
   .backbtn-modifier {
     display: flex;
     justify-content: center;
-    width: 100%;
-  }
-
-  section {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 100vh;
-  }
-
-  .section-Container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
     width: 100%;
   }
 
