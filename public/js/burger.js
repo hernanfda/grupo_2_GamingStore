@@ -1,12 +1,19 @@
+// const e = require("express");
+
 window.addEventListener('load',function(){
-    const burgerMenu = document.querySelector('.burger');
-    const nav = document.querySelector("nav");
-    const navLinks = document.querySelectorAll(".navbar-a");
+
+    const burgerMenu = document.querySelector('.burger')
+    const nav = document.querySelector("nav")
+    const navLinks = document.querySelectorAll(".navbar-a")
     const header = document.querySelector(".headerActions-Container")
+    const headerContainer = document.querySelector(".header-Container")
     const productsLink = document.querySelector("#products")
     const user = document.querySelector(".fa-user")
     const userPanel = document.querySelector(".userPanel")
-    burgerMenu.addEventListener("click", () => {
+    const cart = document.querySelector(".cart")
+    const search = document.querySelector(".search")
+
+    burgerMenu.addEventListener("click", (event) => {
         navLinks.forEach(link => {
             link.classList.remove("activo")
         })
@@ -27,6 +34,7 @@ window.addEventListener('load',function(){
             if(!products.style.color || products.style.color == "white" ) {
                 products.style.color = "rgba(164, 89, 255)"
                 navBar.style.height = "145px"
+                navBar.style.padding = "0px 0px 5px 0px"
             } else {
                 products.style.color = "white"
                 navBar.style.height = "60px"
@@ -36,7 +44,27 @@ window.addEventListener('load',function(){
                     link.classList.toggle("activo");
                 }
             })
+            burgerMenu.addEventListener("click", (e) => {
+                e.preventDefault()
+                if(products.style.color || products.style.color == "rgba(164, 89, 255)" ) {
+                    products.style.color = "white"
+                    navBar.style.height = "60px"
+                } else {
+                    products.style.color = "rgba(164, 89, 255)"
+                    navBar.style.height = "145px"
+                    navBar.style.padding = "0px 0px 5px 0px"
+                }
+            })
         })
+        if (cart.style.display == "none" && search.style.display == "none") {
+            cart.style.display = "block"
+            search.style.display = "block"
+            headerContainer.classList.remove("header-Container_activo")
+        } else {
+            headerContainer.classList.add("header-Container_activo")
+            cart.style.display = "none"
+            search.style.display = "none"
+        }
     });
     // En caso de clickear un link se desactivan los estilos
     

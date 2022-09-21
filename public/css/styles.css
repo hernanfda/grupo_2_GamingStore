@@ -28,6 +28,17 @@ header {
   z-index: 10;
 }
 
+.header-Container {
+  width: 100%;
+}
+
+.header-Container_activo {
+  position: fixed;
+  height: 63.5px;
+  background-color: rgba(0, 0, 0, 0.9);
+  transition: all 1.2s 0.2s;
+}
+
 .headerActions-Container {
   display: flex;
   width: 100%;
@@ -60,6 +71,10 @@ nav {
   top: 14px;
   left: 30px;
   height: 23px;
+}
+
+.burger-Container {
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .bar {
@@ -127,7 +142,7 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    position: absolute;
+    position: fixed;
     top: 63.5px;
     padding-bottom: 5px;
     align-items: center;
@@ -142,11 +157,11 @@ nav {
     font-weight: 700;
   }
 
-  .userPanel.activo {
+  /* .userPanel.activo {
     position: initial;
     padding-bottom: 10px;
     padding-top: 5px;
-  }
+  } */
 
   .fa-solid.fa-user.activo {
     font-size: 20px;
@@ -164,9 +179,9 @@ nav {
 }
 
 .userPanel {
-  position: absolute;
-  right: 106px;
-  top: 17px;
+  position: fixed;
+  right: 47px;
+  top: 18px;
 }
 
 /*--------CENTRADO EL LOGO EN EL HEADER------*/
@@ -216,7 +231,7 @@ header .logo {
 
 /*--------ALINEACIÓN CARRITO------*/
 .fa-cart-shopping {
-  right: 80px;
+  right: 70px;
   font-size: 23px;
 }
 
@@ -647,12 +662,11 @@ video {
   .userPanel {
     position: absolute;
     right: 70px;
-    top: -91px;
   }
 
   /*--------ALINEACIÓN LUPA------*/
   .fa-magnifying-glass {
-    right: 30px;
+    right: 28px;
     top: 22px;
     font-size: 23px;
     transition: all 0.3s ease-in-out;
