@@ -9,34 +9,34 @@
     <%- include('../partials/header') %>
 
       <section>
-
-        <% for(let i=0; i < productList.length; i++){ %>
-          <div class="articulo">
-            <a href="/products/details/<%= productList[i].id %> ">
-              <h4>
-                <%= `${productList[i].brands.name} ${productList[i].model} `%>  
-                <!-- ME FALTA PODER PONER AL LADO DEL MODELO EL TYPE, PERO COMO ES UN INT AHORA.. -->
-              </h4>
-            </a>
-            <a class="img" href="/products/details/<%= productList[i].id %> ">
-              <img src="/img/product-detail/<%= productList[i].image %>" alt="">
-            </a>
-            <div class="priceCart">
-              <p>
-                $<%= productList[i].price %>
-              </p>
-              <a href="/../products/cart">
-                <button class="btn-agregar" id="agregar" type="submit">
-                  Agregar al carrito
-                </button>
+        <div class="section-Container">
+          <% for(let i=0; i < productList.length; i++){ %>
+            <div class="articulo">
+              <a href="/products/details/<%= productList[i].id %> ">
+                <h4>
+                  <%= `${productList[i].brands.name} ${productList[i].model} `%>  
+                  <!-- ME FALTA PODER PONER AL LADO DEL MODELO EL TYPE, PERO COMO ES UN INT AHORA.. -->
+                </h4>
               </a>
+              <a class="img" href="/products/details/<%= productList[i].id %> ">
+                <img src="/img/product-detail/<%= productList[i].image %>" alt="">
+              </a>
+              <div class="priceCart">
+                <p>
+                  $<%= productList[i].price %>
+                </p>
+                <a href="/../products/cart">
+                  <button class="btn-agregar" id="agregar" type="submit">
+                    Agregar al carrito
+                  </button>
+                </a>
+              </div>
             </div>
+            <% } %>
+
+
+              </div>
           </div>
-          <% } %>
-
-
-            </div>
-
       </section>
 
       <!-- FOOTER -->
