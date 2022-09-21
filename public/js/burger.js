@@ -83,6 +83,7 @@ window.addEventListener('load',function(){
                 })
                 user.classList.toggle("activo");
                 userPanel.classList.toggle("activo");
+                headerContainer.classList.remove("header-Container_activo")
             }
         })
     })
