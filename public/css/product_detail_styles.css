@@ -542,6 +542,7 @@ footer {
   }
 
   .userPanel {
+    display: block;
     right: 68px;
     top: 18px;
   }

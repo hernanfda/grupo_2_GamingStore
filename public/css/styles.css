@@ -673,6 +673,7 @@ video {
   }
 
   .userPanel {
+    display: block;
     position: absolute;
     right: 68px;
     top: 17px;
