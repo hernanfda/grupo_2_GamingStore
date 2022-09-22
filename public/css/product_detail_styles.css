@@ -313,7 +313,7 @@ h4 {
   background-color: rgba(255,255,255,0.75);
   color: rgba(0,0,0,0.55);
   box-shadow: 5px 5px 10px;
-  width: 80%;
+  width: 65%;
   height: auto;
   margin: 20px;
   padding: 15px;  
@@ -363,7 +363,7 @@ h4 {
 
 .btn-agregar-Detail {
   padding: 10px;
-  margin-top: 20px;
+  height: 55%;
   color: white;
   border-radius: 10px;
   border: 0px;
@@ -434,6 +434,8 @@ h4 {
 .detail-Cart {
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 80px;
 }
 /*--------DESCRIPCIONES DE PRODUCTO------*/
 .especificaciones {
@@ -444,12 +446,8 @@ h4 {
 }
 
 .especificaciones-Detail {
-  width: 80%;
-  height: auto;
-  text-align: left;
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 65%;
+  padding: 10px;
 }
 
 
@@ -614,10 +612,19 @@ footer {
     height: 120px;
   }
 
-  .backbtn-modifier {
+  .articulo-Detail {
+    width: 80%;
+  }
+
+  .btn-agregar-Detail {
+    height: 55%;
+    margin: 0px;
+  }
+
+  .detail-Cart {
     display: flex;
-    justify-content: center;
-    width: 100%;
+    align-items: center;
+    height: 80px;
   }
 
   section {
@@ -629,7 +636,7 @@ footer {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 70%;
     margin-left: auto;
     margin-right: auto;
   }
