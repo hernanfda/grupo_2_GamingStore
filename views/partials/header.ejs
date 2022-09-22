@@ -11,11 +11,12 @@
                 <i class="fa-solid fa-magnifying-glass"></i>
             </div>
             <div class="userPanel">
-                <% if(locals.isLogged) { %>
+                <!-- <% if(locals.isLogged) { %>
                         <a href="/users/profile"><img src="/img/usersAvatar/<%= locals.userLogged.dataValues.user_avatar %>" class="userProfile-img"></a>
                 <% } else { %>
-                        <a href="/users/login"><i class="fa-solid fa-user"></i></a>
-                    <% } %>
+                        
+                    <% } %> -->
+                    <a href="/users/login"><% if(locals.isLogged) { %><img src="/img/usersAvatar/<%= locals.userLogged.dataValues.user_avatar %>" id="userPanelImg"<% } %><i class="fa-solid fa-user"></i></a>
             </div>
         </div>
         <nav class="navbar">

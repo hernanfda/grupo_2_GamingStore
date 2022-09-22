@@ -10,6 +10,7 @@ window.addEventListener('load',function(){
     const productsLink = document.querySelector("#products")
     const user = document.querySelector(".fa-user")
     const userPanel = document.querySelector(".userPanel")
+    const userPanelImg = document.querySelector("#userPanelImg")
     const cart = document.querySelector(".cart")
     const search = document.querySelector(".search")
 
@@ -19,11 +20,16 @@ window.addEventListener('load',function(){
         navLinks.forEach(link => {
             link.classList.remove("activo")
         })
-        nav.classList.toggle("activo");
+        nav.classList.toggle("activo")
         header.classList.toggle("activo")
-        burgerMenu.classList.toggle("activo");
-        user.classList.toggle("activo");
-        userPanel.classList.toggle("activo");
+        burgerMenu.classList.toggle("activo")
+        user.classList.toggle("activo")
+        userPanel.classList.toggle("activo")
+        if (userPanelImg){
+            userPanelImg.style.height = "30px"
+            userPanelImg.style.width = "30px"
+            userPanelImg.style.borderRadius = "50%"
+        } 
         if(productsLink.id == "products") {
             productsLink.id = "productsActivo"
         } else {
