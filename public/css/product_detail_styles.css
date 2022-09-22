@@ -182,7 +182,7 @@ nav {
 
 .userPanel {
   display: none;
-  position: fixed;
+  position: absolute;
   right: 47px;
   top: 18px;
   z-index: 1000;
@@ -252,9 +252,10 @@ a {
 /*--------ARTICULOS------*/
 section {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   width: 100%;
-  height: 100%;
+  height: 100vh;
 }
 
 .section-Detail {
@@ -303,11 +304,32 @@ h4 {
   transition: all 0.3s ease-in-out;
 }
 
+.articulo-Detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  background-color: rgba(255,255,255,0.75);
+  color: rgba(0,0,0,0.55);
+  box-shadow: 5px 5px 10px;
+  width: 80%;
+  height: auto;
+  margin: 20px;
+  padding: 15px;  
+  transition: all 0.3s ease-in-out;
+}
+
 .articulo:hover .precio {
   background-color: rgb(212, 0, 255);
 }
 
 .articulo img {
+  width: 80%;
+  height: auto;
+}
+
+.articulo-Detail img {
   width: 80%;
   height: auto;
 }
@@ -593,7 +615,8 @@ footer {
   }
 
   section {
-    padding: 30px;
+    height: 100%;
+    padding-top: 30px;
   }
 
   .section-Detail {
@@ -601,8 +624,7 @@ footer {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 70%;
-    height: 100vh;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
   }
@@ -614,9 +636,10 @@ footer {
     align-items: center;
     flex-wrap: wrap;
     width: 100%;
+    height: 100vh;
   }
 
-  .articulo{
+  .articulo {
     width: 25%;
   }
 
