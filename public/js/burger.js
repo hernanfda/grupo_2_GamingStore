@@ -48,7 +48,7 @@ window.addEventListener('load',function(){
             const navBar = document.querySelector(".navbar.activo")
             if(!products.style.color || products.style.color == "white" ) {
                 products.style.color = "rgba(164, 89, 255)"
-                navBar.style.height = "145px"
+                navBar.style.height = "160px"
                 navBar.style.padding = "0px 0px 5px 0px"
             } else {
                 products.style.color = "white"
@@ -66,7 +66,7 @@ window.addEventListener('load',function(){
                     navBar.style.height = "60px"
                 } else {
                     products.style.color = "rgba(164, 89, 255)"
-                    navBar.style.height = "145px"
+                    navBar.style.height = "160px"
                     navBar.style.padding = "0px 0px 5px 0px"
                 }
             })

@@ -132,6 +132,11 @@ nav {
     transition: all 1s 1s;
   }
 
+  .navbar-a.activo:nth-child(6) {
+    font-size: 18px;
+    transition: all 1.2s 1.2s;
+  }
+
   .headerActions-Container.activo {
     background-color: rgba(0, 0, 0, 0.9);
     transition: all 1.2s 0.2s;
