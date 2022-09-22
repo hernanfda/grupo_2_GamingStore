@@ -1,9 +1,7 @@
 <header>
     <%- include('burger') %>
         <a href="/" class="logo-Container">
-            <div class="logo">
-                
-            </div>
+            <div class="logo"></div>
         </a>
         <div class="headerActions-Container">
             <div class="cart">
@@ -14,13 +12,7 @@
             </div>
             <div class="userPanel">
                 <% if(locals.isLogged) { %>
-                    <div class="profile">
-                        <a href="/users/profile">
-                            <div class="userProfile">
-                                <img src="/img/usersAvatar/<%= locals.userLogged.dataValues.user_avatar %>">
-                            </div>
-                        </a>
-                    </div>
+                        <a href="/users/profile"><img src="/img/usersAvatar/<%= locals.userLogged.dataValues.user_avatar %>" class="userProfile-img"></a>
                 <% } else { %>
                         <a href="/users/login"><i class="fa-solid fa-user"></i></a>
                     <% } %>

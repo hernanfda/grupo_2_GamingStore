@@ -13,7 +13,9 @@ window.addEventListener('load',function(){
     const cart = document.querySelector(".cart")
     const search = document.querySelector(".search")
 
+
     burgerMenu.addEventListener("click", (event) => {
+        userPanel.style.display = "flex"
         navLinks.forEach(link => {
             link.classList.remove("activo")
         })

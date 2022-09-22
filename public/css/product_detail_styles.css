@@ -172,16 +172,20 @@ nav {
 
 /* BurgerMenu styles termina acá */
 
-.userProfile img {
+.userProfile-img {
+  height: 18px;
+  width: 18px;
+  color: white;
+  font-size: 30px;
   border-radius: 50%;
-  width: 34px;
-  height: 34px;
 }
 
 .userPanel {
-  position: absolute;
-  right: 100px;
-  top: 11px;
+  display: none;
+  position: fixed;
+  right: 47px;
+  top: 18px;
+  z-index: 1000;
 }
 
 /*--------CENTRADO EL LOGO EN EL HEADER------*/
