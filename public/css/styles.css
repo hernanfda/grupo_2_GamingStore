@@ -180,8 +180,8 @@ nav {
 
 .userPanel {
   position: fixed;
-  right: 47px;
-  top: 18px;
+  right: 100px;
+  top: 11px;
 }
 
 /*--------CENTRADO EL LOGO EN EL HEADER------*/
@@ -661,7 +661,8 @@ video {
 
   .userPanel {
     position: absolute;
-    right: 70px;
+    right: 68px;
+    top: 17px;
   }
 
   /*--------ALINEACIÓN LUPA------*/
