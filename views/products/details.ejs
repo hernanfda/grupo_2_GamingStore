@@ -7,11 +7,11 @@
   <body>
     <!-- HEADER -->
     <%- include('../partials/header') %>
-        <section>
+        <section class="section-Detail">
           <div class="articulo">
             <img id="producto" src="/img/product-detail/<%=product.image%>"/>
           </div>
-          <div class="especificaciones">
+          <div class="especificaciones-Detail">
             <p class="modelo">
               <%= `${product.brands.name} ${product.model}` %>
             </p>
