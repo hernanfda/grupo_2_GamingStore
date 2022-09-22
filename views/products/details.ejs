@@ -12,24 +12,25 @@
             <img id="producto" src="/img/product-detail/<%=product.image%>"/>
           </div>
           <div class="especificaciones-Detail">
-            <p class="modelo">
+            <p class="modelo-Detail">
               <%= `${product.brands.name} ${product.model}` %>
             </p>
-            <!-- <p>ESPECIFICACIONES:</p> -->
-            <p>MARCA: <%= product.brands.name %>
-            </p>
-            <p>MODELO: <%= product.model %>
-            </p>
-            <P class="precio">PRECIO: $<%= product.price %>
-            </P>
-            <p>
-              <%= `12 cuotas de $${(product.price / 12).toFixed(2)}` %>
-            </p>
-
-            <p class="description">DESCRIPCIÓN:</br>
-              <%= product.description %></p>
-            <button class="btn-agregar" type="submit">Agregar al carrito</button>
-
+            <div class="detail-Container">
+              <!-- <p>ESPECIFICACIONES:</p> -->
+              <p class="detail-Info">MARCA: <%= product.brands.name %>.</p>
+              <p class="detail-Info">MODELO: <%= product.model %>.</p>
+              <p class="detail-Description">DESCRIPCIÓN: <%= product.description %>.</p>
+            </div>
+            <div class="detail-Prices">
+              <p class="precio-Detail">PRECIO: $<%= product.price %>
+              </p>
+              <p class="precio-Payments">
+                <%= `12 cuotas de $${(product.price / 12).toFixed(2)}` %>
+              </p>
+            </div>
+            <div class="detail-Cart">
+              <button class="btn-agregar-Detail" type="submit">Agregar al carrito</button>
+            </div>
             <% if(locals.userLogged && locals.userLogged.dataValues.user_profile_id == 2) { %>
             <a href="/products/edit/<%=product.id%>">
             <button class="btn-edit" type="submit">Editar</button>
