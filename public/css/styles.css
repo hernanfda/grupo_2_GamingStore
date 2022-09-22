@@ -195,6 +195,7 @@ nav {
 }
 
 #userPanelImg {
+  display: none;
   transition: all 1.2s 0.2s;
 }
 
@@ -341,13 +342,11 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
   color: rgb(226, 222, 222);
   height: 50px;
-  background-color: rgba(38, 38, 38, .61);
+  background-color: rgba(38, 38, 38, 0.61);
   margin-top: auto;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
 }
 
 .redes {
@@ -672,6 +671,7 @@ video {
   }
 
   #userPanelImg {
+    display: block;
     position: relative;
     width: 50px;
     height: 50px;

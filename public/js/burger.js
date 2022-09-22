@@ -25,18 +25,18 @@ window.addEventListener('load',function(){
         burgerMenu.classList.toggle("activo")
         user.classList.toggle("activo")
         userPanel.classList.toggle("activo")
-        if (userPanelImg){
-            userPanelImg.style.height = "30px"
-            userPanelImg.style.width = "30px"
-            userPanelImg.style.borderRadius = "50%"
-            burgerMenu.addEventListener("click", (event) => {
-                if (header.classList.contains("activo")) {
-                    userPanelImg.style.display = "block"
-                } else {
-                    userPanelImg.style.display = "none"
-                }
-            })
-        }
+        // if (userPanelImg){
+        //     userPanelImg.style.height = "30px"
+        //     userPanelImg.style.width = "30px"
+        //     userPanelImg.style.borderRadius = "50%"
+        //     burgerMenu.addEventListener("click", (event) => {
+        //         if (header.classList.contains("activo")) {
+        //             userPanelImg.style.display = "block"
+        //         } else {
+        //             userPanelImg.style.display = "none"
+        //         }
+        //     })
+        // }
         if(productsLink.id == "products") {
             productsLink.id = "productsActivo"
         } else {
