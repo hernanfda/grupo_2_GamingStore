@@ -29,7 +29,14 @@ window.addEventListener('load',function(){
             userPanelImg.style.height = "30px"
             userPanelImg.style.width = "30px"
             userPanelImg.style.borderRadius = "50%"
-        } 
+            burgerMenu.addEventListener("click", (event) => {
+                if (header.classList.contains("activo")) {
+                    userPanelImg.style.display = "block"
+                } else {
+                    userPanelImg.style.display = "none"
+                }
+            })
+        }
         if(productsLink.id == "products") {
             productsLink.id = "productsActivo"
         } else {

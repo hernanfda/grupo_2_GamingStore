@@ -186,6 +186,11 @@ nav {
   right: 47px;
   top: 18px;
   z-index: 1000;
+  transition: all 1.2s 0.2s;
+}
+
+#userPanelImg {
+  transition: all 1.2s 0.2s;
 }
 
 /*--------CENTRADO EL LOGO EN EL HEADER------*/
