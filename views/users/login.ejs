@@ -12,13 +12,13 @@
                 <div class="register-title">
                     <h1>Ingresá</h1>
                 </div>
+                <ul class="errorList"></ul>
                 <form action="/users/login" method="POST" class="register-container">
                     <div class="control-formulario register-container">
-                        <input type="text" name="email" placeholder="Email de usuario" class="text-input" required>
+                        <input type="text" name="email" placeholder="Email de usuario" class="text-input" >
                     </div>
                     <div class="register-container">
-                        <input type="password" name="password" placeholder="Contraseña" class="text-input" id="pwd"
-                            required>
+                        <input type="password" name="password" placeholder="Contraseña" class="text-input" id="pwd">
                         <span>
                             <i class="fa fa-eye" aria-hidden="true" type="button" id="eye"></i>
                         </span>
@@ -48,6 +48,7 @@
             <!-- FOOTER -->
             <%- include('../partials/footer') %>
 
+                <script src="/js/userLoginValidation.js"></script>
                 <script src="/js/show_hide_pw.js"></script>
     </body>
 
