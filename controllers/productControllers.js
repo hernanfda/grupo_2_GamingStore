@@ -5,6 +5,7 @@ const db = require("../database/models");
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 const { request } = require("http");
+const { validationResult } = require("express-validator");
 
 const ProductList = db.Products;
 const Categories = db.Categories;
@@ -76,22 +77,39 @@ const productControllers = {
             });
     },
     saveProduct: async (req, res) => {
-        await ProductList.create({
-            brand_id: req.body.brand_id,
-            model: req.body.model,
-            price: req.body.price,
-            image: req.file.filename,
-            offer: req.body.offer ? 1 : 0,
-            description: req.body.description,
-            popular: req.body.popular ? 1 : 0,
-            category_id: req.body.category_id,
-        })
-            .then(() => {
-                res.redirect("products");
+        let errors = validationResult(req);
+        if (errors.errors.length > 0) {
+        let brandForm = Brands.findAll();
+        let categoryForm = Categories.findAll();
+        Promise.all([categoryForm, brandForm])
+            .then(([categories, brands]) => {
+                return res.render("products/create", {
+                errors: errors.mapped(),
+                old: req.body,
+                styles: "register_login",
+                categories,
+                brands
+              });});
+        }
+        else{
+            await ProductList.create({
+                brand_id: req.body.brand_id,
+                model: req.body.model,
+                price: req.body.price,
+                image: req.file.filename,
+                offer: req.body.offer ? 1 : 0,
+                description: req.body.description,
+                popular: req.body.popular ? 1 : 0,
+                category_id: req.body.category_id,
             })
-            .catch((err) => {
-                console.error(err);
-            });
+                .then(() => {
+                    res.redirect("products");
+                })
+                .catch((err) => {
+                    console.error(err);
+                });  
+        }
+        
     },
     editProduct: async (req, res) => {
         let id = req.params.id;
@@ -109,26 +127,32 @@ const productControllers = {
     },
     updateProduct: async (req, res) => {
         let id = req.params.id;
-        let file = req.file;
-        await ProductList.update(
-            {
-                brand_id: req.body.brand_id,
-                model: req.body.model,
-                price: req.body.price,
-                image: file ? req.file.filename : req.body.image,
-                offer: req.body.offer ? 1 : 0,
-                description: req.body.description,
-                popular: req.body.popular ? 1 : 0,
-                category_id: req.body.category_id,
-            },
-            { where: { id: id } }
-        )
-            .then(() => {
-                res.redirect("/products");
-            })
-            .catch((err) => {
-                console.error(err);
-            });
+        // let file = req.file;
+        let errors = validationResult(req);
+        console.log(errors);
+        if (errors.errors.length <= 0) {
+            await ProductList.update(
+                {
+                    brand_id: req.body.brand_id,
+                    model: req.body.model,
+                    price: req.body.price,
+                    image: file ? req.file.filename : req.body.image,
+                    offer: req.body.offer ? 1 : 0,
+                    description: req.body.description,
+                    popular: req.body.popular ? 1 : 0,
+                    category_id: req.body.category_id,
+                },
+                { where: { id: id } }
+            )
+                .then(() => {
+                    res.redirect("/products");
+                })
+                .catch((err) => {
+                    console.error(err);
+                });
+        }
+
+       
     },
     deleteProduct: async (req, res) => {
         let id = req.params.id;
