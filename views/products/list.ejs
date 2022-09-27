@@ -9,6 +9,7 @@
     <%- include('../partials/header') %>
 
       <section>
+
         <div class="section-Container">
           <% for(let i=0; i < productList.length; i++){ %>
             <div class="articulo">
@@ -33,9 +34,24 @@
               </div>
             </div>
             <% } %>
-
-
-              </div>
+            <% if(locals.userLogged && locals.userLogged.dataValues.user_profile_id == 2) { %>
+              <div class="section-Container">
+                  <div class="articulo">
+                    <a href="/products/create">
+                      <h4>CREAR NUEVO PRODUCTO
+                      </h4>
+                    </a>
+                    <a class="img" href="/products/create">
+                      <img src="/img/add_simbol2.png" alt="">
+                    </a>
+                    <div class="priceCart">
+                      <a href="/../products/cart">
+                      </a>
+                    </div>
+                  </div>
+                  <% } %>
+                  </div>
+            </div>
           </div>
       </section>
   </body>
