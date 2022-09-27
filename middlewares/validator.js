@@ -29,7 +29,7 @@ module.exports = {
             return true;
             })
     ],
-    CreateProduct: [
+    createProduct: [
         body('brand_id')
             .notEmpty()
             .withMessage("Debes seleccionar una marca"),
@@ -58,4 +58,25 @@ module.exports = {
             return true;
             })
     ],
+    editProduct: [
+        body('brand_id')
+            .notEmpty()
+            .withMessage("Debes seleccionar una marca"),
+        body("category_id")
+            .notEmpty()
+            .withMessage("Debes seleccionar el tipo de producto"),
+        body("model")
+            .notEmpty()
+            .withMessage("Debes ingresar el modelo")
+            .isLength({ min: 3, max: 20 })
+            .withMessage("El modelo debe tener más de 3 caracteres"),
+        body("price")
+            .notEmpty()
+            .withMessage("Debes ingresar el precio")
+            .isNumeric()
+            .withMessage("Debes ingresar el precio en números"),
+        body("description")
+            .notEmpty()
+            .withMessage("Debes ingresar una descripción"),
+    ],   
 }

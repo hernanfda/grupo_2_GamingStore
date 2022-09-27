@@ -15,10 +15,10 @@ router.get("/details/:id", productControllers.productDetail);
 router.get("/list/:type", productControllers.productFilter);
 //create and store product
 router.get("/create", adminMiddleware, productControllers.createProduct);
-router.post("/", upload.single('image'),validator.CreateProduct, productControllers.saveProduct);
+router.post("/", upload.single('image'),validator.createProduct, productControllers.saveProduct);
 //edit product
 router.get("/edit/:id", adminMiddleware, productControllers.editProduct);
-router.put("/:id", upload.single('image'),validator.CreateProduct, productControllers.updateProduct);
+router.put("/:id", upload.single('image'),validator.editProduct, productControllers.updateProduct);
 //delete product
 router.delete("/delete/:id", adminMiddleware, productControllers.deleteProduct);
 

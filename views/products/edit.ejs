@@ -46,17 +46,36 @@
                                     <% } %>
                                     <% }) %>
                             </select>
+                            <div class="register-container">
+                                <label for="model">Modelo</label>
+                                <input type="text" name="model" id="modelo" class="text-input" value="<%= product.model %>" />
+                                <% if(locals.errors && errors.model) { %>
+                                    <div class="mensajeError">
+                                        <h4><%= errors.model.msg %></h4>
+                                    </div>
+                                <% } %>
+                            </div>
 
                             <div class="register-container">
                                 <label for="price">Precio</label>
                                 <input type="text" name="price" id="price" class="text-input"
                                     value="<%= product.price %>" />
+                                    <% if(locals.errors && errors.price) { %>
+                                        <div class="mensajeError">
+                                            <h4><%= errors.price.msg %></h4>
+                                        </div>
+                                    <% } %>
                             </div>
 
                             <div class="register-container">
                                 <label for="description">Descripción</label>
                                 <input type="text" name="description" id="description" class="text-input"
                                     value="<%= product.description %>" />
+                                    <% if(locals.errors && errors.description) { %>
+                                        <div class="mensajeError">
+                                            <h4><%= errors.description.msg %></h4>
+                                        </div>
+                                    <% } %>
                             </div>
                             <div>
                                 <label for="offers">Oferta</label>
@@ -73,6 +92,11 @@
                             <div class="register-container">
                                 <label for="image">Imagen</label>
                                 <input type="file" name="image" id="imagenProducto" value="<%= product.image %>" />
+                                <% if(locals.errors && errors.image) { %>
+                                    <div class="mensajeError">
+                                        <h4><%= errors.image.msg %></h4>
+                                    </div>
+                                <% } %>
                             </div>
                             <div class="btns-container">
                                 <button type="submit" class="btn-crud">
