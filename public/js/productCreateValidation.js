@@ -1,7 +1,6 @@
 window.onload = function () {
     let form = document.querySelector("form");
     let errorsList = document.querySelector(".errorList");
-    console.log("estamos conectados");
     form.addEventListener("submit", (e) => {
         //Check if there is any previous errors created and reset the list
         let errorBullets = document.querySelectorAll("li");
@@ -12,7 +11,6 @@ window.onload = function () {
             });
         }
         let errors = [];
-        console.log(form.brand_id);
         if (form.brand_id.value == "") {
             errors.push("Debes seleccionar una marca");
         }
