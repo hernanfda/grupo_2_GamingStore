@@ -25,7 +25,7 @@ function readProductData(product) {
     if (shoppingCart.some((product) => product.id == infoProduct.id)) {
         // console.log("si paso el == del id");
         const products = shoppingCart.map(product => {
-            if (product.id == infoProduct.id) {
+            if (product.id == infoProduct.id) { 
                 //si es el mismo id aumento la cantidad
                 let cantidad = parseInt(product.cantidad);
                 cantidad++;
@@ -46,7 +46,7 @@ function readProductData(product) {
 
 function addToCart(e) {
     const cartIcon = document.querySelector(".fa-cart-shopping");
-    const cartSpinning = [{ transform: "rotate(360deg)" }];
+    const cartSpinning = [{ transform: "rotate(360deg)", color: 'rgb(162, 0, 255)' }]; //despues podria ser que incremente un numero de items e el cart
     const timeSpinning = {
         duration: 500,
         iterations: 1,
