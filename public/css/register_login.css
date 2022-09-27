@@ -145,6 +145,12 @@ input[type="date"] {
   line-height: 1;
 }
 
+.errorList{
+  display: none;
+  padding: 8px;
+  color: red;
+}
+
 button[type="submit"]:hover,
 [type="reset"]:hover {
   background-color: rgba(164, 89, 255, 0.925);

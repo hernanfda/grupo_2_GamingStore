@@ -14,9 +14,10 @@
                             <h1>Crear Producto</h1>
                         </div>
                         <form action="/products" method="POST" enctype="multipart/form-data">
+                            <ul class="errorList"></ul>
                             <div class="register-container">
                                 <label for="brand_id">Marca</label>
-                                <select name="brand_id" id="" class="text-input" required>
+                                <select name="brand_id" id="" class="text-input">
                                     <option value="" disabled selected>- Marca - </option>
                                     <% brands.forEach(brand=> { %>
                                         <option value="<%= brand.id %>">
@@ -26,7 +27,7 @@
                                 </select>
                   
                                 <label for="category_id">Tipo</label>
-                                <select name="category_id" id="tipo" class="text-input" required>
+                                <select name="category_id" id="tipo" class="text-input" >
                                     <option value="" disabled selected>- Tipo - </option>
                                     <% categories.forEach(category=> { %>
                                         <option value="<%= category.id %>">
@@ -37,16 +38,16 @@
                             </div>
                             <div class="register-container">
                                 <label for="model">Modelo</label>
-                                <input type="text" name="model" id="modelo" class="text-input" required />
+                                <input type="text" name="model" id="modelo" class="text-input"  />
                             </div>
                             <div class="register-container">
                                 <label for="price">Precio</label>
-                                <input type="text" name="price" id="price" class="text-input" required />
+                                <input type="text" name="price" id="price" class="text-input"  />
                             </div>
 
                             <div class="register-container">
                                 <label for="description">Descripción</label>
-                                <input type="text" name="description" id="description" class="text-input" required />
+                                <input type="text" name="description" id="description" class="text-input"  />
                             </div>
 
                             <div>
@@ -78,6 +79,7 @@
                 <%- include('../partials/footer') %>
 
                     <script src="/js/show_hide_pw.js"></script>
+                    <script src="/js/productCreateValidation.js"></script>
         </body>
 
 </html>

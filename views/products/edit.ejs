@@ -14,9 +14,10 @@
                         <h1>Modificar Producto</h1>
                     </div>
                     <form action="/products/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                        <ul class="errorList"></ul>
                         <div class="register-container">
                             <label for="brand">Marca</label>
-                            <select name="brand_id" id="" class="text-input" required>
+                            <select name="brand_id" id="" class="text-input">
                                 <!-- <option value="" disabled >- Marca - </option> -->
                                 <% brands.forEach(brand=> { %>
                                     <%if(product.brands.name == brand.name){%>
@@ -32,7 +33,7 @@
                             </select>
 
                             <label for="category_id">Tipo</label>
-                            <select name="category_id" id="tipo" class="text-input" required>
+                            <select name="category_id" id="tipo" class="text-input">
                                 <!-- <option value="" disabled>- Tipo - </option> -->
                                 <% categories.forEach(category=> { %>
                                     <%if(product.categories.name == category.name){%>
@@ -50,13 +51,13 @@
                             <div class="register-container">
                                 <label for="price">Precio</label>
                                 <input type="text" name="price" id="price" class="text-input"
-                                    value="<%= product.price %>" required />
+                                    value="<%= product.price %>" />
                             </div>
 
                             <div class="register-container">
                                 <label for="description">Descripción</label>
                                 <input type="text" name="description" id="description" class="text-input"
-                                    value="<%= product.description %>" required />
+                                    value="<%= product.description %>" />
                             </div>
                             <div>
                                 <label for="offers">Oferta</label>
@@ -91,6 +92,7 @@
             <%- include('../partials/footer') %>
 
                 <script src="/js/show_hide_pw.js"></script>
+                <script src="/js/productEditValidation.js"></script>
     </body>
 
 </html>
