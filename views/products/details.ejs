@@ -17,19 +17,19 @@
             </p>
             <div class="detail-Container">
               <!-- <p>ESPECIFICACIONES:</p> -->
-              <p class="detail-Info">MARCA: <%= product.brands.name %>.</p>
-              <p class="detail-Info">MODELO: <%= product.model %>.</p>
-              <p class="detail-Description">DESCRIPCIÓN: <%= product.description %>.</p>
+              <p class="detail-Info brand" value="<%= product.brands.name %>">MARCA: <%= product.brands.name %>.</p>
+              <p class="detail-Info model" value="<%= product.model %>" >MODELO: <%= product.model %>.</p>
+              <p class="detail-Description" value=" <%= product.description %>" >DESCRIPCIÓN: <%= product.description %>.</p>
             </div>
             <div class="detail-Prices">
-              <p class="precio-Detail">PRECIO: $<%= product.price %>
+              <p class="precio-Detail priceCart" value="<%= product.price %>">PRECIO: $<%= product.price %>
               </p>
               <p class="precio-Payments">
                 <%= `12 cuotas de $${(product.price / 12).toFixed(2)}` %>
               </p>
             </div>
             <div class="detail-Cart">
-              <button class="btn-agregar-Detail" type="submit">Agregar al carrito</button>
+              <button class="btn-agregar-Detail"  value="<%= parseInt(product.id) %>">Agregar al carrito</button>
             </div>
             <% if(locals.userLogged && locals.userLogged.dataValues.user_profile_id == 2) { %>
             <a href="/products/edit/<%=product.id%>">
@@ -45,6 +45,7 @@
         </section>
         <!-- FOOTER -->
         <%- include('../partials/footer') %>
+        <script src="/js/shop-cart.js"></script>
   </body>
 
 </html>
