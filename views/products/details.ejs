@@ -7,7 +7,7 @@
   <body>
     <!-- HEADER -->
     <%- include('../partials/header') %>
-        <section class="section-Detail">
+        <section class="section-Detail" id="div-cart">
           <div class="articulo-Detail">
             <img id="producto" src="/img/product-detail/<%=product.image%>"/>
           </div>
@@ -43,7 +43,7 @@
         </section>
         <!-- FOOTER -->
         <%- include('../partials/footer') %>
-        <script src="/js/shop-cart.js"></script>
+        <script defer src="/js/shop-cart.js"></script>
       <script defer src="/js/burger.js"></script>
 
   </body>

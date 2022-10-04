@@ -1,61 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  <!-- HEAD  -->
-  <%- include('../partials/head') %>
+    <!-- HEAD  -->
+    <%- include('../partials/head') %>
 
     <body>
-      <!-- HEADER -->
-      <%- include('../partials/header') %>
+        <!-- HEADER -->
+        <%- include('../partials/header') %>
 
-<section>
-  <div class="section-Container">
-    <% for(let i=0; i < productList.length; i++){ %>
-        <div class="especificaciones-detail">
-      <div class="articulo">
-        <input type="hidden" class="brand" name="brand" value="<%= productList[i].brands.name %>">
-        <input type="hidden" class="model" name="model" value="<%= productList[i].model %>">
-        <a href="/products/details/<%= productList[i].id %> ">
-          <h4>
-            <%= `${productList[i].brands.name} ${productList[i].model} `%>
-              <!-- ME FALTA PODER PONER AL LADO DEL MODELO EL TYPE, PERO COMO ES UN INT AHORA.. -->
-          </h4>
-        </a>
-        <a class="img" href="/products/details/<%= productList[i].id %> ">
-          <img id="producto" src="/img/product-detail/<%= productList[i].image %>" alt="">
-        </a>
-        <div class="priceCart">
-          <p class="precio">
-            $<%= productList[i].price %>
-          </p>
-          <div class="detail-Cart">
-            <button class="btn-agregar-Detail" value="<%= parseInt(productList[i].id) %>">Agregar al
-              carrito</button>
-          </div>
-        </div>
-        </div>
-      </div>
-      <% } %>
-        <% if(locals.userLogged && locals.userLogged.dataValues.user_profile_id==2) { %>
-          <div class="section-Container">
-            <div class="articulo">
-              <a href="/products/create">
-                <h4>CREAR NUEVO PRODUCTO
-                </h4>
-              </a>
-              <a class="img" href="/products/create">
-                <img src="/img/add_simbol2.png" alt="">
-              </a>
+        <section>
+            <div class="section-Container" id="div-cart">
+                <% for(let i=0; i < productList.length; i++){ %>
+                <!-- <div class="especificaciones-detail"> -->
+                <div class="articulo">
+                    <input type="hidden" class="brand" name="brand" value="<%= productList[i].brands.name %>" />
+                    <input type="hidden" class="model" name="model" value="<%= productList[i].model %>" />
+                    <a href="/products/details/<%= productList[i].id %> ">
+                        <h4>
+                            <%= `${productList[i].brands.name} ${productList[i].model} `%>
+                            <!-- ME FALTA PODER PONER AL LADO DEL MODELO EL TYPE, PERO COMO ES UN INT AHORA.. -->
+                        </h4>
+                    </a>
+                    <a class="img" href="/products/details/<%= productList[i].id %> ">
+                        <img id="producto" src="/img/product-detail/<%= productList[i].image %>" alt="" />
+                    </a>
+                    <div>
+                        <p class="precio priceCart" value="<%= productList[i].price %>">$<%= productList[i].price %></p>
+                        <div class="detail-Cart">
+                            <button class="btn-agregar-Detail" value="<%= parseInt(productList[i].id) %>">
+                                Agregar al carrito
+                            </button>
+                        </div>
+                    </div>
+                    <!-- </div> -->
+                </div>
+                <% } %> <% if(locals.userLogged && locals.userLogged.dataValues.user_profile_id==2) { %>
+                <div class="section-Container">
+                    <div class="articulo">
+                        <a href="/products/create">
+                            <h4>CREAR NUEVO PRODUCTO</h4>
+                        </a>
+                        <a class="img" href="/products/create">
+                            <img src="/img/add_simbol2.png" alt="" />
+                        </a>
+                    </div>
+                    <% } %>
+                </div>
+                <!-- </div> -->
             </div>
-            <% } %>
-          </div>
-  </div>
-  </div>
-</section>
+        </section>
         <script defer src="/js/shop-cart.js"></script>
         <script defer src="/js/burger.js"></script>
-
-
     </body>
-
 </html>

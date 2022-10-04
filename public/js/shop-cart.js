@@ -1,4 +1,4 @@
-const addProduct = document.querySelector(".btn-agregar-Detail");
+const addProduct = document.querySelector("#div-cart");
 let shoppingCart = [];
 
 loadEventListeners();
@@ -41,7 +41,6 @@ function readProductData(product) {
     }
     console.log(shoppingCart);
     syncLocalStorage()
-    //////ACA EN EL CARRITO DE JS TIENE LA FUNCION CARRITOHTML()
 }
 
 function addToCart(e) {
@@ -51,13 +50,13 @@ function addToCart(e) {
         duration: 500,
         iterations: 1,
     };
-    e.preventDefault();
-    const product = e.target.parentElement.parentElement.parentElement;
-    //console.log(product);
-       readProductData(product);
-    
+    if (e.target.classList.contains('btn-agregar-Detail')){
+        e.preventDefault();
+        const product = e.target.parentElement.parentElement.parentElement;
+        readProductData(product);
+        cartIcon.animate(cartSpinning, timeSpinning);
+    }
     syncLocalStorage();
-    cartIcon.animate(cartSpinning, timeSpinning);
 }
 
 function syncLocalStorage() {
