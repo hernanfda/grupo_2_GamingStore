@@ -6,5 +6,7 @@ const multer = require('../../middlewares/multer');
 
 
 router.post("/register", multer.single('userAvatar'), usersApiControllers.processRegister);
+router.post("/login", usersApiControllers.processLogin);
+
 
 module.exports = router;
