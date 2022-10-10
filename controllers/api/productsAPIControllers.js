@@ -6,6 +6,7 @@ const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 // const { request } = require("http");
 const { validationResult } = require("express-validator");
+const { request } = require("express");
 
 const ProductList = db.Products;
 const Categories = db.Categories;
@@ -33,9 +34,9 @@ const productsApiControllers = {
                 console.error(error);
             });
     },
-    productFilter: async (req, res) => {
+    productFilter: (req, res) => {
         let productType = req.params.type;
-        await ProductList.findAll({
+        ProductList.findAll({
             include: [
                 "brands",
                 {
@@ -62,9 +63,9 @@ const productsApiControllers = {
                 console.error(error);
             });
     },
-    productDetail: async (req, res) => {
+    productDetail: (req, res) => {
         let id = req.params.id;
-        await ProductList.findByPk(id, { include: ["brands"] })
+        ProductList.findByPk(id, { include: ["brands", "categories"] })
             .then((product) => {
                 let response = {
                     meta: {
@@ -79,34 +80,9 @@ const productsApiControllers = {
                 console.error(error);
             });
     },
-    //   createProduct: async (req, res) => {
-    //     let brandForm = Brands.findAll();
-    //     let categoryForm = Categories.findAll();
-    //     Promise.all([categoryForm, brandForm])
-    //       .then(([categories, brands]) => {
-    //         //console.log(brands);
-    //         return res.render("products/create", { styles: "register_login", categories, brands });
-    //       })
-    //       .catch((error) => {
-    //         console.error(error);
-    //       });
-    //   },
-    saveProduct: async (req, res) => {
-        let errors = validationResult(req);
-        if (errors.errors.length > 0) {
-            let brandForm = Brands.findAll();
-            let categoryForm = Categories.findAll();
-            Promise.all([categoryForm, brandForm]).then(([categories, brands]) => {
-                return res.render("products/create", {
-                    errors: errors.mapped(),
-                    old: req.body,
-                    styles: "register_login",
-                    categories,
-                    brands,
-                });
-            });
-        } else {
-            await ProductList.create({
+    //save product dude, pero validationResult aca en realidad no se si iria por ser APi
+    saveProduct:  (req, res) => {
+        ProductList.create({
                 brand_id: req.body.brand_id,
                 model: req.body.model,
                 price: req.body.price,
@@ -116,28 +92,33 @@ const productsApiControllers = {
                 popular: req.body.popular ? 1 : 0,
                 category_id: req.body.category_id,
             })
-                .then(() => {
-                    res.redirect("products");
+                .then((confirm) => {
+                    let response;
+                    if (confirm){
+                        response = {
+                            meta: {
+                                status: 200,
+                                total: confirm.length,
+                                url: 'api/products/create'
+                            },
+                            data: confirm
+                        }
+                    } else {
+                        response = {
+                            meta: {
+                                status: 200,
+                                total: confirm.length,
+                                url: 'api/products/create'
+                            },
+                            data: confirm
+                        }
+                    }
+                    res.json(response);
                 })
                 .catch((err) => {
                     console.error(err);
                 });
-        }
     },
-    //   editProduct: async (req, res) => {
-    //     let id = req.params.id;
-    //     let productForm = ProductList.findByPk(id, { include: ["brands", "categories"] });
-    //     let brandForm = Brands.findAll();
-    //     let categoryForm = Categories.findAll();
-    //     let selected = "selected";
-    //     Promise.all([categoryForm, brandForm, productForm])
-    //       .then(([categories, brands, product]) => {
-    //         return res.render("products/edit", { styles: "register_login", categories, brands, product, selected });
-    //       })
-    //       .catch((error) => {
-    //         console.error(error);
-    //       });
-    //   },
     updateProduct: async (req, res) => {
         let id = req.params.id;
         let file = req.file;
