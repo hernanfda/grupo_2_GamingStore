@@ -8,7 +8,7 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 const cookies = require('cookie-parser');
 const userLogged = require('./middlewares/userLogged');
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3008;
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));

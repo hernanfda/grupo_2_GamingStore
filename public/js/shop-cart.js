@@ -43,13 +43,18 @@ function readProductData(product) {
     syncLocalStorage()
 }
 
-function addToCart(e) {
+function moveCart() {
     const cartIcon = document.querySelector(".fa-cart-shopping");
     const cartSpinning = [{ transform: "rotate(360deg)", color: 'rgb(162, 0, 255)' }]; //despues podria ser que incremente un numero de items e el cart
     const timeSpinning = {
         duration: 500,
         iterations: 1,
     };
+    
+}
+
+function addToCart(e) {
+    moveCart();
     if (e.target.classList.contains('btn-agregar-Detail')){
         e.preventDefault();
         const product = e.target.parentElement.parentElement.parentElement;
@@ -62,3 +67,5 @@ function addToCart(e) {
 function syncLocalStorage() {
     localStorage.setItem("cart", JSON.stringify(shoppingCart));
 }
+
+ export { moveCart };
