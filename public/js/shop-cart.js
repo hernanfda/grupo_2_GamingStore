@@ -50,16 +50,16 @@ function moveCart() {
         duration: 500,
         iterations: 1,
     };
-    
+    cartIcon.animate(cartSpinning, timeSpinning);
 }
 
 function addToCart(e) {
-    moveCart();
     if (e.target.classList.contains('btn-agregar-Detail')){
         e.preventDefault();
         const product = e.target.parentElement.parentElement.parentElement;
         readProductData(product);
-        cartIcon.animate(cartSpinning, timeSpinning);
+        // cartIcon.animate(cartSpinning, timeSpinning);
+        moveCart();
     }
     syncLocalStorage();
 }
@@ -68,4 +68,4 @@ function syncLocalStorage() {
     localStorage.setItem("cart", JSON.stringify(shoppingCart));
 }
 
- export { moveCart };
+//VER PARA TOMAR EL PRODUCTO POR BD CON EL ID QUE MANDA, PARA NO TOMAR DEL HTML
