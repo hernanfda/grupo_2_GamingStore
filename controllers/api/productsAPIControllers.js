@@ -12,10 +12,8 @@ const Categories = db.Categories;
 const Brands = db.Brands;
 
 const productsApiControllers = {
-    productCart: (req, res) => {
-        res.render("products/cart", { styles: "product-cart" });
-    },
-    'productList': (req, res) => {
+
+    productList: (req, res) => {
         ProductList.findAll({
             include: ["brands", "categories"],
         })
@@ -24,6 +22,7 @@ const productsApiControllers = {
                     meta: {
                         status: 200,
                         url: "api/products",
+                        total: productList.length
                     },
                     data: productList,
                 };
@@ -49,10 +48,15 @@ const productsApiControllers = {
             ],
         })
             .then((filteredList) => {
-                res.render("products/list", {
-                    styles: "product_detail_styles",
-                    productList: filteredList,
-                });
+                let response = {
+                    meta: {
+                        status: 200,
+                        url: "api/products/list/:type",
+                        total: filteredList.length
+                    },
+                    data: filteredList,
+                }
+                res.json(response);
             })
             .catch((error) => {
                 console.error(error);
@@ -62,10 +66,14 @@ const productsApiControllers = {
         let id = req.params.id;
         await ProductList.findByPk(id, { include: ["brands"] })
             .then((product) => {
-                res.render("products/details", {
-                    styles: "product_detail_styles",
-                    product,
-                });
+                let response = {
+                    meta: {
+                        status: 200,
+                        url: 'api/products/details/:id'
+                    },
+                    data: product
+                }
+                res.json(response);
             })
             .catch((error) => {
                 console.error(error);
