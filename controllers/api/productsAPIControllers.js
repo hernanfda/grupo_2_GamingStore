@@ -1,11 +1,11 @@
 // const { urlencoded } = require("express");
 // const fs = require("fs");
 // const path = require("path");
+// const { request } = require("http");
+const { validationResult } = require("express-validator");
 const db = require("../../database/models");
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
-// const { request } = require("http");
-const { validationResult } = require("express-validator");
 const { request } = require("express");
 
 const ProductList = db.Products;
@@ -80,6 +80,27 @@ const productsApiControllers = {
                 console.error(error);
             });
     },
+    lastOneInDb: (req, res) => {
+        ProductList.findAll({
+            include: ['brands', 'categories'],
+            order: [
+                ['id', 'DESC']
+            ],
+            limit: 1
+        })
+            .then(movies => {
+                let response = {
+                    meta: {
+                        status: 200,
+                        total: movies[0].length,
+                        url: 'api/products/lastone'
+                    },
+                    data: movies
+                }
+                res.json(response);
+            })
+            .catch(err => console.log(err));
+    },
     //save product dude, pero validationResult aca en realidad no se si iria por ser APi
     saveProduct:  (req, res) => {
         ProductList.create({
@@ -116,59 +137,59 @@ const productsApiControllers = {
                     res.json(response);
                 })
                 .catch((err) => {
-                    console.error(err);
+                    res.send(err);
                 });
     },
-    updateProduct: async (req, res) => {
-        let id = req.params.id;
-        let file = req.file;
-        let errors = validationResult(req);
-        if (errors.errors.length == 0) {
-            await ProductList.update(
-                {
-                    brand_id: req.body.brand_id,
-                    model: req.body.model,
-                    price: req.body.price,
-                    image: file ? req.file.filename : req.body.image,
-                    offer: req.body.offer ? 1 : 0,
-                    description: req.body.description,
-                    popular: req.body.popular ? 1 : 0,
-                    category_id: req.body.category_id,
-                },
-                { where: { id: id } }
-            )
-                .then(() => {
-                    res.redirect("/products");
-                })
-                .catch((err) => {
-                    console.error(err);
-                });
-        } else {
-            let productForm = ProductList.findByPk(id, { include: ["brands", "categories"] });
-            let brandForm = Brands.findAll();
-            let categoryForm = Categories.findAll();
-            let selected = "selected";
-            Promise.all([categoryForm, brandForm, productForm])
-                .then(([categories, brands, product]) => {
-                    return res.render("products/edit", {
-                        styles: "register_login",
-                        errors: errors.mapped(),
-                        old: req.body,
-                        categories,
-                        brands,
-                        product,
-                        selected,
-                    });
-                })
-                .catch((error) => {
-                    console.error(error);
-                });
-        }
-    },
-    deleteProduct: async (req, res) => {
+    // updateProduct: async (req, res) => {
+    //     let id = req.params.id;
+    //     let file = req.file;
+    //     let errors = validationResult(req);
+    //     if (errors.errors.length == 0) {
+    //         await ProductList.update(
+    //             {
+    //                 brand_id: req.body.brand_id,
+    //                 model: req.body.model,
+    //                 price: req.body.price,
+    //                 image: file ? req.file.filename : req.body.image,
+    //                 offer: req.body.offer ? 1 : 0,
+    //                 description: req.body.description,
+    //                 popular: req.body.popular ? 1 : 0,
+    //                 category_id: req.body.category_id,
+    //             },
+    //             { where: { id: id } }
+    //         )
+    //             .then(() => {
+    //                 res.redirect("/products");
+    //             })
+    //             .catch((err) => {
+    //                 console.error(err);
+    //             });
+    //     } else {
+    //         let productForm = ProductList.findByPk(id, { include: ["brands", "categories"] });
+    //         let brandForm = Brands.findAll();
+    //         let categoryForm = Categories.findAll();
+    //         let selected = "selected";
+    //         Promise.all([categoryForm, brandForm, productForm])
+    //             .then(([categories, brands, product]) => {
+    //                 return res.render("products/edit", {
+    //                     styles: "register_login",
+    //                     errors: errors.mapped(),
+    //                     old: req.body,
+    //                     categories,
+    //                     brands,
+    //                     product,
+    //                     selected,
+    //                 });
+    //             })
+    //             .catch((error) => {
+    //                 console.error(error);
+    //             });
+    //     }
+    // },
+    deleteProduct: async (req, res) => { //SIN PROBAR!!!!!!
         let id = req.params.id;
         await ProductList.destroy({ where: { id: id } });
-        res.redirect("/products");
+        res.json();
     },
 };
 

@@ -8,21 +8,29 @@ module.exports = (sequelize, DataTypes) => {
         },
         name: {
             type: DataTypes.STRING,
+            allowNull: false,
         },
         last_name: {
             type: DataTypes.STRING,
+            allowNull: false,
+
         },
         email: {
             type: DataTypes.STRING,
+            allowNull: false,
         },
         birth_date: {
             type: DataTypes.DATE,
+            allowNull: false
         },
         user_password: {
             type: DataTypes.TEXT,
+            allowNull: false,
+
         },
         user_avatar: {
             type: DataTypes.TEXT,
+            defaultValue: 'img-404',
         },
         user_profile_id: {
             type: DataTypes.INTEGER,

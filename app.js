@@ -8,7 +8,7 @@ const productRoutes = require('./routes/productRoutes');
 
 // const usersApiRouter = require('./routes/api/usersApiRouter');
 const productsApiRouter = require('./routes/api/productsApiRouter');
-// const usersApiRouter = require('./routes/api/usersApiRouter');
+const usersApiRouter = require('./routes/api/usersApiRouter');
 
 const methodOverride = require('method-override');
 const session = require('express-session');
@@ -40,7 +40,7 @@ app.use('/users', userRoutes);
 app.use('/products', productRoutes);
 
 //Api Resources
-// app.use('/api/users', usersApiRouter); 
+app.use('/api/users', usersApiRouter); 
 app.use('/api/products', productsApiRouter);
 
 // 404 REDIRECT

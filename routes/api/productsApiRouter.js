@@ -12,6 +12,8 @@ router.get("/list/:type", productsApiControllers.productFilter);
 router.get("/details/:id", productsApiControllers.productDetail);
 //create a new product
 router.post("/create", upload.single('image'), productsApiControllers.saveProduct);
+//get tha last ptoduct in DB
+router.get('/lastone', productsApiControllers.lastOneInDb)
 
 
 
