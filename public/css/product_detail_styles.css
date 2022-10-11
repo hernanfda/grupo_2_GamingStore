@@ -261,7 +261,7 @@ section {
 .section-Detail {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
   height: 100vh;
@@ -446,7 +446,7 @@ h4 {
 }
 
 .especificaciones-Detail {
-  width: 65%;
+  width: 80%;
   padding: 10px;
 }
 
@@ -675,6 +675,10 @@ footer {
     margin-left: 50px;
 }
 
+.especificaciones-Detail {
+  width: 65%;
+}
+
   footer a {
     color: rgb(226, 222, 222);
     padding-left: 10px;
@@ -705,4 +709,11 @@ footer {
     section {
       height: 100%;
     }
+}
+
+@media (max-height: 450px) {
+  .section-Detail {
+    margin-top: 3%;
+    margin-bottom: 3%;
+  }
 }
