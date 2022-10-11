@@ -40,6 +40,7 @@
     flex-direction: column;
     align-items: center;
     width: 100vw;
+    height: 100vh;
     max-width: 500px;
     padding: 5px;
     margin-top: 10px;
@@ -51,18 +52,16 @@
     width: 70vw;
 }
 
-  footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    color: rgb(226, 222, 222);
-    height: 50px;
-    background-color: rgba(38, 38, 38, .61);
-    margin-top: auto;
-    position: absolute;
-    bottom: 0px;
-  }
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: rgb(226, 222, 222);
+  height: 50px;
+  background-color: rgba(38, 38, 38, 0.61);
+  margin-top: auto;
+}
 
   footer a {
     color: rgb(226, 222, 222);
@@ -109,11 +108,24 @@
 
   @media (min-width: 769px) {
 
-    footer {
-        justify-content: space-between;
-        padding-left: 10px;
-        padding-right: 10px;
-      }
+    footer a {
+      color: rgb(226, 222, 222);
+      padding-left: 10px;
+    }
+  
+    .footer-Container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      color: rgb(226, 222, 222);
+      height: 50px;
+      background-color: rgba(38, 38, 38, .61);
+      margin-top: auto;
+      user-select: none;
+      padding-right: 10px;
+      padding-left: 10px;
+    }
 
     .container {
         max-width: 1600px;

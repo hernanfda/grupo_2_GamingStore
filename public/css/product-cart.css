@@ -27,8 +27,13 @@
     .cart-cards {
         display: none;
     }
-    
+
     footer {
+        display: flex;
+        width: 100%;
+    }
+    
+    .footer-Container {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -37,8 +42,9 @@
         height: 50px;
         background-color: rgba(38, 38, 38, .61);
         margin-top: auto;
-        position: absolute;
-        bottom: 0px;
+        user-select: none;
+        padding-right: 10px;
+        padding-left: 10px;
       }
       
       .redes {
@@ -80,6 +86,7 @@
         max-width: 500px;
         padding: 5px;
         margin-top: 10px;
+        height: 100vh;
      }
 
      /* Cart Content starts here */
@@ -490,6 +497,7 @@
         flex-direction: column;
         align-items: center;
         width: 100vw;
+        height: 100vh;
         padding: 5px;
         margin-top: 10px;
      }
@@ -870,17 +878,12 @@
     footer {
         display: flex;
         align-items: center;
+        justify-content: center;
         width: 100%;
         color: rgb(226, 222, 222);
         height: 50px;
-        background-color: rgba(38, 38, 38, .61);
+        background-color: rgba(38, 38, 38, 0.61);
         margin-top: auto;
-        position: absolute;
-        bottom: 0px;
-        justify-content: space-between;
-        padding-left: 10px;
-        padding-right: 10px;
-
       }
     
       footer a {

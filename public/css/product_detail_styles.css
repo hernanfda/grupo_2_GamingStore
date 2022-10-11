@@ -578,6 +578,17 @@ footer {
     top: 18px;
   }
 
+  .userPanelDesktop {
+    display: block !important;
+    position: relative !important;
+    width: 50px !important;
+    height: 50px !important;
+    left: 5px !important;
+    bottom: 8px !important;
+    border-radius: 100% !important;
+    padding: 10px !important;
+}
+
   /*--------ALINEACIÓN LUPA------*/
   .fa-magnifying-glass {
     right: 28px;
@@ -590,6 +601,7 @@ footer {
     transform: scale(1.10);
     color: rgb(212, 0, 255);
     filter: drop-shadow(5px 5px 10px rgba(162, 0, 255, 0.5));
+    cursor: pointer;
   }
 
   /*--------ALINEACIÓN CARRITO------*/
