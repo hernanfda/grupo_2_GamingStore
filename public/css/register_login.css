@@ -45,6 +45,7 @@ header {
   justify-content: center;
   max-width: 300px;
   margin-top: 20px;
+  margin-bottom: 20px;
   box-shadow: inset 0px 0px 5px rgba(164, 89, 255, 0.925);
   border-radius: 30px;
   padding: 20px;
@@ -208,7 +209,7 @@ footer {
   width: 100%;
   color: rgb(226, 222, 222);
   height: 50px;
-  background-color: rgba(38, 38, 38, .61);
+  background-color: rgba(38, 38, 38, 0.61);
   margin-top: auto;
 }
 
@@ -217,14 +218,23 @@ footer {
 }
 
 @media (min-width:768px) {
-  footer {
-    justify-content: space-between;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
 
   footer a {
     color: rgb(226, 222, 222);
+    padding-left: 10px;
+  }
+
+  .footer-Container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    color: rgb(226, 222, 222);
+    height: 50px;
+    background-color: rgba(38, 38, 38, .61);
+    margin-top: auto;
+    user-select: none;
+    padding-right: 10px;
     padding-left: 10px;
   }
 
