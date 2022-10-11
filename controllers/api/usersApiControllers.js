@@ -5,6 +5,7 @@ const bcrypt = require("bcryptjs");
 const db = require("../../database/models");
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
+const { error } = require("console");
 const Users = db.Users;
 
 
@@ -31,13 +32,24 @@ const usersApiControllers = {
             let id = req.params.id;
             Users.findByPk(id, { include: ["user_profile"] })
                 .then((user) => {
-                    let response = {
-                        meta: {
-                            status: 200,
-                            url: "api/users/details/:id",
-                        },
-                        data: user,
-                    };
+                    let response;
+                    if (user) {
+                        response = {
+                            meta: {
+                                status: 200,
+                                url: "api/users/details/:id",
+                            },
+                            data: user,
+                        };
+                    } else {
+                        response = {
+                            meta: {
+                                status: 204,
+                                url: "api/users/details/:id"
+                            },
+                            data: {"User": 'Not found'},  //esta bien? funcionar funciona!
+                        }
+                    }
                     res.json(response);
                 })
                 .catch((error) => {
