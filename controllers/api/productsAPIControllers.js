@@ -13,17 +13,16 @@ const Categories = db.Categories;
 const Brands = db.Brands;
 
 const productsApiControllers = {
-
     productList: (req, res) => {
         ProductList.findAll({
             include: ["brands", "categories"],
         })
-            .then(productList => {
+            .then((productList) => {
                 let response = {
                     meta: {
                         status: 200,
                         url: "api/products",
-                        total: productList.length
+                        total: productList.length,
                     },
                     data: productList,
                 };
@@ -53,10 +52,10 @@ const productsApiControllers = {
                     meta: {
                         status: 200,
                         url: "api/products/list/:type",
-                        total: filteredList.length
+                        total: filteredList.length,
                     },
                     data: filteredList,
-                }
+                };
                 res.json(response);
             })
             .catch((error) => {
@@ -70,10 +69,10 @@ const productsApiControllers = {
                 let response = {
                     meta: {
                         status: 200,
-                        url: 'api/products/details/:id'
+                        url: "api/products/details/:id",
                     },
-                    data: product
-                }
+                    data: product,
+                };
                 res.json(response);
             })
             .catch((error) => {
@@ -82,114 +81,135 @@ const productsApiControllers = {
     },
     lastOneInDb: (req, res) => {
         ProductList.findAll({
-            include: ['brands', 'categories'],
-            order: [
-                ['id', 'DESC']
-            ],
-            limit: 1
+            include: ["brands", "categories"],
+            order: [["id", "DESC"]],
+            limit: 1,
         })
-            .then(movies => {
+            .then((movies) => {
                 let response = {
                     meta: {
                         status: 200,
                         total: movies[0].length,
-                        url: 'api/products/lastone'
+                        url: "api/products/lastone",
                     },
-                    data: movies
+                    data: movies,
+                };
+                res.json(response);
+            })
+            .catch((err) => console.log(err));
+    },
+    //save product dude, pero validationResult aca en realidad no se si iria por ser APi
+    saveProduct: (req, res) => {
+        ProductList.create({
+            brand_id: req.body.brand_id,
+            model: req.body.model,
+            price: req.body.price,
+            image: req.file.filename,
+            offer: req.body.offer ? 1 : 0,
+            description: req.body.description,
+            popular: req.body.popular ? 1 : 0,
+            category_id: req.body.category_id,
+        })
+            .then((confirm) => {
+                let response;
+                if (confirm) {
+                    response = {
+                        meta: {
+                            status: 200,
+                            total: confirm.length,
+                            url: "api/products/create",
+                        },
+                        data: confirm,
+                    };
+                } else {
+                    response = {
+                        meta: {
+                            status: 200,
+                            total: confirm.length,
+                            url: "api/products/create",
+                        },
+                        data: confirm,
+                    };
                 }
                 res.json(response);
             })
-            .catch(err => console.log(err));
+            .catch((err) => {
+                res.send(err);
+            });
     },
-    //save product dude, pero validationResult aca en realidad no se si iria por ser APi
-    saveProduct:  (req, res) => {
-        ProductList.create({
-                brand_id: req.body.brand_id,
-                model: req.body.model,
-                price: req.body.price,
-                image: req.file.filename,
-                offer: req.body.offer ? 1 : 0,
-                description: req.body.description,
-                popular: req.body.popular ? 1 : 0,
-                category_id: req.body.category_id,
-            })
-                .then((confirm) => {
-                    let response;
-                    if (confirm){
-                        response = {
-                            meta: {
-                                status: 200,
-                                total: confirm.length,
-                                url: 'api/products/create'
-                            },
-                            data: confirm
-                        }
-                    } else {
-                        response = {
-                            meta: {
-                                status: 200,
-                                total: confirm.length,
-                                url: 'api/products/create'
-                            },
-                            data: confirm
-                        }
-                    }
-                    res.json(response);
-                })
-                .catch((err) => {
-                    res.send(err);
-                });
-    },
-    // updateProduct: async (req, res) => {
-    //     let id = req.params.id;
-    //     let file = req.file;
-    //     let errors = validationResult(req);
-    //     if (errors.errors.length == 0) {
-    //         await ProductList.update(
-    //             {
-    //                 brand_id: req.body.brand_id,
-    //                 model: req.body.model,
-    //                 price: req.body.price,
-    //                 image: file ? req.file.filename : req.body.image,
-    //                 offer: req.body.offer ? 1 : 0,
-    //                 description: req.body.description,
-    //                 popular: req.body.popular ? 1 : 0,
-    //                 category_id: req.body.category_id,
-    //             },
-    //             { where: { id: id } }
-    //         )
-    //             .then(() => {
-    //                 res.redirect("/products");
-    //             })
-    //             .catch((err) => {
-    //                 console.error(err);
-    //             });
-    //     } else {
-    //         let productForm = ProductList.findByPk(id, { include: ["brands", "categories"] });
-    //         let brandForm = Brands.findAll();
-    //         let categoryForm = Categories.findAll();
-    //         let selected = "selected";
-    //         Promise.all([categoryForm, brandForm, productForm])
-    //             .then(([categories, brands, product]) => {
-    //                 return res.render("products/edit", {
-    //                     styles: "register_login",
-    //                     errors: errors.mapped(),
-    //                     old: req.body,
-    //                     categories,
-    //                     brands,
-    //                     product,
-    //                     selected,
-    //                 });
-    //             })
-    //             .catch((error) => {
-    //                 console.error(error);
-    //             });
-    //     }
-    // },
-    deleteProduct: async (req, res) => { //SIN PROBAR!!!!!!
+    updateProduct: (req, res) => { //PROBARRRRRRRRR 
+        let file = req.file;
         let id = req.params.id;
-        await ProductList.destroy({ where: { id: id } });
-        res.json();
+        ProductList.update(
+                {
+                    brand_id: req.body.brand_id,
+                    model: req.body.model,
+                    price: req.body.price,
+                    image: file ? req.file.filename : req.body.image,
+                    offer: req.body.offer ? 1 : 0,
+                    description: req.body.description,
+                    popular: req.body.popular ? 1 : 0,
+                    category_id: req.body.category_id,
+                },
+                { where: { id: id } }
+            )
+            .then((confirm) => {
+                let response;
+                if (confirm) {
+                    response = {
+                        meta: {
+                            status: 200,
+                            total: confirm.length,
+                            url: "api/products/create",
+                        },
+                        data: confirm,
+                    };
+                } else {
+                    response = {
+                        meta: {
+                            status: 200,
+                            total: confirm.length,
+                            url: "api/products/update",
+                        },
+                        data: confirm,
+                    };
+                }
+                res.json(response);
+            })
+            .catch((err) => {
+                res.send(err);
+            });
+    },
+    deleteProduct: (req, res) => {
+        let id = req.params.id;
+        ProductList.destroy({ where: { id: id } })
+            .then((confirm) => {
+                let response;
+                if (confirm) {
+                    response = {
+                        meta: {
+                            status: 200,
+                            total: confirm.length,
+                            id: id,
+                            url: "api/products/delete/:id",
+                        },
+                        data: confirm,
+                    };
+                } else {
+                    response = {
+                        meta: {
+                            status: 200,
+                            total: confirm.length,
+                            url: "api/products/delete/:id",
+                        },
+                        data: confirm,
+                    };
+                }
+                res.json(response);
+            })
+            .catch((err) => {
+                res.send(err);
+            });
     },
 };
 

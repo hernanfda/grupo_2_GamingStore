@@ -9,7 +9,41 @@ const Users = db.Users;
 
 
 const usersApiControllers = {
- 
+
+    userList: (req, res) => {
+        Users.findAll({
+            include: ['user_profile']
+        })
+            .then(users => {
+                let respuesta = {
+                    meta: {
+                        status: 200,
+                        total: users.length,
+                        url: 'api/users'
+                    },
+                    data: users
+                }
+                res.json(respuesta);
+            })
+            .catch((err) => { res.send(err) })
+    },
+    userDetail: (req, res) => {
+            let id = req.params.id;
+            Users.findByPk(id, { include: ["user_profile"] })
+                .then((user) => {
+                    let response = {
+                        meta: {
+                            status: 200,
+                            url: "api/users/details/:id",
+                        },
+                        data: user,
+                    };
+                    res.json(response);
+                })
+                .catch((error) => {
+                    res.send(error);
+                });
+    },
     processLogin:  (req, res) => {
          Users.findOne({ where: { email: req.body.email } })
             .then(userToLogin => {
