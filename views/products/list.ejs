@@ -8,10 +8,8 @@
     <!-- HEADER -->
     <%- include('../partials/header') %>
       <section>
-        <% let articulos = [] %> 
         <div class="section-Container">
           <% for(let i=0; i < productList.length; i++){ %>
-            <% articulos.push(productList[i].id) %> 
             <div class="articulo">
               <a href="/products/details/<%= productList[i].id %> ">
                 <h4>
@@ -54,8 +52,6 @@
             </div>
           </div>
       </section>
-      <% function run (result) {if(result.length < 8){return result = "true"}} %> 
-      <div id="<%= run(articulos)  %>"></div>
       <%- include('../partials/footer') %>
       <script defer src="/js/burger.js"></script>
       <script defer src="/js/footer.js"></script>
