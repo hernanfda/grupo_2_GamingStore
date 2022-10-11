@@ -654,6 +654,10 @@ video {
     transform: scale(1.10);
   }
 
+  #products {
+    display: none;
+  }
+
   /*--------ALINEACION USER------*/
   .fa-solid.fa-user {
     display: flex;
