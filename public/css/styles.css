@@ -8,6 +8,7 @@
   box-sizing: border-box;
   font-family: "Play", sans-serif;
   color: rgb(179, 179, 179);
+  -webkit-tap-highlight-color: transparent
 }
 
 body {
