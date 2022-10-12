@@ -6,7 +6,6 @@ const mainRoutes = require('./routes/mainRoutes')
 const userRoutes = require('./routes/userRoutes')
 const productRoutes = require('./routes/productRoutes');
 
-// const usersApiRouter = require('./routes/api/usersApiRouter');
 const productsApiRouter = require('./routes/api/productsApiRouter');
 const usersApiRouter = require('./routes/api/usersApiRouter');
 
@@ -14,7 +13,7 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 const cookies = require('cookie-parser');
 const userLogged = require('./middlewares/userLogged');
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));

@@ -21,16 +21,25 @@ const productsApiControllers = {
                 let response = {
                     meta: {
                         status: 200,
-                        url: "api/products",
+                        url: "/api/products",
                         total: productList.length,
                     },
-                    data: productList,
+                    data: productList.map(product => { 
+                         product = {
+                            id: product.id,
+                            name: product.brands.name + ' ' + product.model,
+                             description: product.description,
+                            price: product.price,
+                            url: `/api/products/details/${product.id}`,
+                        } 
+                       return product
+                     }),
                 };
                 res.json(response);
             })
 
             .catch((error) => {
-                console.error(error);
+                res.send(error);
             });
     },
     productFilter: (req, res) => {
@@ -66,10 +75,11 @@ const productsApiControllers = {
         let id = req.params.id;
         ProductList.findByPk(id, { include: ["brands", "categories"] })
             .then((product) => {
+               product.image = `/img/product-detail/${product.image}`;
                 let response = {
                     meta: {
                         status: 200,
-                        url: "api/products/details/:id",
+                        url: `/api/products/details/${product.id}`,
                     },
                     data: product,
                 };
@@ -79,27 +89,39 @@ const productsApiControllers = {
                 console.error(error);
             });
     },
+    listCategory: (req, res) => {
+            Categories.findAll()
+            .then(categories => {
+                let respuesta = {
+                    meta: {
+                        status : 200,
+                        total: categories.length,
+                        url: '/api/categories'
+                    },
+                    data: categories
+                }
+                    res.json(respuesta);
+                })
+    },
     lastOneInDb: (req, res) => {
         ProductList.findAll({
             include: ["brands", "categories"],
             order: [["id", "DESC"]],
             limit: 1,
         })
-            .then((movies) => {
+            .then((products) => {
                 let response = {
                     meta: {
                         status: 200,
-                        total: movies[0].length,
-                        url: "api/products/lastone",
+                        url: "/api/products/lastone",
                     },
-                    data: movies,
+                    data: products[0],
                 };
                 res.json(response);
             })
-            .catch((err) => console.log(err));
+            .catch((err) => res.send(err));
     },
-    //save product dude, pero validationResult aca en realidad no se si iria por ser APi
-    saveProduct: (req, res) => {
+        saveProduct: (req, res) => {
         ProductList.create({
             brand_id: req.body.brand_id,
             model: req.body.model,
@@ -117,7 +139,7 @@ const productsApiControllers = {
                         meta: {
                             status: 200,
                             total: confirm.length,
-                            url: "api/products/create",
+                            url: "/api/products/create",
                         },
                         data: confirm,
                     };
@@ -126,7 +148,7 @@ const productsApiControllers = {
                         meta: {
                             status: 200,
                             total: confirm.length,
-                            url: "api/products/create",
+                            url: "/api/products/create",
                         },
                         data: confirm,
                     };
@@ -160,7 +182,7 @@ const productsApiControllers = {
                         meta: {
                             status: 200,
                             total: confirm.length,
-                            url: "api/products/create",
+                            url: "/api/products/create",
                         },
                         data: confirm,
                     };
@@ -169,7 +191,7 @@ const productsApiControllers = {
                         meta: {
                             status: 200,
                             total: confirm.length,
-                            url: "api/products/update",
+                            url: "/api/products/update",
                         },
                         data: confirm,
                     };
@@ -191,7 +213,7 @@ const productsApiControllers = {
                             status: 200,
                             total: confirm.length,
                             id: id,
-                            url: "api/products/delete/:id",
+                            url: "/api/products/delete/:id",
                         },
                         data: confirm,
                     };
@@ -200,7 +222,7 @@ const productsApiControllers = {
                         meta: {
                             status: 200,
                             total: confirm.length,
-                            url: "api/products/delete/:id",
+                            url: "/api/products/delete/:id",
                         },
                         data: confirm,
                     };

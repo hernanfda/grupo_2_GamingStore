@@ -22,7 +22,15 @@ const usersApiControllers = {
                         total: users.length,
                         url: 'api/users'
                     },
-                    data: users
+                    data: users.map(user => {
+                        user = {
+                            id: user.id,
+                            name: user.name,
+                            email: user.email,
+                            url: `/api/users/${user.id}`
+                        }
+                        return user;
+                    }),
                 }
                 res.json(respuesta);
             })
@@ -30,24 +38,31 @@ const usersApiControllers = {
     },
     userDetail: (req, res) => {
             let id = req.params.id;
-            Users.findByPk(id, { include: ["user_profile"] })
+            Users.findByPk(id)
                 .then((user) => {
                     let response;
                     if (user) {
                         response = {
                             meta: {
                                 status: 200,
-                                url: "api/users/details/:id",
+                                url: `/api/users/details/${id}`,
                             },
-                            data: user,
+                            data:  user = {
+                                id: user.id,
+                                name: user.name,
+                                lastname: user.last_name,
+                                email: user.email,
+                                birthdate: user.birthdate,
+                                avatar: `/img/usersAvatar/${user.user_avatar}`,
+                            },
                         };
                     } else {
                         response = {
                             meta: {
-                                status: 204,
-                                url: "api/users/details/:id"
+                                status: 204, 
+                                url: `/api/users/details/${id}`,
                             },
-                            data: {"User": 'Not found'},  //esta bien? funcionar funciona!
+                            data: {"Msg": 'Not found'},  
                         }
                     }
                     res.json(response);
