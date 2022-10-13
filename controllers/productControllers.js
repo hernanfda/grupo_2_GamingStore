@@ -10,10 +10,11 @@ const { validationResult } = require("express-validator");
 const ProductList = db.Products;
 const Categories = db.Categories;
 const Brands = db.Brands;
+// const listCart = localStorage.getItem('cart');
 
 const productControllers = {
   productCart: (req, res) => {
-    res.render("products/cart", { styles: "product-cart" });
+    res.render("products/cart", { styles: "product-cart"});
   },
   productList: async (req, res) => {
     await ProductList.findAll({
