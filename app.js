@@ -1,14 +1,19 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+
 const mainRoutes = require('./routes/mainRoutes')
 const userRoutes = require('./routes/userRoutes')
 const productRoutes = require('./routes/productRoutes');
+
+const productsApiRouter = require('./routes/api/productsApiRouter');
+const usersApiRouter = require('./routes/api/usersApiRouter');
+
 const methodOverride = require('method-override');
 const session = require('express-session');
 const cookies = require('cookie-parser');
 const userLogged = require('./middlewares/userLogged');
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
@@ -23,12 +28,19 @@ app.use(session({
 app.use(cookies());
 app.use(userLogged)
 
+
+
+
 // INDEX 
 app.use('/', mainRoutes);
 // LOGIN & REGISTER 
 app.use('/users', userRoutes);
 // CART, DETAIL, CREATE & MODIFY
 app.use('/products', productRoutes);
+
+//Api Resources
+app.use('/api/users', usersApiRouter); 
+app.use('/api/products', productsApiRouter);
 
 // 404 REDIRECT
 app.use((req, res, next) => {
@@ -38,3 +50,4 @@ app.use((req, res, next) => {
 app.listen(PORT, () => {
   console.log(`App listening and running in http://localhost:${PORT}`);
 });
+

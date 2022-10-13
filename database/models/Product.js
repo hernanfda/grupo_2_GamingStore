@@ -8,12 +8,16 @@ module.exports = (sequelize, DataTypes) => {
         },
         model: {
             type: DataTypes.STRING,
+            defaultValue: 'S/M'
+            // allowNull: false,
         },
         price: {
             type: DataTypes.MEDIUMINT,
+            defaultValue: 0,
         },
         image: {
             type: DataTypes.STRING,
+            defaultValue: 'img-404',
         },
         offer: {
             type: DataTypes.TINYINT,
@@ -23,6 +27,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         description: {
             type: DataTypes.TEXT,
+            defaultValue: 'without description',
         },
         category_id: {
             type: DataTypes.INTEGER,
