@@ -20,6 +20,8 @@ router.get('/lastone', productsApiControllers.lastOneInDb);
 router.put("/update/:id", productsApiControllers.updateProduct);
 //delete one product
 router.delete("/delete/:id", productsApiControllers.deleteProduct);
+//search a product
+router.post('/search', productsApiControllers.searchProduct);
 
 
 

@@ -24,16 +24,16 @@ const productsApiControllers = {
                         url: "/api/products",
                         total: productList.length,
                     },
-                    data: productList.map(product => { 
-                         product = {
+                    data: productList.map(product => {
+                        product = {
                             id: product.id,
                             name: product.brands.name + ' ' + product.model,
-                             description: product.description,
+                            description: product.description,
                             price: product.price,
                             url: `/api/products/details/${product.id}`,
-                        } 
-                       return product
-                     }),
+                        }
+                        return product
+                    }),
                 };
                 res.json(response);
             })
@@ -75,7 +75,7 @@ const productsApiControllers = {
         let id = req.params.id;
         ProductList.findByPk(id, { include: ["brands", "categories"] })
             .then((product) => {
-               product.image = `/img/product-detail/${product.image}`;
+                product.image = `/img/product-detail/${product.image}`;
                 let response = {
                     meta: {
                         status: 200,
@@ -89,19 +89,32 @@ const productsApiControllers = {
                 console.error(error);
             });
     },
+    searchProduct: (req, res) => { 
+        ProductList.findAll({ where: { model: { [Op.like]: '%' + req.body.model + '%' } } })
+            .then(products => {
+                let response = {
+                    meta: {
+                        status: 200,
+                        founded: products.length
+                    },
+                    data: products
+                }
+                res.json(response);
+            })
+    },
     listCategory: (req, res) => {
-            Categories.findAll()
+        Categories.findAll()
             .then(categories => {
                 let respuesta = {
                     meta: {
-                        status : 200,
+                        status: 200,
                         total: categories.length,
                         url: '/api/categories'
                     },
                     data: categories
                 }
-                    res.json(respuesta);
-                })
+                res.json(respuesta);
+            })
     },
     lastOneInDb: (req, res) => {
         ProductList.findAll({
@@ -121,7 +134,7 @@ const productsApiControllers = {
             })
             .catch((err) => res.send(err));
     },
-        saveProduct: (req, res) => {
+    saveProduct: (req, res) => {
         ProductList.create({
             brand_id: req.body.brand_id,
             model: req.body.model,
@@ -163,18 +176,18 @@ const productsApiControllers = {
         let file = req.file;
         let id = req.params.id;
         ProductList.update(
-                {
-                    brand_id: req.body.brand_id,
-                    model: req.body.model,
-                    price: req.body.price,
-                    image: file ? req.file.filename : req.body.image,
-                    offer: req.body.offer ? 1 : 0,
-                    description: req.body.description,
-                    popular: req.body.popular ? 1 : 0,
-                    category_id: req.body.category_id,
-                },
-                { where: { id: id } }
-            )
+            {
+                brand_id: req.body.brand_id,
+                model: req.body.model,
+                price: req.body.price,
+                image: file ? req.file.filename : req.body.image,
+                offer: req.body.offer ? 1 : 0,
+                description: req.body.description,
+                popular: req.body.popular ? 1 : 0,
+                category_id: req.body.category_id,
+            },
+            { where: { id: id } }
+        )
             .then((confirm) => {
                 let response;
                 if (confirm) {
