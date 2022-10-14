@@ -357,6 +357,11 @@ h4 {
   transform: scale(1.10);
 }
 
+.btn-agregar-Detail:active {
+  transition: 0.1s all ease-in-out;
+  background-color: rgba(162, 0, 255, 1);
+}
+
 .btn-agregar:hover {
   cursor: pointer;
   background-color: rgb(0, 0, 0, 0.5);
@@ -374,7 +379,7 @@ h4 {
 }
 
 .btn-edit {
-  background-color: rgb(123, 125, 3);
+  background-color: rgb(0, 89, 255);
 }
 .btn-delete {
   background-color: rgb(209, 0, 0);
