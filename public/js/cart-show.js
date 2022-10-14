@@ -42,14 +42,10 @@ window.addEventListener("load", (e) => {
     }
 
     //trash cart is correctly removed
-    trashCart.addEventListener("click", () => {
-        //  alert('delete cart');
-        // e.preventDefault();
-        console.log("delete de panchito");
-        // localStorage.clear("cart");
-        // console.log(localStorage);
+    document.querySelector(".content-empty_btn").addEventListener("click", () => {
+        localStorage.clear("cart");
+        location.reload();
     });
-
     const deleteProduct = document.querySelectorAll(".actions-form_delete");
 
     deleteProduct.forEach((button) => {
