@@ -24,15 +24,15 @@ const productsApiControllers = {
                         url: "/api/products",
                         total: productList.length,
                     },
-                    data: productList.map(product => {
+                    data: productList.map((product) => {
                         product = {
                             id: product.id,
-                            name: product.brands.name + ' ' + product.model,
+                            name: product.brands.name + " " + product.model,
                             description: product.description,
                             price: product.price,
                             url: `/api/products/details/${product.id}`,
-                        }
-                        return product
+                        };
+                        return product;
                     }),
                 };
                 res.json(response);
@@ -89,32 +89,40 @@ const productsApiControllers = {
                 console.error(error);
             });
     },
-    searchProduct: (req, res) => { 
-        ProductList.findAll({ where: { model: { [Op.like]: '%' + req.body.model + '%' } } })
-            .then(products => {
-                let response = {
-                    meta: {
-                        status: 200,
-                        founded: products.length
+    searchProduct: (req, res) => {
+        ProductList.findAll({
+            include: {
+                model: Categories,
+                as: "categories",
+                where: {
+                    name: {
+                        [Op.like]: "%" + req.body.model + "%",
                     },
-                    data: products
-                }
-                res.json(response);
-            })
+                },
+            },
+        }).then((products) => {
+            let response = {
+                meta: {
+                    status: 200,
+                    founded: products.length,
+                },
+                data: products,
+            };
+            res.json(response);
+        });
     },
     listCategory: (req, res) => {
-        Categories.findAll()
-            .then(categories => {
-                let respuesta = {
-                    meta: {
-                        status: 200,
-                        total: categories.length,
-                        url: '/api/categories'
-                    },
-                    data: categories
-                }
-                res.json(respuesta);
-            })
+        Categories.findAll().then((categories) => {
+            let respuesta = {
+                meta: {
+                    status: 200,
+                    total: categories.length,
+                    url: "/api/categories",
+                },
+                data: categories,
+            };
+            res.json(respuesta);
+        });
     },
     lastOneInDb: (req, res) => {
         ProductList.findAll({
@@ -172,7 +180,8 @@ const productsApiControllers = {
                 res.send(err);
             });
     },
-    updateProduct: (req, res) => { //PROBARRRRRRRRR 
+    updateProduct: (req, res) => {
+        //PROBARRRRRRRRR
         let file = req.file;
         let id = req.params.id;
         ProductList.update(
