@@ -20,6 +20,7 @@ window.addEventListener("load", (e) => {
             } else {
                 productPrices.push(producto.price);
             }
+
             document.querySelector(".cart-content_products").innerHTML += `<div class='products-details'>
 
                 <img class="products-details_img" src="${producto.image}">
@@ -64,10 +65,12 @@ window.addEventListener("load", (e) => {
         minusBtn.forEach((button, i) => {
             button.addEventListener("click", (e) => {
                 e.preventDefault();
-                articulosCarrito[i].cantidad -= 1;
-                qtyField[i].value = articulosCarrito[i].cantidad;
-                localStorage.setItem("cart", JSON.stringify(articulosCarrito));
-                location.reload();
+                if (articulosCarrito[i].cantidad > 1) {
+                    articulosCarrito[i].cantidad -= 1;
+                    qtyField[i].value = articulosCarrito[i].cantidad;
+                    localStorage.setItem("cart", JSON.stringify(articulosCarrito));
+                    location.reload();
+                }
             });
         });
 
@@ -76,9 +79,9 @@ window.addEventListener("load", (e) => {
             localStorage.clear("cart");
             location.reload();
         });
-        const deleteProduct = document.querySelectorAll(".actions-form_delete");
+        const deleteProductBtn = document.querySelectorAll(".actions-form_delete");
 
-        deleteProduct.forEach((button) => {
+        deleteProductBtn.forEach((button) => {
             button.addEventListener("click", (e) => {
                 let newCart = articulosCarrito.filter((element) => element.id != parseInt(e.target.id));
                 localStorage.setItem("cart", JSON.stringify(newCart));
