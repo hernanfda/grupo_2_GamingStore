@@ -1,51 +1,60 @@
-import React from 'react';
-import SmallCard from './SmallCard';
+import React, { useEffect, useState } from "react";
+import SmallCard from "./SmallCard";
 
 /*  Cada set de datos es un objeto literal */
 
-/* <!-- Movies in DB --> */
-
-//ESTO NO DEBERIA SER DINAMICO???????????
-let productsInDB = {
-    title: 'Products in Data Base',
-    color: 'primary',
-    cuantity: 21,
-    icon: 'fa-clipboard-list'
-}
-
-/* <!-- Total awards --> */
-
-// let totalAwards = {
-//     title: ' Total awards',
-//     color: 'success',
-//     cuantity: '79',
-//     icon: 'fa-award'
-// }
-
-/* <!-- Actors quantity --> */
-
-// let actorsQuantity = {
-//     title: 'Actors quantity',
-//     color: 'warning',
-//     cuantity: '49',
-//     icon: 'fa-user-check'
-// }
-
-// let cartProps = [moviesInDB, totalAwards, actorsQuantity];
-let cartProps = [productsInDB];
-
 function ContentRowMovies() {
+    /* <!-- Movies in DB --> */
+    const [products, setProducts] = useState(0);
+    useEffect(() => {
+        fetch("/api/products")
+            .then((response) => response.json())
+            .then((products) => setProducts(products.meta.total))
+            .catch((err) => console.error(err));
+    }, []);
+    const [categories, setCategories] = useState(0);
+    useEffect(() => {
+        fetch("/api/products/categories")
+            .then((response) => response.json())
+            .then((categories) => setCategories(categories.meta.total))
+            .catch((err) => console.error(err));
+    }, []);
+    const [users, setUsers] = useState(0);
+    useEffect(() => {
+        fetch("/api/users")
+            .then((response) => response.json())
+            .then((users) => setUsers(users.meta.total))
+            .catch((err) => console.error(err));
+    }, []);
+
+    let productsInDB = {
+        title: "Products in Data Base",
+        color: "success",
+        cuantity: products,
+        icon: "fa-clipboard-list",
+    };
+    let categoriesInDB = {
+        title: "categories in Data Base",
+        color: "danger",
+        cuantity: categories,
+        icon: "fa-award",
+    };
+    let usersInDB = {
+        title: "Users in Data Base",
+        color: "warning",
+        cuantity: users,
+        icon: "fa-user-check",
+    };
+    let kpis = [productsInDB, categoriesInDB, usersInDB];
     return (
-        <div className='container'>
+        <div className="container">
             <div className="row ">
-                {cartProps.map((movie, i) => {
-
-                    return <SmallCard {...movie} key={i} />
-
+                {kpis.map((card, i) => {
+                  return  <SmallCard {...card} key={ i } />;
                 })}
             </div>
         </div>
-    )
+    );
 }
 
 export default ContentRowMovies;

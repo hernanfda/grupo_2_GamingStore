@@ -2,19 +2,21 @@ import React from "react";
 import image from "../assets/images/logo-light.svg";
 import { Link, Route, Switch } from "react-router-dom";
 import CategoriesDb from "./CategoriesInDb";
+import LastUserInDb from "./LastUserInDb";
 import LastProductInDb from "./LastProductInDb";
+import CardUser from "./CardUser";
+import CardProduct from "./CardProduct";
 import ContentRowMovies from "./ContentRowMovies";
 import Product from "./ProductTable";
 import ContentWrapper from "./ContentWrapper";
 import NotFound from "./NotFound404";
 import SearchMovies from "./SearchProduct";
-import CardProduct from "./CardProduct";
 
 function SideBar() {
     return (
         <React.Fragment>
             {/*<!-- Sidebar -->*/}
-            <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <ul className="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
                 {/*<!-- Sidebar - Brand -->*/}
                 <Link to={"/"} className="sidebar-brand d-flex align-items-center justify-content-center">
                     <div className="sidebar-brand-icon">
@@ -44,13 +46,19 @@ function SideBar() {
                         <span>Last Product in DB</span>
                     </Link>
                 </li>
+                <li className="nav-item">
+                    <Link to={"/LastUserInDb"} className="nav-link collapsed">
+                        <i className="fas fa-fw fa-folder"></i>
+                        <span>Last User in DB</span>
+                    </Link>
+                </li>
                 {/*<!-- Nav Item - Charts -->*/}
-                {/* <li className="nav-item">
+                <li className="nav-item">
                     <Link to={"/ContentRowMovies"} className="nav-link">
                         <i className="fas fa-fw fa-chart-area"></i>
                         <span>Content Row Movies</span>
                     </Link>
-                </li> */}
+                </li>
                 {/*<!-- Nav Item - Tables -->*/}
                 <li className="nav-item">
                     <Link to="/search" className="nav-link">
@@ -66,10 +74,12 @@ function SideBar() {
             <Switch>
                 <Route path="/CategoriesInDb" component={CategoriesDb} />
                 <Route path="/LastProductInDb" component={LastProductInDb} />
-                {/* <Route path="/ContentRowMovies" component={ContentRowMovies} /> */}
+                <Route path="/LastUserInDb" component={LastUserInDb} />
+                <Route path="/ContentRowMovies" component={ContentRowMovies} />
                 <Route path="/Products" component={Product} />
                 <Route path="/Search" component={SearchMovies} />
                 <Route path="/CardProduct/:id" component={CardProduct} />
+                <Route path="/CardUser/:id" component={CardUser} />
                 <Route exact path="/" component={ContentWrapper} />
                 <Route component={NotFound} />
             </Switch>

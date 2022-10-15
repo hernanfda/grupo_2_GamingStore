@@ -11,6 +11,8 @@ router.get("/details/:id", usersApiControllers.userDetail);
 router.post("/register", multer.single('userAvatar'), usersApiControllers.processRegister);
 //login an user with api access
 router.post("/login", usersApiControllers.processLogin);
+//get tha last user in DB
+router.get('/lastone', usersApiControllers.lastOneInDb);
 
 
 module.exports = router;

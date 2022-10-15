@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Link, Route } from "react-router-dom";
 import imagenFondo from "../assets/images/404.png";
-import CardProduct from "./CardProduct";
+import CardUser from "./CardUser";
 
-function LastProductInDb() {
-    const [products, setproducts] = useState([]);
+function LastUserInDb() {
+    const [users, setUsers] = useState([]);
 
     useEffect(() => {
-        fetch("/api/products/lastone")
+        fetch("/api/users/lastone")
             .then((response) => response.json())
-            .then((product) => setproducts(product.data));
+            .then((users) => setUsers(users.data));
     }, []);
 
     return (
@@ -18,21 +18,21 @@ function LastProductInDb() {
             <div className="col-lg-6 mb-4">
                 <div className="card shadow mb-4">
                     <div className="card-header py-3">
-                        <h5 className="m-0 font-weight-bold text-gray-800">Last product in Data Base</h5>
+                        <h5 className="m-0 font-weight-bold text-gray-800">Last users in Data Base</h5>
                     </div>
                     <div className="card-body">
                         <div className="text-center">
                             <img
                                 className="img-fluid px-3 px-sm-4 mt-3 mb-4"
                                 style={{ width: 15 + "rem" }}
-                                src={`/img/product-detail/${products.image}`}
-                                alt=" Img - Last ProductInDb "
+                                src={`${users.avatar}`}
+                                alt=" Img - Last UsersInDb "
                             />
                         </div>
                         <div>
-                            <p> {products.model} </p>
-                            <Link to={{ pathname: `CardProduct/${products.id}`, state: {product: products} }} className="btn btn-danger" rel="nofollow">
-                                View product detail
+                            <p> {users.model} </p>
+                            <Link to={{ pathname: `CardUser/${users.id}`, state: {user: users} }} className="btn btn-danger" rel="nofollow">
+                                View user detail
                             </Link>
                         </div>
                     </div>
@@ -42,4 +42,4 @@ function LastProductInDb() {
     );
 }
 
-export default LastProductInDb;
+export default LastUserInDb;

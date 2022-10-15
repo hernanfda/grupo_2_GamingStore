@@ -36,6 +36,32 @@ const usersApiControllers = {
             })
             .catch((err) => { res.send(err) })
     },
+    lastOneInDb: (req, res) => {
+        Users.findAll({
+            include: ['user_profile'],
+            order: [["id", "DESC"]],
+            limit: 1,
+        })
+            .then((users) => {
+                let response = {
+                    meta: {
+                        status: 200,
+                        url: "/api/users/lastone",
+                        total: users.length,
+                    },
+                    data:  user = {
+                        id: users[0].id,
+                        name: users[0].name,
+                        lastname: users[0].last_name,
+                        email: users[0].email,
+                        birthdate: users[0].birthdate,
+                        avatar: `/img/usersAvatar/${users[0].user_avatar}`,
+                    },
+                };
+                res.json(response);
+            })
+            .catch((err) => res.send(err));
+    },
     userDetail: (req, res) => {
             let id = req.params.id;
             Users.findByPk(id)
