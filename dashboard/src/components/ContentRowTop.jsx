@@ -1,6 +1,6 @@
 import React from "react";
 import ContentRowCenter from "./ContentRowCenter";
-import ContentRowMovies from "./ContentRowMovies";
+import ContentRowMovies from "./ContentKpisProducts";
 
 function ContentRowTop() {
     return (

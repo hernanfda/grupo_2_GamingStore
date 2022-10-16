@@ -3,7 +3,7 @@ import SmallCard from "./SmallCard";
 
 /*  Cada set de datos es un objeto literal */
 
-function ContentRowMovies() {
+function ContentKpisProducts() {
     /* <!-- Movies in DB --> */
     const [products, setProducts] = useState(0);
     useEffect(() => {
@@ -57,4 +57,4 @@ function ContentRowMovies() {
     );
 }
 
-export default ContentRowMovies;
+export default ContentKpisProducts;

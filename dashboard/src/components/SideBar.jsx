@@ -6,7 +6,7 @@ import LastUserInDb from "./LastUserInDb";
 import LastProductInDb from "./LastProductInDb";
 import CardUser from "./CardUser";
 import CardProduct from "./CardProduct";
-import ContentRowMovies from "./ContentRowMovies";
+import ContentKpisProducts from "./ContentKpisProducts";
 import Product from "./ProductTable";
 import ContentWrapper from "./ContentWrapper";
 import NotFound from "./NotFound404";
@@ -54,9 +54,9 @@ function SideBar() {
                 </li>
                 {/*<!-- Nav Item - Charts -->*/}
                 <li className="nav-item">
-                    <Link to={"/ContentRowMovies"} className="nav-link">
+                    <Link to={"/ContentKpisProducts"} className="nav-link">
                         <i className="fas fa-fw fa-chart-area"></i>
-                        <span>Content Row Movies</span>
+                        <span>Kpis Products</span>
                     </Link>
                 </li>
                 {/*<!-- Nav Item - Tables -->*/}
@@ -75,7 +75,7 @@ function SideBar() {
                 <Route path="/CategoriesInDb" component={CategoriesDb} />
                 <Route path="/LastProductInDb" component={LastProductInDb} />
                 <Route path="/LastUserInDb" component={LastUserInDb} />
-                <Route path="/ContentRowMovies" component={ContentRowMovies} />
+                <Route path="/ContentKpisProducts" component={ContentKpisProducts} />
                 <Route path="/Products" component={Product} />
                 <Route path="/Search" component={SearchMovies} />
                 <Route path="/CardProduct/:id" component={CardProduct} />
