@@ -3,16 +3,13 @@ window.addEventListener("load", (e) => {
     const trashCart = document.querySelector(".content-empty_btn");
 
     let articulosCarrito = JSON.parse(localStorage.getItem("cart")) || [];
-    console.log(articulosCarrito);
     showCart();
 
     function showCart() {
         const productPrices = [];
         articulosCarrito.forEach((producto) => {
             let productQty = producto.cantidad;
-            console.log(productQty);
             if (productQty > 1) {
-                console.log("entre al if de mas de 1");
                 while (productQty >= 1) {
                     productPrices.push(producto.price);
                     productQty--;
@@ -44,7 +41,6 @@ window.addEventListener("load", (e) => {
                 </div>  
             </div>`;
         });
-        console.log(productPrices);
         totalValue();
 
         //Cart qty buttons
@@ -71,6 +67,12 @@ window.addEventListener("load", (e) => {
                     localStorage.setItem("cart", JSON.stringify(articulosCarrito));
                     location.reload();
                 }
+                //Uncomment the "else" bellow in order to delete the product if the user press minus with the qty in 1
+                // else {
+                //     let newCart = articulosCarrito.filter((element) => element.id != articulosCarrito[i].id);
+                //     localStorage.setItem("cart", JSON.stringify(newCart));
+                //     location.reload();
+                // }
             });
         });
 
@@ -95,6 +97,4 @@ window.addEventListener("load", (e) => {
             document.querySelector(".summary-number_total").innerText = `$${sumWithInitial}`;
         }
     }
-
-    //console.log(articulosCarrito);
 });
