@@ -1,7 +1,4 @@
-// const { urlencoded } = require("express");
-// const fs = require("fs");
-// const path = require("path");
-// const { request } = require("http");
+
 const { validationResult } = require("express-validator");
 const db = require("../../database/models");
 const sequelize = db.sequelize;
@@ -120,6 +117,19 @@ const productsApiControllers = {
                     url: "/api/categories",
                 },
                 data: categories,
+            };
+            res.json(respuesta);
+        });
+    },
+    listBrand: (req, res) => {
+        Brands.findAll().then((brands) => {
+            let respuesta = {
+                meta: {
+                    status: 200,
+                    total: brands.length,
+                    url: "/api/brands",
+                },
+                data: brands,
             };
             res.json(respuesta);
         });

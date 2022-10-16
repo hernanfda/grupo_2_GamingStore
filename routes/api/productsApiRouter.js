@@ -8,6 +8,8 @@ const upload = require('../../middlewares/multer');
 router.get('/', productsApiControllers.productList)
 //list categories
 router.get("/categories", productsApiControllers.listCategory);
+//list brands
+router.get("/brands", productsApiControllers.listBrand);
 //listo all products of a certain type
 router.get("/list/:type", productsApiControllers.productFilter);
 //get a  detaial of certain product 
