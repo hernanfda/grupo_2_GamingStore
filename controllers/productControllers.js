@@ -167,6 +167,36 @@ const productControllers = {
     await ProductList.destroy({ where: { id: id } });
     res.redirect("/products");
   },
+  searchProduct: async (req, res) => {
+    let search = req.params.search;
+    console.log('hola soy lo que estas buscando '+ search);
+    await ProductList.findAll({
+        where: {
+            [Op.or]:[{model: {
+                [Op.like]: "%" + search + "%",
+            }},{description: {
+                [Op.like]: "%" + search + "%",
+            }}]
+            
+        },
+        include: ['brands',"categories"]
+    })
+    .then((filteredList) => {
+      res.render("products/search", {
+        styles: "product_detail_styles",
+        productList: filteredList,
+        });
+        
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+  }
+
+
+
+
+
 };
 
 module.exports = productControllers;

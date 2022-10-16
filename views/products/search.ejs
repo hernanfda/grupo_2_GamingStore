@@ -31,7 +31,7 @@
                             </button>
                         </div>
                     </div>
-                    <!-- </div> -->
+
                 </div>
                 <% } %> <% if(locals.userLogged && locals.userLogged.dataValues.user_profile_id==2) { %>
                 <div class="section-Container">
@@ -44,8 +44,15 @@
                         </a>
                     </div>
                     <% } %>
+                    <% if(productList.length ===0) { %>
+                        <div id="emptySearch">Lo sentimos, no hemos podido encontrar el producto que deseas.</div>
+                            <% } %>
+                        </div>
                 </div>
-                <!-- </div> -->
+
+
+
+                
             </div>
           </div>
       </section>
@@ -54,6 +61,5 @@
       <script defer src="/js/footer.js"></script>
       <script defer src="/js/userPanel.js"></script>
       <script defer src="/js/shop-cart.js"></script>
-      
   </body>
 </html>

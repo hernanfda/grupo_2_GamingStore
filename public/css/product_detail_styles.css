@@ -8,7 +8,7 @@
   box-sizing: border-box;
   font-family: "Play", sans-serif;
   color: rgb(179, 179, 179);
-  -webkit-tap-highlight-color: transparent
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -64,7 +64,28 @@ nav {
 .navbar-a {
   font-size: 0;
 }
+/*styles searchbar */
+.form-buscador {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.form-buscador #search {
+  width: 100vw;
+  height: 64px;
+  text-align: center;
+  font-size: 20px;
+  background-color: rgb(26, 26, 26);
+  color: rgba(164, 89, 255);
+  border:rgb(26, 26, 26);
+}
 
+#emptySearch {
+  font-size: 1.5em;
+  color: rgba(164, 89, 255);
+  height: 100%;
+  text-align: center;
+}
 /* BurgerMenu styles empieza acá */
 
 .burger {
@@ -88,17 +109,17 @@ nav {
   transition: all 0.3s ease-in-out;
 }
 
-@media(max-width: 767px) {
-  .burger.activo .bar:nth-child(2){
+@media (max-width: 767px) {
+  .burger.activo .bar:nth-child(2) {
     opacity: 0;
   }
-  
-  .burger.activo .bar:nth-child(1){
+
+  .burger.activo .bar:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
     transition: all 0.7s;
   }
-  
-  .burger.activo .bar:nth-child(3){
+
+  .burger.activo .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
     transition: all 0.7s;
   }
@@ -151,7 +172,7 @@ nav {
     background-color: rgba(0, 0, 0, 0.9);
     transition: all 1.2s 0.2s;
   }
-  
+
   .navbar.activo .navbar-a {
     color: white;
     padding-left: 10px;
@@ -296,13 +317,13 @@ h4 {
   align-items: center;
   justify-content: center;
   border-radius: 20px;
-  background-color: rgba(255,255,255,0.75);
-  color: rgba(0,0,0,0.55);
+  background-color: rgba(255, 255, 255, 0.75);
+  color: rgba(0, 0, 0, 0.55);
   box-shadow: 5px 5px 10px;
   width: 80%;
   height: auto;
   margin: 20px;
-  padding: 15px;  
+  padding: 15px;
   transition: all 0.3s ease-in-out;
 }
 
@@ -312,13 +333,13 @@ h4 {
   align-items: center;
   justify-content: center;
   border-radius: 20px;
-  background-color: rgba(255,255,255,0.75);
-  color: rgba(0,0,0,0.55);
+  background-color: rgba(255, 255, 255, 0.75);
+  color: rgba(0, 0, 0, 0.55);
   box-shadow: 5px 5px 10px;
   width: 65%;
   height: auto;
   margin: 20px;
-  padding: 15px;  
+  padding: 15px;
   transition: all 0.3s ease-in-out;
 }
 
@@ -341,20 +362,22 @@ h4 {
   text-align: center;
 }
 /*--------BOTON CARRITO------*/
-.btn-agregar, .btn-edit, .btn-delete {
+.btn-agregar,
+.btn-edit,
+.btn-delete {
   padding: 10px;
   margin-top: 20px;
   color: white;
   border-radius: 10px;
   border: 0px;
-  background-color: rgb(26,26,26,1);
+  background-color: rgb(26, 26, 26, 1);
   transition: all 0.3s ease-in-out;
 }
 
 .btn-agregar-Detail:hover {
   cursor: pointer;
   background-color: rgb(0, 0, 0, 0.5);
-  transform: scale(1.10);
+  transform: scale(1.1);
 }
 
 .btn-agregar-Detail:active {
@@ -365,7 +388,7 @@ h4 {
 .btn-agregar:hover {
   cursor: pointer;
   background-color: rgb(0, 0, 0, 0.5);
-  transform: scale(1.10);
+  transform: scale(1.1);
 }
 
 .btn-agregar-Detail {
@@ -374,7 +397,7 @@ h4 {
   color: white;
   border-radius: 10px;
   border: 0px;
-  background-color: rgb(0,0,0,0.9);
+  background-color: rgb(0, 0, 0, 0.9);
   transition: all 0.3s ease-in-out;
 }
 
@@ -386,21 +409,21 @@ h4 {
 }
 
 .precio {
-  color: rgba(255,255,255,1);
+  color: rgba(255, 255, 255, 1);
   border-radius: 5px;
   font-weight: bold;
   background-color: rgba(212, 0, 255, 0.35);
-  filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.5));
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
   font-size: 15px;
   padding: 5px;
   transition: all 0.3s ease-in-out;
 }
 
 .precio-Detail {
-  color: rgba(255,255,255,1);
+  color: rgba(255, 255, 255, 1);
   border-radius: 5px;
   font-weight: bold;
-  filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.5));
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
   font-size: 18px;
   transition: all 0.3s ease-in-out;
 }
@@ -410,7 +433,7 @@ h4 {
 }
 
 .detail-Container {
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 0px 0px 10px 10px;
   padding: 10px;
 }
@@ -418,13 +441,13 @@ h4 {
 .detail-Info {
   padding-top: 5px;
   padding-bottom: 5px;
-  color: rgba(255,255,255,1);
+  color: rgba(255, 255, 255, 1);
 }
 
 .detail-Description {
   padding-top: 5px;
   padding-bottom: 5px;
-  color: rgba(255,255,255,1);
+  color: rgba(255, 255, 255, 1);
 }
 
 .detail-Prices {
@@ -457,7 +480,6 @@ h4 {
   padding: 10px;
 }
 
-
 p.modelo {
   color: rgb(111, 0, 209);
   font-size: 1.4em;
@@ -466,14 +488,14 @@ p.modelo {
 
 .modelo-Detail {
   background-color: rgba(111, 0, 209, 0.45);
-  color: rgba(255,255,255,1);
+  color: rgba(255, 255, 255, 1);
   padding: 10px;
   font-size: 1.4em;
   font-weight: bold;
   border-radius: 10px 10px 0px 0px;
 }
 
-.priceCart{
+.priceCart {
   text-align: center;
 }
 
@@ -495,7 +517,6 @@ footer {
 }
 
 @media (min-width: 768px) {
- 
   /*--------HEADER CON NUEVA ALTURA------*/
   header {
     color: rgb(179, 179, 179);
@@ -532,18 +553,17 @@ footer {
     font-weight: bold;
     justify-content: space-evenly;
   }
-  
 
   .navbar-a {
     font-size: 23px;
-    color: rgba(255,255,255,1);
-    filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.5));
+    color: rgba(255, 255, 255, 1);
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
     transition: 0.3s all ease-in-out;
   }
 
   .navbar-a:hover {
     filter: drop-shadow(5px 5px 10px rgba(162, 0, 255, 1));
-    transform: scale(1.10);
+    transform: scale(1.1);
   }
 
   #products {
@@ -561,13 +581,12 @@ footer {
   }
 
   .fa-solid.fa-user:hover {
-    transform: scale(1.10);
+    transform: scale(1.1);
     color: rgb(212, 0, 255);
     filter: drop-shadow(5px 5px 10px rgba(162, 0, 255, 0.5));
   }
 
-
-   #userPanelImg {
+  #userPanelImg {
     position: relative;
     width: 50px;
     height: 50px;
@@ -593,7 +612,7 @@ footer {
     bottom: 8px !important;
     border-radius: 100% !important;
     padding: 10px !important;
-}
+  }
 
   /*--------ALINEACIÓN LUPA------*/
   .fa-magnifying-glass {
@@ -604,7 +623,7 @@ footer {
   }
 
   .fa-magnifying-glass:hover {
-    transform: scale(1.10);
+    transform: scale(1.1);
     color: rgb(212, 0, 255);
     filter: drop-shadow(5px 5px 10px rgba(162, 0, 255, 0.5));
     cursor: pointer;
@@ -619,7 +638,7 @@ footer {
   }
 
   .fa-cart-shopping:hover {
-    transform: scale(1.10);
+    transform: scale(1.1);
     color: rgb(212, 0, 255);
     filter: drop-shadow(5px 5px 10px rgba(162, 0, 255, 0.5));
   }
@@ -663,7 +682,7 @@ footer {
     margin-left: auto;
     margin-right: auto;
   }
-  
+
   .section-Container {
     display: flex;
     flex-direction: row;
@@ -678,7 +697,7 @@ footer {
   }
 
   .articulo:hover {
-    transform: scale(1.10);
+    transform: scale(1.1);
     color: rgba(162, 0, 255, 1);
     box-shadow: (5px 5px 10px);
   }
@@ -692,11 +711,11 @@ footer {
     width: 30%;
     text-align: left;
     margin-left: 50px;
-}
+  }
 
-.especificaciones-Detail {
-  width: 65%;
-}
+  .especificaciones-Detail {
+    width: 65%;
+  }
 
   footer a {
     color: rgb(226, 222, 222);
@@ -710,7 +729,7 @@ footer {
     width: 100%;
     color: rgb(226, 222, 222);
     height: 50px;
-    background-color: rgba(38, 38, 38, .61);
+    background-color: rgba(38, 38, 38, 0.61);
     margin-top: auto;
     user-select: none;
     padding-right: 10px;
@@ -725,9 +744,9 @@ footer {
 }
 
 @media (min-width: 448px) and (max-width: 768px) {
-    section {
-      height: 100%;
-    }
+  section {
+    height: 100%;
+  }
 }
 
 @media (max-height: 450px) {

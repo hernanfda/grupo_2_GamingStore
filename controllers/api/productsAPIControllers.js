@@ -88,17 +88,17 @@ const productsApiControllers = {
     },
     searchProduct: (req, res) => {
         ProductList.findAll({
-            include: {
-                model: Categories,
-                as: "categories",
-                where: {
-                    name: {
-                        [Op.like]: "%" + req.body.model + "%",
-                    },
-                },
-            },
-        }).then((products) => {
-            let response = {
+            where: {
+                [Op.or]:[{model: {
+                    [Op.like]: "%" + req.body.model + "%",
+                }},{description: {
+                    [Op.like]: "%" + req.body.model + "%",
+                }}]
+                
+            }
+        })
+.then((products) => {
+            let response = { 
                 meta: {
                     status: 200,
                     founded: products.length,

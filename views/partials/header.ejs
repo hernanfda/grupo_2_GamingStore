@@ -10,6 +10,10 @@
             <div class="search">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </div>
+            
+
+  
+      </div>
             <div class="userPanel">
                 <!-- <% if(locals.isLogged) { %>
                         <a href="/users/profile"><img src="/img/usersAvatar/<%= locals.userLogged.dataValues.user_avatar %>" class="userProfile-img"></a>
@@ -28,4 +32,10 @@
             <a href="/products/" class="navbar-a">VER TODO</a>
         </nav>
     </div>
-</header>
+    <div class="form-buscador">
+        <form class="formSearch" action="">
+            <input id="search" type="text" class="input" placeholder="BUSCAR PRODUCTOS"/>
+
+        </form>
+        <script defer src="/js/search.js"></script>        
+</header>   

@@ -13,6 +13,8 @@ router.get("/cart", productControllers.productCart);
 router.get("/details/:id", productControllers.productDetail);
 //filter by type
 router.get("/list/:type", productControllers.productFilter);
+//search by model or description
+router.get("/search/:search", productControllers.searchProduct);
 //create and store product
 router.get("/create", adminMiddleware, productControllers.createProduct);
 router.post("/", upload.single('image'),validator.createProduct, productControllers.saveProduct);
