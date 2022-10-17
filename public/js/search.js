@@ -11,7 +11,7 @@ window.addEventListener("load", function () {
         searchBar.style.display = "block";
         searchBar.style.zIndex = 9999;
         input.focus();
-        input.select();
+        input.selects();
     });
     searchBar.addEventListener("input", (e) => {
         let value = e.target.value;
