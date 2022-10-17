@@ -1,15 +1,14 @@
 window.addEventListener("load", function () {
     let searchIcon = document.querySelector(".search");
-    let searchBar = document.querySelector(".form-buscador");
+    let searchBar = document.querySelector("#form-buscador");
     let submitform = document.querySelector(".formSearch");
     let main = document.querySelector("main");
     let section = document.querySelector("section");
     let input = document.querySelector("#search");
-    console.log(section);
+    // console.log(section);
 
     searchIcon.addEventListener("click", (event) => {
         searchBar.style.display = "block";
-        searchBar.style.zIndex = 9999;
         input.focus();
         input.selects();
     });
@@ -25,7 +24,13 @@ window.addEventListener("load", function () {
     if (main) {
         main.addEventListener("click", (e) => {
             if (searchBar.style.display == "block") {
-                searchBar.style.display = "none";
+                searchBar.classList.remove("form-buscador")
+                searchBar.classList.add("form-buscadorFadeOut")
+                setTimeout(() => {
+                    searchBar.style.display = "none"
+                    searchBar.classList.remove("form-buscadorFadeOut")
+                    searchBar.classList.add("form-buscador")
+                }, 450);
             }
         });
     }
