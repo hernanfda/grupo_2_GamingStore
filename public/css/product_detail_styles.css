@@ -143,6 +143,16 @@ nav {
   transition: all 0.3s ease-in-out;
 }
 
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+
 @media (max-width: 767px) {
   .burger.activo .bar:nth-child(2) {
     opacity: 0;

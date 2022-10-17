@@ -34,10 +34,15 @@ window.addEventListener("load", function () {
             }
         });
     }
-
     section.addEventListener("click", (e) => {
         if (searchBar.style.display == "block") {
-            searchBar.style.display = "none";
+            searchBar.classList.remove("form-buscador")
+            searchBar.classList.add("form-buscadorFadeOut")
+            setTimeout(() => {
+                searchBar.style.display = "none"
+                searchBar.classList.remove("form-buscadorFadeOut")
+                searchBar.classList.add("form-buscador")
+            }, 450);
         }
     });
 });
