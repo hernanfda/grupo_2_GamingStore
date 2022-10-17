@@ -8,6 +8,7 @@ const db = require("../database/models");
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 const Users = db.Users;
+
 const userControllers = {
     login: (req, res) => {
         res.render("users/login", { styles: "register_login" });
@@ -27,8 +28,10 @@ const userControllers = {
                     Reflect.deleteProperty(user, "password");
                     req.session.userLogged = user;
                     if (req.body.remember_me) {
-                        res.cookie("userEmail", userToLogin.email, { maxAge: 1000 * 60 * 60 * 24 * 7 });
+                        const user = { ...userToLogin, user_password: undefined };
+                        res.cookie("userLogged", user, { maxAge: 1000 * 60 * 60 * 24 * 7 });
                     }
+
                     res.redirect("/");
                 }
             })
@@ -69,7 +72,7 @@ const userControllers = {
         }
     },
     logout: (req, res) => {
-        res.clearCookie("userEmail");
+        res.clearCookie("userLogged");
         req.session.destroy();
         res.redirect("/");
     },
