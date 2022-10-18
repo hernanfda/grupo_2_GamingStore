@@ -5,7 +5,7 @@ window.addEventListener('load', function(){
     let body = document.querySelector('body')
     let footer= document.querySelector('footer')
     // let div = document.querySelector('#true')
-    if(articulos.length < 8){
-        section.style.height = '100vh'
-    }
+    // if(articulos.length < 3){
+    //     section.style.height = "100%"
+    // }
 })

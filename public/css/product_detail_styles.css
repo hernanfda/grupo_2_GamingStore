@@ -17,6 +17,7 @@ body {
   background-color: rgb(26, 26, 26);
   min-width: 320px;
   position: relative;
+  height: 100%;
 }
 
 header {
@@ -567,6 +568,7 @@ footer {
   height: 50px;
   background-color: rgba(38, 38, 38, 0.61);
   margin-top: auto;
+  position: unset;
 }
 
 .redes {
@@ -728,6 +730,7 @@ footer {
 
   section {
     padding-top: 30px;
+    min-height:calc(100vh - 170px);
   }
 
   .section-Detail {
