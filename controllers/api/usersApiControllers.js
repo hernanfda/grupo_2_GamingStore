@@ -8,37 +8,37 @@ const { Op } = require("sequelize");
 const { error } = require("console");
 const Users = db.Users;
 
-
 const usersApiControllers = {
-
     userList: (req, res) => {
         Users.findAll({
-            include: ['user_profile']
+            include: ["user_profile"],
         })
-            .then(users => {
+            .then((users) => {
                 let respuesta = {
                     meta: {
                         status: 200,
                         total: users.length,
-                        url: 'api/users'
+                        url: "api/users",
                     },
-                    data: users.map(user => {
+                    data: users.map((user) => {
                         user = {
                             id: user.id,
                             name: user.name,
                             email: user.email,
-                            url: `/api/users/${user.id}`
-                        }
+                            url: `/api/users/details/${user.id}`,
+                        };
                         return user;
                     }),
-                }
+                };
                 res.json(respuesta);
             })
-            .catch((err) => { res.send(err) })
+            .catch((err) => {
+                res.send(err);
+            });
     },
     lastOneInDb: (req, res) => {
         Users.findAll({
-            include: ['user_profile'],
+            include: ["user_profile"],
             order: [["id", "DESC"]],
             limit: 1,
         })
@@ -49,57 +49,57 @@ const usersApiControllers = {
                         url: "/api/users/lastone",
                         total: users.length,
                     },
-                    data:  user = {
+                    data: (user = {
                         id: users[0].id,
                         name: users[0].name,
                         lastname: users[0].last_name,
                         email: users[0].email,
                         birthdate: users[0].birthdate,
                         avatar: `/img/usersAvatar/${users[0].user_avatar}`,
-                    },
+                    }),
                 };
                 res.json(response);
             })
             .catch((err) => res.send(err));
     },
     userDetail: (req, res) => {
-            let id = req.params.id;
-            Users.findByPk(id)
-                .then((user) => {
-                    let response;
-                    if (user) {
-                        response = {
-                            meta: {
-                                status: 200,
-                                url: `/api/users/details/${id}`,
-                            },
-                            data:  user = {
-                                id: user.id,
-                                name: user.name,
-                                lastname: user.last_name,
-                                email: user.email,
-                                birthdate: user.birthdate,
-                                avatar: `/img/usersAvatar/${user.user_avatar}`,
-                            },
-                        };
-                    } else {
-                        response = {
-                            meta: {
-                                status: 204, 
-                                url: `/api/users/details/${id}`,
-                            },
-                            data: {"Msg": 'Not found'},  
-                        }
-                    }
-                    res.json(response);
-                })
-                .catch((error) => {
-                    res.send(error);
-                });
+        let id = req.params.id;
+        Users.findByPk(id)
+            .then((user) => {
+                let response;
+                if (user) {
+                    response = {
+                        meta: {
+                            status: 200,
+                            url: `/api/users/details/${id}`,
+                        },
+                        data: (user = {
+                            id: user.id,
+                            name: user.name,
+                            lastname: user.last_name,
+                            email: user.email,
+                            birthdate: user.birthdate,
+                            avatar: `/img/usersAvatar/${user.user_avatar}`,
+                        }),
+                    };
+                } else {
+                    response = {
+                        meta: {
+                            status: 204,
+                            url: `/api/users/details/${id}`,
+                        },
+                        data: { Msg: "Not found" },
+                    };
+                }
+                res.json(response);
+            })
+            .catch((error) => {
+                res.send(error);
+            });
     },
-    processLogin:  (req, res) => {
-         Users.findOne({ where: { email: req.body.email } })
-            .then(userToLogin => {
+    processLogin: (req, res) => {
+        Users.findOne({ where: { email: req.body.email } })
+            .then((userToLogin) => {
                 if (bcrypt.compareSync(req.body.password, userToLogin.user_password)) {
                     const user = { ...userToLogin, user_password: undefined };
                     Reflect.deleteProperty(user, "password");
@@ -109,49 +109,47 @@ const usersApiControllers = {
                     }
                     res.json("oh yeah"); //armar los status correctos
                 } else {
-                    res.json('no pepe nooo');  //armar los status correctos
+                    res.json("no pepe nooo"); //armar los status correctos
                 }
             })
             .catch((err) => console.error(err));
     },
     processRegister: (req, res) => {
         Users.create({
-                name: req.body.nombre,
-                last_name: req.body.apellido,
-                email: req.body.email,
-                birth_date: req.body.birthDate,
-                user_password: bcrypt.hashSync(req.body.password, 10),
-                user_avatar: req.file.filename, //ojo que en forms es userAvatar
-                user_profile_id: 1,
-            
+            name: req.body.nombre,
+            last_name: req.body.apellido,
+            email: req.body.email,
+            birth_date: req.body.birthDate,
+            user_password: bcrypt.hashSync(req.body.password, 10),
+            user_avatar: req.file.filename, //ojo que en forms es userAvatar
+            user_profile_id: 1,
         })
-        .then((confirm) => {
-            let response;
-            if (confirm){
-                response = {
-                    meta: {
-                        status: 200,
-                        total: confirm.length,
-                        url: 'api/users/register'
-                    },
-                    data: confirm
+            .then((confirm) => {
+                let response;
+                if (confirm) {
+                    response = {
+                        meta: {
+                            status: 200,
+                            total: confirm.length,
+                            url: "api/users/register",
+                        },
+                        data: confirm,
+                    };
+                } else {
+                    response = {
+                        meta: {
+                            status: 200,
+                            total: confirm.length,
+                            url: "api/users/register",
+                        },
+                        data: confirm,
+                    };
                 }
-            } else {
-                response = {
-                    meta: {
-                        status: 200,
-                        total: confirm.length,
-                        url: 'api/users/register'
-                    },
-                    data: confirm
-                }
-            }
-            res.json(response);
-        })
-        .catch((err) => {
-            res.send(err);
-        });
-        
+                res.json(response);
+            })
+            .catch((err) => {
+                res.send(err);
+            });
     },
     // logout: (req, res) => {
     //     res.clearCookie("userEmail");
