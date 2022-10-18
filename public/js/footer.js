@@ -6,9 +6,6 @@ window.addEventListener('load', function(){
     let footer= document.querySelector('footer')
     // let div = document.querySelector('#true')
     if(articulos.length < 8){
-        section.style.height = '100%'
-        body.style.position = "unset"
-        footer.style.position ="absolute";
-        footer.style.bottom = "0px"
+        section.style.height = '100vh'
     }
 })
