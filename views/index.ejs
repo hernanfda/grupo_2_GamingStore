@@ -80,7 +80,7 @@
         <section class="ofertas">
           <h2>OFERTAS</h2>
           <% for(let i=0; i < productList.length; i++){ %>
-            <% if(productList[i].offers==true){ %>
+            <% if(productList[i].offer==true){ %>
               <div class="articulo">
                 <a class="img" href="/products/details/<%= productList[i].id %> ">
                 <img id="producto" src="/img/product-detail/<%= productList[i].image %> " />
@@ -90,7 +90,7 @@
                   <p class="descuento">20% OFF</p>
                   
                     <h3 class="descripcion">
-                      <%= `${productList[i].brand} ${productList[i].model}` %>
+                      <%= `${productList[i].brands.name} ${productList[i].model}` %>
                     </h3>
                   </a>
                 </div>
@@ -111,7 +111,7 @@
                   </p>
                   
                     <h3 class="descripcion">
-                      <%= `${productList[i].brand} ${productList[i].model}` %>
+                      <%= `${productList[i].brands.name} ${productList[i].model}` %>
                     </h3>
                   </a>
                 </div>

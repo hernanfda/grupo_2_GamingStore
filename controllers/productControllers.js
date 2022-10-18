@@ -135,7 +135,7 @@ const productControllers = {
           model: req.body.model,
           price: req.body.price,
           image: file ? req.file.filename : req.body.image,
-          offer: req.body.offer ? 1 : 0,
+          offer: req.body.offers ? 1 : 0,
           description: req.body.description,
           popular: req.body.popular ? 1 : 0,
           category_id: req.body.category_id,
